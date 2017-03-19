@@ -1,0 +1,111 @@
+body {
+    font: 12px arial;
+}
+
+
+/*头部信息*/
+
+header {
+    overflow: hidden;
+}
+
+header .body {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 590px;
+    font-size: 13px;
+    text-align: right;
+    color: #999;
+    line-height: 32px;
+}
+
+header .body a {
+    margin-left: 18px;
+    font-weight: bold;
+    color: #555;
+    height: 32px;
+    display: inline-block;
+}
+/*更多产品*/
+#moreProduct {
+    width: 86px;
+    height: 32px;
+    line-height: 32px;
+    color: white;
+    background: #398bfb;
+    font-size: 13px;
+    text-align: center;
+    overflow: hidden;
+    border-bottom: 1px solid #398bfb;
+    text-decoration: none;
+    display:block;
+    float: right;
+}
+
+/*主体部分*/
+
+.content {
+    margin-top: 83px;
+    text-align: center;
+}
+
+.content img {
+    width: 270px;
+    height: 129px;
+}
+
+.content form {
+    margin-top: 25px;
+}
+
+.content input {
+    padding: 3px 7px;
+    width: 536px;
+    height: 34px;
+    border: 1px solid #b8b8b8;
+    font-size: 16px;
+    margin-right: -2px;
+}
+
+.content button {
+    width: 102px;
+    height: 40px;
+    background-color: #38f;
+    color: white;
+    border: 0px;
+    font-size: 16px;
+    box-shadow: none;
+}
+
+.content button:hover {
+    width: 102px;
+    height: 40px;
+    line-height: 38px;
+    background-color: #317ef3;
+    color: white;
+    border: 0px;
+    border-bottom: 1px solid #2868c8;
+    font: 26px;
+    box-shadow: 1px 1px 1px #ccc;
+}
+
+
+/*底部信息*/
+
+footer {
+    padding-top: 200px;
+}
+
+footer p {
+    text-align: center;
+}
+
+footer p * {
+    color: #999;
+}
+
+footer p img {
+    width: 16px;
+    height: 16px;
+}

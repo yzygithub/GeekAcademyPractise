@@ -1,0 +1,74 @@
+/*地基*/
+#base {
+    width: 310px;
+    height: 310px;
+    /*自适应居中*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -155px;
+    margin-left: -155px;
+}
+
+/*楼层*/
+#floor1 {
+    width: 310px;
+    height: 100px;
+}
+
+#floor2 {
+    width: 310px;
+    height: 110px;
+}
+
+#floor3 {
+    width: 310px;
+    height: 100px;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    box-shadow:0 2px 6px 4px rgba(0,0,0,.4);
+}
+
+.middlebox {
+    float: left;
+}
+
+/*单元*/
+#up {
+    margin: 0 auto;
+    background-color: #D8BFD8;
+}
+
+#left {
+    margin: 5px 0;
+    background-color: #20B2AA;
+}
+
+#middle {
+    margin: 5px;
+    background-color: #C0C0C0;
+    box-shadow:0 -2px 6px 5px rgba(0,0,0,.4) inset;
+    line-height: 100px;
+    text-align: center;
+}
+
+#right {
+    margin: 5px 0;
+    background-color: #FFDEAD;
+}
+
+#down {
+    margin: 0 auto;
+    background-color: #4169E1;
+}
+
+/*葛城美里的十字架*/
+#EVA_Cross {
+    margin: 5px;
+    width: 64px;
+    height: 64px;
+    vertical-align: middle;
+}
