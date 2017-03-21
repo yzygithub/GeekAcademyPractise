@@ -12,6 +12,7 @@
 	<div class="wrapper">
 		<!-- header start -->
 		<header>
+		<div id="top-wrap">
 			<div class="body">
 				<a href="http://www.nuomi.com/?cid=002540" target="_blank">糯米</a>
 				<a href="http://news.baidu.com/" target="_blank">新闻</a>
@@ -22,7 +23,30 @@
 				<a href="https://passport.baidu.com/v2/?login&tpl=mn&u=http%3A%2F%2Fwww.baidu.com%2F" target="_blank">登录</a>
 				<a href="javascript:;">设置</a>
 				<!-- <a id="moreProduct" href="javascript:;">更多产品</a> -->
-				<a href="http://www.baidu.com/more/" name="tj_briicon" id="moreProduct" target="_blank"> 更多产品</a>
+				<div id="mrpdt">
+					<a href="http://www.baidu.com/more/" name="tj_briicon" id="moreProduct" target="_blank"> 更多产品</a>
+					<!-- hidden div start-->
+					<div class="bdbriimg">
+						<div class="s_bdmainlink">
+							<div id="bdbriimgtitle">更多产品</div>
+							<div class="s_briscrollwrapperContainer">
+								<div class="s_briscrollwrapper s_bdbriscroll-ctrl-content s_bdbriscroll-onwheel" style="height: 332px;">
+									<div id="bdbriwrapper" style="zoom: 1;">
+										<a href="http://music.baidu.com" target="_blank"><img src="img/music.png">音乐</a>
+										<a href="http://image.baidu.com" target="_blank"><img src="img/image.png">图片</a>
+										<a href="http://zhidao.baidu.com" target="_blank"><img src="img/zhidao.png">知道</a>
+										<a href="http://wenku.baidu.com" target="_blank"><img src="img/wenku.png">文库</a>
+										<a href="http://top.baidu.com" target="_blank"><img src="img/bang.png">风云榜</a>
+										<a href="http://e.baidu.com/" target="_blank"><img src="img/tuiguang.png">百度推广</a>
+										<div class="s_bdbrievenmore"><a href="http://www.baidu.com/more/" target="_blank">全部产品&gt;&gt;</a></div>
+									</div>
+								</div>
+							</div>
+						</div>
+				</div>
+<!-- hidden div end -->
+			</div>
+			</div>
 			</div>
 		</header>
 		<!-- header end -->
@@ -30,7 +54,11 @@
 		<div class="content">
 			<img src="img/bd_logo1.png" alt="百度一下">
 			<form action="https://www.baidu.com/s" method="get" target="_blank">
-				<input type="text" name="wd">
+				<span id="s_kw_wrap" class="bg s_ipt_wr quickdelete-wrap">
+  				<span class="ipt_rec"></span>
+  				<span class="soutu_btn"></span>
+  				<input type="text" class="s_ipt" name="wd" id="kw" maxlength="100" autocomplete="off">
+				</span>
 				<button type="submit">百度一下</button>
 			</form>
 		</div>

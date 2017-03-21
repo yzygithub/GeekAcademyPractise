@@ -36,13 +36,88 @@ header .body a {
     background: #398bfb;
     font-size: 13px;
     text-align: center;
-    overflow: hidden;
     border-bottom: 1px solid #398bfb;
     text-decoration: none;
     display:block;
     float: right;
 }
 
+#mrpdt {
+    float: right;
+}
+/* hidden div */
+.bdbriimg{
+    display: none;
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    top: 0;
+    width: 85px;
+    min-height: 600px;
+    border-left: 1px solid #e7e7e7;
+    background-color: #f9f9f9;
+    overflow: hidden;
+    text-shadow: none;
+}
+
+#mrpdt:hover .bdbriimg{
+    display: block;
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    top: 0;
+    width: 85px;
+    min-height: 688px;
+    border-left: 1px solid #e7e7e7;
+    background-color: #f9f9f9;
+    overflow: hidden;
+    text-shadow: none;
+}
+
+#bdbriimgtitle {
+    color: #333;
+    text-align: center;
+    width: 66px;
+    height: 30px;
+    line-height: 34px;
+    padding-bottom: 10px;
+    margin: 0 auto;
+    border-bottom: #f0f0f0 1px solid;
+    font-size: 13px;
+    cursor: default;
+}
+
+#bdbriwrapper a {
+    display: block;
+    text-align: center;
+    width: 66px;
+    height: 76px;
+    margin: 0 auto;
+    font-size: 12px;
+    border-bottom: #f0f0f0 1px solid;
+    color: #666;
+    text-decoration: none;
+    overflow: hidden;
+    text-shadow: none;
+    line-height: 14px;
+}
+
+#bdbriwrapper a img {
+    display: block;
+    height: 36px;
+    width: auto;
+    margin: 10px auto 5px;
+    cursor: pointer;
+}
+/* hidden div end */
+#top-wrap {
+    border-bottom: 1px solid #ebebeb;
+    min-width: 1000px;
+    width: 100%;
+    height: 32px;
+    position: absolute;
+    top:0;
+}
 /*主体部分*/
 
 .content {
@@ -59,13 +134,52 @@ header .body a {
     margin-top: 25px;
 }
 
+#s_kw_wrap {
+    position: relative;
+    display: inline-block;
+    zoom: 1;
+    vertical-align: top;
+    text-align: left;
+}
+
+.ipt_rec {
+    display: block;
+    top: 3px;
+    right: 41px!important;
+    left: initial;
+    z-index: 1;
+    position: absolute;
+    height: 34px;
+    width: 24px;
+    background: url(img/microphone.png) no-repeat center;
+    background-image: -webkit-image-set(url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAASCAYAAACAa1QyAAAAAXNSR…lFZdxpUpXF3MU+peIeuIx+McELeFutVjvg/5Jeneno+W3ELz3Rmg23qA6NAAAAAElFTkSuQmCC) 1x,url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAkCAMAAACg5NohAAAA7VBMV…TXmyg051Lbt3PDGjj6iTOwXMtO3fUm0qR3m+JQXD/1N+gbnHtANlxuv2EAAAAASUVORK5CYII=) 2x);
+    background-size: 13px 18px;
+    background-position: 0 50%;
+    cursor: pointer;
+}
+
+
+.soutu_btn {
+    z-index: 1;
+    position: absolute;
+    right: 11px;
+    top: 50%;
+    margin-top: -8px;
+    height: 16px;
+    width: 18px;
+    background: #fff url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/soutu/img/camera_new_5606e8f.png) no-repeat;
+    cursor: pointer;
+}
+
 .content input {
     padding: 3px 7px;
     width: 536px;
-    height: 34px;
+    height: 32px;
     border: 1px solid #b8b8b8;
     font-size: 16px;
     margin-right: -2px;
+    width: 450px!important;
+    padding-right: 78px!important;
 }
 
 .content button {
@@ -76,6 +190,7 @@ header .body a {
     border: 0px;
     font-size: 16px;
     box-shadow: none;
+    margin-left: -2px;
 }
 
 .content button:hover {
@@ -94,7 +209,15 @@ header .body a {
 /*底部信息*/
 
 footer {
-    padding-top: 200px;
+    width: 100%;
+    position: absolute;
+    z-index: 3;
+    bottom: 12px;
+    left: 0;
+    overflow: hidden;
+    color: #999;
+    zoom: 1;
+    margin: 0;
 }
 
 footer p {
