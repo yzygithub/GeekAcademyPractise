@@ -1,0 +1,210 @@
+  html,body,.wrapper {
+    height: 100%;
+}
+
+/* 盒子模型部分 */
+/* 盒子容器 */
+.leftbox {
+  float: left;
+  width: 200px;
+  height: 150px;
+  border: 1px solid gray;
+}
+
+.rightbox {
+  margin-left: 10px;
+  float: left;
+  width: 200px;
+  height: 150px;
+  border: 1px solid gray;
+  margin-bottom: 20px;
+}
+
+/* 正常盒子 */
+#content1 {
+  width: 100px;
+  height: 100px;
+  background-color: #19e5e5;
+  overflow: auto;
+  font-size: 12px;
+}
+
+#border1 {
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+  margin: 0 auto;
+  margin-top: 10px;
+  background-color: #dd7e6b;
+  border: 5px solid #666666;
+  box-sizing: content-box; /*默认*/
+}
+
+/* 怪异盒子 */
+#content2 {
+  width: 100px;
+  height: 100px;
+  background-color: #19e5e5;
+  overflow: auto;
+  font-size: 12px;
+}
+
+#border2 {
+  width: 130px;
+  height: 130px;
+  padding: 10px;
+  margin: 0 auto;
+  margin-top: 10px;
+  background-color: #dd7e6b;
+  border: 5px solid #666666;
+  box-sizing: border-box;
+}
+
+hr {
+  clear: both;
+}
+
+/*弹性盒模型*/
+/*水平方向排列*/
+.horizen {
+  width: 100%;
+  height: 160px;
+  border: 1px solid gray;
+  text-align: center;
+}
+
+.menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.menu li {
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  flex: 1 1 100%;
+}
+
+.menu li:nth-child(1) {
+  background-color: #ff9900;
+}
+
+.menu li:nth-child(2) {
+  background-color: #cc9900;
+}
+
+.menu li:nth-child(3) {
+  background-color: #999900;
+}
+
+.menu li:nth-child(4) {
+  background-color: #669900;
+}
+
+.menu li:nth-child(5) {
+  background-color: #339900;
+}
+
+.menu li:nth-child(6){
+  background-color: #009900;
+}
+
+p {
+  display: inline;
+}
+/*响应式布局*/
+@media (min-width: 480px) {
+  .menu li {
+    flex: 1 1 50%;
+  }
+}
+
+@media (min-width: 800px) {
+  .menu {
+    flex-flow: row nowrap;
+  }
+}
+/*垂直方向排列&排序*/
+.vertical {
+  width: 500px;
+  height: 100%;
+  border: 1px solid gray;
+}
+
+.menu2 {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.menu2 li {
+  height: 60px;
+  width: 100px;
+  text-align: center;
+  line-height: 60px;
+  flex: 1 1 100%;
+}
+
+.menu2 li:nth-child(1) {
+  background-color: #ff9900;
+  order: 6;
+}
+
+.menu2 li:nth-child(2) {
+  background-color: #cc9900;
+  order: 5;
+}
+
+.menu2 li:nth-child(3) {
+  background-color: #999900;
+  order: 4;
+}
+
+.menu2 li:nth-child(4) {
+  background-color: #669900;
+  order: 3;
+}
+
+.menu2 li:nth-child(5) {
+  background-color: #339900;
+  order: 2;
+}
+
+.menu2 li:nth-child(6){
+  background-color: #009900;
+  order: 1;
+}
+/* Multi column*/
+.column {
+  padding: 5px 10px;
+  width:700px;
+  border:2px solid #000;
+  -moz-columns:180px 3;
+  -webkit-columns: 180px 3;
+  columns: 180px 3;
+}
+
+#column {
+  background-color: #eee;
+}
+
+/*旧版盒子居中*/
+img {
+  width: 300px;
+  height: 212px;
+}
+
+.center {
+  display: -webkit-box;
+  -webkit-box-pack:center;
+  -webkit-box-align:center;
+  width: 400px;
+  height: 300px;
+  background-color: lightblue;
+}
+
