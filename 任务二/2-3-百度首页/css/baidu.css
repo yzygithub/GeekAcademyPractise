@@ -1,8 +1,18 @@
 body {
     font: 12px arial;
+    margin: 0;
+}
+/* 页面稳定 start */
+html,body,.wrapper {
+    height: 100%;
 }
 
-
+.wrapper {
+    min-height: 600px;
+    min-width: 810px;
+    position: relative;
+}
+/* 页面稳定 end */
 /*头部信息*/
 
 header {
@@ -27,6 +37,11 @@ header .body a {
     height: 32px;
     display: inline-block;
 }
+
+header .body a:hover {
+    color: #00c;
+}
+
 /*更多产品*/
 #moreProduct {
     width: 86px;
@@ -151,8 +166,7 @@ header .body a {
     position: absolute;
     height: 34px;
     width: 24px;
-    background: url(img/microphone.png) no-repeat center;
-    background-image: -webkit-image-set(url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAASCAYAAACAa1QyAAAAAXNSR…lFZdxpUpXF3MU+peIeuIx+McELeFutVjvg/5Jeneno+W3ELz3Rmg23qA6NAAAAAElFTkSuQmCC) 1x,url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAkCAMAAACg5NohAAAA7VBMV…TXmyg051Lbt3PDGjj6iTOwXMtO3fUm0qR3m+JQXD/1N+gbnHtANlxuv2EAAAAASUVORK5CYII=) 2x);
+    background: url(../img/microphone.png) no-repeat center;
     background-size: 13px 18px;
     background-position: 0 50%;
     cursor: pointer;
@@ -167,8 +181,13 @@ header .body a {
     margin-top: -8px;
     height: 16px;
     width: 18px;
-    background: #fff url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/soutu/img/camera_new_5606e8f.png) no-repeat;
+    background: #fff url(../img/camera.png) no-repeat;
     cursor: pointer;
+
+}
+
+.soutu_btn:hover {
+    background-position: 0 -20px;
 }
 
 .content input {
@@ -180,7 +199,16 @@ header .body a {
     margin-right: -2px;
     width: 450px!important;
     padding-right: 78px!important;
+    outline: 0;
 }
+
+.content input:hover {
+    border: 1px solid #a5a5a5;
+}
+
+.content input:focus {
+    border: 1px #38f solid;
+} 
 
 .content button {
     width: 102px;
