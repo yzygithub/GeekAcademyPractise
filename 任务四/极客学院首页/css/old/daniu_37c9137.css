@@ -1,0 +1,284 @@
+.jk-offline {
+    width: 1000px;
+    margin: 0 auto 40px
+}
+
+.jk-offline h2 {
+    font-size: 18px;
+    color: #555;
+    line-height: 18px;
+    height: 18px;
+    margin-bottom: 22px
+}
+
+.jk-offline li {
+    float: left;
+    position: relative;
+    width: 261px;
+    height: 139px
+}
+
+.jk-offline li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    padding-top: 35px
+}
+
+.jk-offline li a span {
+    display: block;
+    width: 27px;
+    margin: 0 auto;
+    margin-bottom: 15px
+}
+
+.jk-offline li a i {
+    display: inline-block;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0;
+    transition: opacity .8s;
+    -moz-transition: opacity .8s;
+    -webkit-transition: opacity .8s;
+    -o-transition: opacity .8s
+}
+
+.jk-offline li:nth-child(1),
+.jk-offline li:nth-child(5) {
+    background: #7C839A
+}
+
+.jk-offline li:nth-child(2),
+.jk-offline li:nth-child(4) {
+    background: #62687F
+}
+
+.jk-offline li:nth-child(3) {
+    float: right;
+    width: 478px;
+    height: 278px;
+    background: url(https://s1.jikexueyuan.com/index/images/daniu-bg_0221743.png) center center no-repeat;
+    background-size: cover
+}
+
+.jk-offline li:nth-child(3) a {
+    padding-top: 40px
+}
+
+.jk-offline li:nth-child(3) a .ban {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+    height: 37px;
+    line-height: 37px;
+    text-align: center;
+    background-image: -webkit-linear-gradient(-90deg, #000 0, rgba(216, 216, 216, 0) 100%);
+    background-image: -o-linear-gradient(-90deg, #000 0, rgba(216, 216, 216, 0) 100%);
+    background-image: -moz-linear-gradient(-90deg, #000 0, rgba(216, 216, 216, 0) 100%);
+    background-image: linear-gradient(-90deg, #000 0, rgba(216, 216, 216, 0) 100%)
+}
+
+.jk-offline li:nth-child(3) a .top-title {
+    font-size: 37px;
+    margin-bottom: 10px
+}
+
+.jk-offline li:nth-child(3) a .title {
+    font-size: 40px;
+    margin-bottom: 12px;
+    font-weight: 500
+}
+
+.jk-offline li:nth-child(3) a .bot-title {
+    font-size: 26px
+}
+
+.jk-offline li:nth-child(1) a span {
+    height: 33px;
+    background: url(https://s1.jikexueyuan.com/index/images/daniu-01_60f2744.png) center center no-repeat;
+    background-size: cover
+}
+
+.jk-offline li:nth-child(2) a span {
+    height: 33px;
+    background: url(https://s1.jikexueyuan.com/index/images/daniu-02_6973cd3.png) center center no-repeat;
+    background-size: cover
+}
+
+.jk-offline li:nth-child(4) a span {
+    height: 27px;
+    background: url(https://s1.jikexueyuan.com/index/images/daniu-03_d854a5e.png) center center no-repeat;
+    background-size: cover
+}
+
+.jk-offline li:nth-child(5) a span {
+    height: 26px;
+    background: url(https://s1.jikexueyuan.com/index/images/daniu-04_fa62646.png) center center no-repeat;
+    background-size: cover
+}
+
+.jk-offline .daniu li {
+    float: right;
+    transition: all .8s!important;
+    -moz-transition: all .8s!important;
+    -webkit-transition: all .8s!important;
+    -o-transition: all .8s!important
+}
+
+.jk-offline .daniu li:nth-child(3) {
+    float: left;
+    background: url(https://s1.jikexueyuan.com/index/images/daniu-bg2_5bb23e1.png) center center no-repeat;
+    background-size: 480px 278px
+}
+
+.jk-offline .daniu li:nth-child(3) a .ban {
+    left: 0;
+    top: 0;
+    background-image: -webkit-linear-gradient(-90deg, #000 0, rgba(216, 216, 216, 0) 100%);
+    background-image: -o-linear-gradient(-90deg, #000 0, rgba(216, 216, 216, 0) 100%);
+    background-image: -moz-linear-gradient(-90deg, #000 0, rgba(216, 216, 216, 0) 100%);
+    background-image: linear-gradient(-90deg, #000 0, rgba(216, 216, 216, 0) 100%)
+}
+
+.jk-offline .daniu li:nth-child(3):hover {
+    border: 0;
+    box-shadow: 0 0 0!important
+}
+
+.jk-offline .daniu li:nth-child(3):hover i {
+    opacity: .2
+}
+
+.jk-offline .daniu li:nth-child(1),
+.jk-offline .daniu li:nth-child(5) {
+    background: #0276f1
+}
+
+.jk-offline .daniu li:nth-child(1):hover,
+.jk-offline .daniu li:nth-child(5):hover {
+    background: #0569d3;
+    border: 0;
+    box-shadow: 0 0 0!important
+}
+
+.jk-offline .daniu li:nth-child(2),
+.jk-offline .daniu li:nth-child(4) {
+    background: #3390f3
+}
+
+.jk-offline .daniu li:nth-child(2):hover,
+.jk-offline .daniu li:nth-child(4):hover {
+    background: #0569d3;
+    border: 0;
+    box-shadow: 0 0 0!important
+}
+
+.jk-offline .daniu li:nth-child(1) a span {
+    width: 31px;
+    height: 24px;
+    background: url(https://s1.jikexueyuan.com/index/images/daniu-05_b18767c.png) center center no-repeat;
+    background-size: cover;
+    margin-bottom: 20px
+}
+
+.jk-offline .daniu li:nth-child(2) a span {
+    width: 31px;
+    height: 28px;
+    background: url(https://s1.jikexueyuan.com/index/images/daniu-06_5b9a64a.png) center center no-repeat;
+    background-size: cover
+}
+
+.jk-offline .daniu li:nth-child(4) a span {
+    width: 31px;
+    height: 30px;
+    background: url(https://s1.jikexueyuan.com/index/images/daniu-07_e81e2d7.png) center center no-repeat;
+    background-size: cover
+}
+
+.jk-offline .daniu li:nth-child(5) a span {
+    width: 29px;
+    height: 31px;
+    background: url(https://s1.jikexueyuan.com/index/images/daniu-08_a15e689.png) center center no-repeat;
+    background-size: cover
+}
+
+.jk-offline .mogui {
+    margin-top: 20px
+}
+
+.jk-offline .mogui li {
+    float: right
+}
+
+.jk-offline .mogui li:hover {
+    border: 0;
+    box-shadow: 0 0 0!important
+}
+
+.jk-offline .mogui li:hover i {
+    opacity: .2
+}
+
+.jk-offline .mogui li:nth-child(3) {
+    float: left;
+    background: url(https://s1.jikexueyuan.com/index/images/mogui-bg_ee9827b.png) center center no-repeat;
+    background-size: 480px 278px
+}
+
+.jk-offline .mogui li:nth-child(3) a .ban {
+    left: 0;
+    top: 0;
+    background-image: -webkit-linear-gradient(-90deg, #000 0, rgba(216, 216, 216, 0) 100%);
+    background-image: -o-linear-gradient(-90deg, #000 0, rgba(216, 216, 216, 0) 100%);
+    background-image: -moz-linear-gradient(-90deg, #000 0, rgba(216, 216, 216, 0) 100%);
+    background-image: linear-gradient(-90deg, #000 0, rgba(216, 216, 216, 0) 100%)
+}
+
+.jk-offline .mogui li:nth-child(1),
+.jk-offline .mogui li:nth-child(5) {
+    background: #EB313E
+}
+
+.jk-offline .mogui li:nth-child(2),
+.jk-offline .mogui li:nth-child(4) {
+    background: #F64450
+}
+
+.jk-offline .mogui li:nth-child(1) a span {
+    width: 31px;
+    height: 24px;
+    background: url(https://s1.jikexueyuan.com/index/images/mogui-02_5e33480.png) center center no-repeat;
+    background-size: cover;
+    margin-bottom: 20px
+}
+
+.jk-offline .mogui li:nth-child(2) a span {
+    width: 31px;
+    height: 28px;
+    background: url(https://s1.jikexueyuan.com/index/images/mogui-01_08e776e.png) center center no-repeat;
+    background-size: cover
+}
+
+.jk-offline .mogui li:nth-child(4) a span {
+    width: 31px;
+    height: 30px;
+    background: url(https://s1.jikexueyuan.com/index/images/mogui-04_ce7d6bc.png) center center no-repeat;
+    background-size: cover
+}
+
+.jk-offline .mogui li:nth-child(5) a span {
+    width: 29px;
+    height: 31px;
+    background: url(https://s1.jikexueyuan.com/index/images/mogui-03_e9f2b48.png) center center no-repeat;
+    background-size: cover
+}

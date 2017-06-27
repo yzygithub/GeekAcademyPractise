@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/index.css">
+  <title>jQuery基础</title>
+</head>
+<body>
+<div class="test">
+  <p>ppp</p>
+  <button>click</button>
+</div>
+<script type="text/javascript" src="scripts/jquery.min.js" ></script>
+<script>
+  //ready html骨架准备完成
+  $(document).ready(function () {
+    $('button').click(function () {
+      $('p').text('111');
+    });
+  });
+  //onload 整个页面加载完成
+</script>
+</body>
+</html>

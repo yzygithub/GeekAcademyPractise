@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+  div { width:60px; height:60px; margin:10px; float:left;
+        border:2px solid blue; }
+  .blue { background:blue; }
+  </style>
+  <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+</head>
+<body>
+  <div></div>
+  <div></div>
+  <div></div>
+ 
+  <div></div>
+  <div></div>
+  <div></div>
+<script>
+$("body").find("div").eq(2).addClass("blue");
+</script>
+ 
+</body>
+</html>

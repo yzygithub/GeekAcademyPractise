@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    ul, li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      float: left;
+      background-color: #4c4c4c;
+      color: #fff;
+      padding: 5px;
+      margin-right: 3px;
+      border: 1px solid #fff;
+    }
+
+    .tab-in {
+      border: 1px solid #5e5e5e;
+      background-color: #5e5e5e;
+    }
+
+    .content {
+      clear: both;
+      background-color: #5e5e5e;
+      color: #fff;
+      width: 200px;
+      height: 150px;
+      padding: 10px;
+      display: none;
+    }
+
+    .content-in {
+      display: block;
+    }
+    /*第二个tab*/
+    #ul_second li {
+      float: left;
+      background-color: #fff;
+      color: #31b0d5;
+      padding:10px;
+      margin-right: 2px;
+      cursor: pointer;
+    }
+    #ul_second li.tab-in {
+      background-color: #8bc5ff;
+      border:1px solid #000;
+      border-bottom: 0;
+      position: relative;
+      z-index: 100;
+    }
+    #contentSecond {
+      width: 400px;
+      height: 200px;
+      color: #2f2f2f;
+      clear: both;
+      border:1px solid black;
+      background-color: #8bc5ff;
+      position: relative;
+      top:-2px;
+    }
+  </style>
+  <script src="scripts/jquery.min.js"></script>
+</head>
+<body>
+<ul id="ul_first">
+  <li class="tab-in">标签1</li>
+  <li>标签2</li>
+  <li>标签3</li>
+</ul>
+
+<div class="content-in content">内容1</div>
+<div class="content">内容2</div>
+<div class="content">内容3</div>
+
+<br><br><br><br>
+
+<ul id="ul_second">
+  <li class="tab-in">加载完整页面</li>
+  <li>加载部分页面</li>
+  <li>加载网络数据</li>
+</ul>
+
+<div id="contentSecond">
+  <div id="realContent">
+
+  </div>
+</div>
+
+<script>
+  var timeOut;//设置延迟，防止误触
+  $(document).ready(function () {
+    $('#ul_first li').each(function (index) {
+//      console.log(index);
+      var thisLi = $(this);
+      thisLi.mouseover(function () {
+        timeOut = setTimeout(function () {
+          $('.content-in').removeClass('content-in');
+          $('#ul_first li.tab-in').removeClass('tab-in');
+          $('div.content').eq(index).addClass('content-in');
+          thisLi.addClass('tab-in');
+        }, 200);
+      }).mouseout(function () {
+        clearTimeout(timeOut);//延迟，防抖动
+      });
+    });
+//    第二个
+    $('#realContent').load("testswitchtab1.html");
+    $('#ul_second li').each(function (index) {
+      $(this).click(function () {
+        $('#ul_second li.tab-in').removeClass('tab-in');
+        $(this).addClass('tab-in');
+        if (index==0) {
+          $('#realContent').load("testswitchtab1.html");
+
+        } else if (index==1) {
+          $('#realContent').load("https://www.baidu.com/");
+
+        } else if (index==2) {
+          $('#realContent').load("testswitchtab1.html");
+
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

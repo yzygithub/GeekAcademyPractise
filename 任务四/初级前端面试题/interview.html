@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="interview">
+    <meta name="author" content="yzy">
+    <title>iterview</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/blog.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+          <a class="blog-nav-item active" href="#">Home</a>
+          <a class="blog-nav-item" href="#">New features</a>
+          <a class="blog-nav-item" href="#">Press</a>
+          <a class="blog-nav-item" href="#">New hires</a>
+          <a class="blog-nav-item" href="#">About</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="blog-header">
+        <h1 class="blog-title">初级前端面试题</h1>
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-8 blog-main">
+
+          <div class="blog-post">
+            <h3 class="blog-post-title">简答题</h3>
+            <div class="mcCon">
+        <div class="fr" style=" margin:0 0 10px 10px">
+        </div>
+        HTML+CSS
+        <br> 1.对WEB标准以及W3C的理解与认识
+        <br> 标签闭合、标签小写、不乱嵌套、提高搜索机器人搜索几率、使用外 链css和js脚本、结构行为表现的分离、文件下载与页面速度更快、内容能被更多的用户所访问、内容能被更广泛的设备所访问、更少的代码和组件，容易维 护、改版方便，不需要变动页面内容、提供打印版本而不需要复制内容、提高网站易用性；
+        <br>
+        <br> 2.xhtml和html有什么区别
+        <br> HTML是一种基本的WEB网页设计语言，XHTML是一个基于XML的置标语言
+        <br> 最主要的不同：
+        <br> XHTML 元素必须被正确地嵌套。
+        <br> XHTML 元素必须被关闭。
+        <br> 标签名必须用小写字母。
+        <br> XHTML 文档必须拥有根元素。
+        <br>
+        <br> 3.Doctype? 严格模式与混杂模式-如何触发这两种模式，区分它们有何意义?
+        <br> 用于声明文档使用那种规范（html/Xhtml）一般为 严格 过度 基于框架的html文档
+        <br> 加入XMl声明可触发，解析方式更改为IE5.5 拥有IE5.5的bug
+        <br>
+        <br> 4.行内元素有哪些?块级元素有哪些?CSS的盒模型?
+        <br> 块级元素：div p h1 h2 h3 h4 form ul
+        <br> 行内元素: a b br i span input select
+        <br> Css盒模型:内容，border ,margin，padding
+        <br>
+        <br> 5.CSS引入的方式有哪些? link和@import的区别是?
+        <br> 内联 内嵌 外链 导入
+        <br> 区别 ：同时加载
+        <br> 前者无兼容性，后者CSS2.1以下浏览器不支持
+        <br> Link 支持使用javascript改变样式，后者不可
+        <br>
+        <br> 6.CSS选择符有哪些?哪些属性可以继承?优先级算法如何计算?内联和important哪个优先级高?
+        <br> 标签选择符 类选择符 id选择符
+        <br> 继承不如指定 Id&gt;class&gt;标签选择
+        <br> 后者优先级高
+        <br>
+        <br> 7.前端页面有哪三层构成，分别是什么?作用是什么?
+        <br> 结构层 Html 表示层 CSS 行为层 js
+        <br>
+        <br> 8.css的基本语句构成是?
+        <br> 选择器{属性1:值1;属性2:值2;……}
+        <br>
+        <br> 9.你做的页面在哪些流览器测试过?这些浏览器的内核分别是什么?
+        <br> Ie(Ie内核) 火狐（Gecko） 谷歌（webkit） opear(Presto)
+        <br>
+        <br> 10.写出几种IE6 BUG的解决方法
+        <br> 1.双边距BUG float引起的 使用display
+        <br> 2.3像素问题 使用float引起的 使用dislpay:inline -3px
+        <br> 3.超链接hover 点击后失效 使用正确的书写顺序 link visited hover active
+        <br> 4.Ie z-index问题 给父级添加position:relative
+        <br> 5.Png 透明 使用js代码 改
+        <br> 6.Min-height 最小高度 ！Important 解决’
+        <br> 7.select 在ie6下遮盖 使用iframe嵌套
+        <br> 8.为什么没有办法定义1px左右的宽度容器（IE6默认的行高造成的，使用over:hidden,zoom:0.08 line-height:1px）
+        <br>
+        <br> 11.标签上title与alt属性的区别是什么?
+        <br> Alt 当图片不显示是 用文字代表。
+        <br> Title 为该属性提供信息
+        <br>
+        <br> 12.描述css reset的作用和用途。
+        <br> Reset重置浏览器的css默认属性 浏览器的品种不同，样式不同，然后重置，让他们统一
+        <br>
+        <br> 13.解释css sprites，如何使用。
+        <br> Css 精灵 把一堆小的图片整合到一张大的图片上，减轻服务器对图片的请求数量
+        <br>
+        <br> 14.浏览器标准模式和怪异模式之间的区别是什么?
+        <br> 盒子模型 渲染模式的不同
+        <br> 使用 window.top.document.compatMode 可显示为什么模式
+        <br>
+        <br> 15.你如何对网站的文件和资源进行优化?期待的解决方案包括：
+        <br> 文件合并
+        <br> 文件最小化/文件压缩
+        <br> 使用CDN托管
+        <br> 缓存的使用
+        <br>
+        <br> 16.什么是语义化的HTML?
+        <br> 直观的认识标签 对于搜索引擎的抓取有好处
+        <br>
+        <br> 17.清除浮动的几种方式，各自的优缺点
+        <br> 1.使用空标签清除浮动 clear:both（理论上能清楚任何标签，，，增加无意义的标签）
+        <br> 2.使用overflow:auto（空标签元素清除浮动而不得不增加无意代码的弊端,,使用zoom:1用于兼容IE）
+        <br> 3.是用afert伪元素清除浮动(用于非IE浏览器)
+        <br>
+        <br> Javascript
+        <br> 1.javascript的typeof返回哪些数据类型
+        <br> Object number function boolean underfind
+        <br>
+        <br> 2.例举3种强制类型转换和2种隐式类型转换?
+        <br> 强制（parseInt,parseFloat,number）
+        <br> 隐式（== – ===）
+        <br>
+        <br> 3.split() join() 的区别
+        <br> 前者是切割成数组的形式，后者是将数组转换成字符串
+        <br>
+        <br> 4.数组方法pop() push() unshift() shift()
+        <br> Push()尾部添加 pop()尾部删除
+        <br> Unshift()头部添加 shift()头部删除
+        <br>
+        <br> 5.事件绑定和普通事件有什么区别
+        <br>
+        <br> 6.IE和DOM事件流的区别
+        <br> 1.执行顺序不一样、
+        <br> 2.参数不一样
+        <br> 3.事件加不加on
+        <br> 4.this指向问题
+        <br>
+        <br> 7.IE和标准下有哪些兼容性的写法
+        <br> Var ev = ev || window.event
+        <br> document.documentElement.clientWidth || document.body.clientWidth
+        <br> Var target = ev.srcElement||ev.target
+        <br>
+        <br> 8.ajax请求的时候get 和post方式的区别
+        <br> 一个在url后面 一个放在虚拟载体里面
+        <br> 有大小限制
+        <br> 安全问题
+        <br> 应用不同 一个是论坛等只需要请求的，一个是类似修改密码的
+        <br>
+        <br> 9.call和apply的区别
+        <br> Object.call(this,obj1,obj2,obj3)
+        <br> Object.apply(this,arguments)
+        <br>
+        <br> 10.ajax请求时，如何解释json数据
+        <br> 使用eval parse 鉴于安全性考虑 使用parse更靠谱
+        <br> 11.b继承a的方法
+        <br>
+        <br> 12.写一个获取非行间样式的函数
+        <br>
+        <br> function getStyle(obj,attr,value)
+        <br> {
+        <br> if(!value)
+        <br> {
+        <br> if(obj.currentStyle)
+        <br> {
+        <br> return obj.currentStyle(attr)
+        <br> }
+        <br> else
+        <br> {
+        <br> obj.getComputedStyle(attr,false)
+        <br> }
+        <br> }
+        <br> else
+        <br> {
+        <br> obj.style[attr]=value
+        <br> }
+        <br> }
+        <br>
+        <br> 13.事件委托是什么
+        <br> 让利用事件冒泡的原理，让自己的所触发的事件，让他的父元素代替执行！
+        <br> http://www.webasily.com/?p=78 例子可见此链接
+        <br>
+        <br> 14.闭包是什么，有什么特性，对页面有什么影响
+        <br> 闭包就是能够读取其他函数内部变量的函数。
+        <br> http://blog.csdn.net/gaoshanwudi/article/details/7355794 此链接可查看（问这个问题的不是一个公司）
+        <br>
+        <br> 15.如何阻止事件冒泡和默认事件
+        <br> canceBubble return false
+        <br>
+        <br> 16.添加 删除 替换 插入到某个接点的方法
+        <br> obj.appendChidl()
+        <br> obj.innersetBefore
+        <br> obj.replaceChild
+        <br> obj.removeChild
+        <br>
+        <br> 17.解释jsonp的原理，以及为什么不是真正的ajax
+        <br> 动态创建script标签，回调函数
+        <br> Ajax是页面无刷新请求数据操作
+        <br>
+        <br> 18.javascript的本地对象，内置对象和宿主对象
+        <br> 本地对象为array obj regexp等可以new实例化
+        <br> 内置对象为gload Math 等不可以实例化的
+        <br> 宿主为浏览器自带的document,window 等
+        <br>
+        <br> 19.document load 和document ready的区别
+        <br> Document.onload 是在结构和样式加载完才执行js
+        <br> Document.ready原生种没有这个方法，jquery中有 $().ready(function)
+        <br>
+        <br> 20.”==”和“===”的不同
+        <br> 前者会自动转换类型
+        <br> 后者不会
+        <br>
+        <br> 21.javascript的同源策略
+        <br> 一段脚本只能读取来自于同一来源的窗口和文档的属性，这里的同一来源指的是主机名、协议和端口号的组合
+        <br>
+        <br> 22.编写一个数组去重的方法
+        <br> function oSort(arr)
+        <br> {
+        <br> var result ={};
+        <br> var newArr=[];
+        <br> for(var i=0;i&lt;arr.length;i++)
+        <br> {
+        <br> if(!result[arr])
+        <br> {
+        <br> newArr.push(arr)
+        <br> result[arr]=1
+        <br> }
+        <br> }
+        <br> return newArr
+        <br> }
+        <br>
+    </div>
+          </div>
+
+          <div class="blog-post">
+            <h3 class="blog-post-title">选择题</h3>
+          <div id="article_content" class="article_content">
+        <p align="center"><strong>HTML+CSS+JS<span style="font-family:宋体">面试题</span></strong></p>
+        <p><strong>一、单项选择<span style="font-family:Arial">(165</span><span style="font-family:宋体">题</span><span style="font-family:Arial">)</span></strong></p>
+        <p><strong>1.HTML<span style="font-family:宋体">是什么意思？</span></strong></p>
+        <p>A)<span style="font-family:宋体">高级文本语言</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">B)<span style="font-family:宋体">超文本标记语言</span></span></strong></p>
+        <p>C)<span style="font-family:宋体">扩展标记语言</span></p>
+        <p>D)<span style="font-family:宋体">图形化标记语言</span></p>
+        <p><strong>2.<span style="font-family:宋体">浏览器针对于</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">文档起到了什么作用？</span></strong></p>
+        <p>A)<span style="font-family:宋体">浏览器用于创建</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">文档</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">B)<span style="font-family:宋体">浏览器用于查看</span><span style="font-family:Arial">HTML</span></span>文档</strong></p>
+        <p>C)<span style="font-family:宋体">浏览器用于修改</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">文档</span></p>
+        <p>D)<span style="font-family:宋体">浏览器用于删除</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">文档</span></p>
+        <p><strong>3.<span style="font-family:宋体">默认情况下，使用</span><span style="font-family:Arial">P</span><span style="font-family:宋体">标记会形成什么效果？</span></strong></p>
+        <p>A)<span style="font-family:宋体">在文字</span><span style="font-family:Arial">P</span><span style="font-family:宋体">所在位置中加入</span><span style="font-family:Arial">8</span><span style="font-family:宋体">个空格</span></p>
+        <p>B)P<span style="font-family:宋体">后面的文字会变成粗体</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">C)<span style="font-family:宋体">开始新的一行</span></span></strong></p>
+        <p>D)P<span style="font-family:宋体">后面的文字会变成斜体</span></p>
+        <p><strong>4.<span style="font-family:宋体">哪个标记用于表示</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">文档的结束？</span></strong></p>
+        <p>A)/BODY</p>
+        <p><strong><span style="color:rgb(255,0,0)">B)/HTML</span></strong></p>
+        <p>C)/TABLE</p>
+        <p>D)/TITLE</p>
+        <p><strong>5.META<span style="font-family:宋体">元素的作用是什么？。</span></strong></p>
+        <p>A)META<span style="font-family:宋体">元素用于表达</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">文档的格式</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">B)META<span style="font-family:宋体">元素用于指定关于</span><span style="font-family:Arial">HTML</span></span>文档的信息</strong></p>
+        <p>C)META<span style="font-family:宋体">元素用于实现本页的自动刷新</span></p>
+        <p>D)<span style="font-family:宋体">以上都不对</span></p>
+        <p><strong>6.<span style="font-family:宋体">我们在</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">页面中制作了一个图像，想要在鼠标指向这个图像时浮出一条提示信息，应该使用哪个参数做到？</span></strong></p>
+        <p>A)POP</p>
+        <p>B)SRC</p>
+        <p><strong><span style="color:rgb(255,0,0)">C)ALT</span></strong></p>
+        <p>D)MSG</p>
+        <p><strong>7.<span style="font-family:宋体">以下的哪一种颜色格式支持上百万种颜色，但是不支持无损压缩？</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A)bmp</span></strong></p>
+        <p>B)jpg</p>
+        <p>C)gif</p>
+        <p>D)tif</p>
+        <p><strong>8.<span style="font-family:宋体">哪一个标记用于使</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">文档中表格里的单元格在同行进行合并？</span></strong></p>
+        <p>A)cellspacing</p>
+        <p>B)cellpadding</p>
+        <p>C)rowspan</p>
+        <p><strong><span style="color:rgb(255,0,0)">D)colspan</span></strong></p>
+        <p><strong>9.<span style="font-family:宋体">使用以下那一种元素可以将声音添加到网页里面？</span></strong></p>
+        <p>A)sound</p>
+        <p><strong><span style="color:rgb(255,0,0)">B)bgsound</span></strong></p>
+        <p>C)music</p>
+        <p>D)voice</p>
+        <p><strong>10.<span style="font-family:宋体">以下</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">代码中，哪一个是将词语</span><span style="font-family:Arial">“Run Away Bride”</span><span style="font-family:宋体">显示为</span><span style="font-family:Arial">Verdana</span><span style="font-family:宋体">字体并且字号为</span><span style="font-family:Arial">5</span><span style="font-family:宋体">号的正确代码？</span></strong></p>
+        <p>A)&lt;font size=“5”font=“Verdana”&gt;RunAway Bride&lt;/font&gt;</p>
+        <p><strong><span style="color:rgb(255,0,0)">B)&lt;font size=“5</span>”face=“Verdana”&gt;RunAway Bride&lt;/font&gt;</strong></p>
+        <p>C)&lt;font size=5font=Verdana&gt;“Run Away Bride”&lt;/font&gt;</p>
+        <p>D)&lt;font size=5 face=“Verdana”,text=“RunAway Bride”&lt;/font&gt;</p>
+        <p><strong>11.<span style="font-family:宋体">在</span><span style="font-family:Arial">&lt;param&gt;</span><span style="font-family:宋体">标签中，下列哪个属性用于给参数传递内容？</span></strong></p>
+        <p>A)Address</p>
+        <p><strong><span style="color:rgb(255,0,0)">B)Value</span></strong></p>
+        <p>C)Amount</p>
+        <p>D)Method</p>
+        <p><strong>12.<span style="font-family:宋体">超链接不能链接到下列哪个位置？</span></strong></p>
+        <p>A)<span style="font-family:宋体">同一</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">文档内的位置</span></p>
+        <p>B)<span style="font-family:宋体">磁盘上其他</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">文档</span></p>
+        <p>C)Internet<span style="font-family:宋体">上</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">文档</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">D)<span style="font-family:宋体">计算机，你与它之间没有通信链路</span></span></strong></p>
+        <p><strong>13.<span style="font-family:宋体">一个文件夹名称叫</span><span style="font-family:Arial">Parent</span><span style="font-family:宋体">，其下有一个叫做</span><span style="font-family:Arial">test.asp</span><span style="font-family:宋体">的文件，和一个名为</span><span style="font-family:Arial">Child</span><span style="font-family:宋体">的文件夹。</span><span style="font-family:Arial">Child</span><span style="font-family:宋体">下有一个名为</span><span style="font-family:Arial">default.htm</span><span style="font-family:宋体">文件，想在</span><span style="font-family:Arial">default.htm</span><span style="font-family:宋体">中作一个连接，链到</span><span style="font-family:Arial">test.asp</span><span style="font-family:宋体">。以下正确的是：</span></strong></p>
+        <p>A)&lt;a href=“/test.asp”&gt;…&lt;/a&gt;</p>
+        <p>B)&lt;a href=“c:/test.asp”&gt;…&lt;/a&gt;</p>
+        <p><strong><span style="color:rgb(255,0,0)">C)&lt;a href=“‥/test.asp”&gt;</span>…&lt;/a&gt;</strong></p>
+        <p>D)&lt;a href=“Parent/test.asp”&gt;…&lt;/a&gt;</p>
+        <p><strong>14.<span style="font-family:宋体">下列那项技术可以用于帮助网页设计时使页面具有统一、专业的外观？</span></strong></p>
+        <p>A)HTML</p>
+        <p>B)DHTML</p>
+        <p><strong><span style="color:rgb(255,0,0)">C)CSS</span></strong></p>
+        <p>D)URL</p>
+        <p><strong>15.Window<span style="font-family:宋体">对象是代表</span><span style="font-family:Arial">InternetExplorer</span><span style="font-family:宋体">窗口的对象，其属性、方法和事件可以不经限定就可以直接使用。比如</span><span style="font-family:Arial">Window.Alert“stop”</span><span style="font-family:宋体">也可以直接写成：</span><span style="font-family:Arial">Alert“stop”</span><span style="font-family:宋体">这种说法是正确的还是错误的？</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A)<span style="font-family:宋体">正确</span></span></strong></p>
+        <p>B)<span style="font-family:宋体">错误</span></p>
+        <p><strong>16.<span style="font-family:宋体">在页面中看不见的表单元素是那种？</span></strong></p>
+        <p>A)&lt;inputtype="password"&gt;&lt;/input&gt;</p>
+        <p>B)&lt;inputtype="radio"&gt;&lt;/input&gt;</p>
+        <p><strong><span style="color:rgb(255,0,0)">C)&lt;inputtype="hidden"&gt;&lt;/input&gt;</span></strong></p>
+        <p>D)&lt;inputtype="reset"&gt;&lt;/input&gt;</p>
+        <p><strong>17.<span style="font-family:宋体">以下哪一个项目是用来访问</span><span style="font-family:Arial">web</span><span style="font-family:宋体">页的软件？</span></strong></p>
+        <p>A)OutlookExpress</p>
+        <p><strong><span style="color:rgb(255,0,0)">B)Internet Explorer</span></strong></p>
+        <p>C)QQ</p>
+        <p>D)FTP</p>
+        <p><strong>18.<span style="font-family:宋体">哪条命令用于使一行文本折行，而不是插入一个新的段落？</span></strong></p>
+        <p>A)&lt;TD&gt;</p>
+        <p><strong><span style="color:rgb(255,0,0)">B)&lt;BR&gt;</span></strong></p>
+        <p>C)&lt;P&gt;</p>
+        <p>D)&lt;H1&gt;</p>
+        <p><strong>19.<span style="font-family:宋体">世界上最大的计算机网络是：</span></strong></p>
+        <p>A)WWW</p>
+        <p>B)WAN</p>
+        <p>C)MAN</p>
+        <p><strong><span style="color:rgb(255,0,0)">D)Internet</span></strong></p>
+        <p><strong>20.<span style="font-family:宋体">下面关于</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">说法错误的是？</span></strong></p>
+        <p>A)HTML<span style="font-family:宋体">是一种标记语言</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">B)HTML<span style="font-family:宋体">可以控制页面和内容的外观</span></span></strong></p>
+        <p>C)HTML<span style="font-family:宋体">文档总是静态的</span></p>
+        <p>D)HTML<span style="font-family:宋体">文档是超文本文档</span></p>
+        <p><strong>21.<span style="font-family:宋体">语句</span><span style="font-family:Arial">A</span><span style="font-family:宋体">：</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">文档必须包括</span><span style="font-family:Arial">“</span><span style="font-family:宋体">头</span><span style="font-family:Arial">”</span><span style="font-family:宋体">和</span><span style="font-family:Arial">“</span><span style="font-family:宋体">主体</span><span style="font-family:Arial">”</span><span style="font-family:宋体">两部分</span></strong></p>
+        <p><strong>语句<span style="font-family:Arial">B</span><span style="font-family:宋体">：</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">文档的扩展名为</span><span style="font-family:Arial">.htm</span><span style="font-family:宋体">或</span><span style="font-family:Arial">.html</span><span style="font-family:宋体">以下说法正确的是：</span></strong></p>
+        <p>A)<span style="font-family:宋体">两句都对</span></p>
+        <p>B)<span style="font-family:宋体">两句都错</span></p>
+        <p>C)<span style="font-family:宋体">只有</span><span style="font-family:Arial">A</span><span style="font-family:宋体">对</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">D)<span style="font-family:宋体">只有</span><span style="font-family:Arial">B</span></span>对</strong></p>
+        <p><strong>22.<span style="font-family:宋体">以下哪个项目不是可以在</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">文档中使用的特殊字符。</span></strong></p>
+        <p>A)&gt;</p>
+        <p><strong><span style="color:rgb(255,0,0)">B)&amp;tl;</span></strong></p>
+        <p>C)©</p>
+        <p>D)&nbsp;</p>
+        <p><strong>23.Html<span style="font-family:宋体">标记中，哪个标记表示表格？</span></strong></p>
+        <p>A)&lt;H1&gt;</p>
+        <p>B)&lt;TD&gt;</p>
+        <p><strong><span style="color:rgb(255,0,0)">C)&lt;TABLE&gt;</span></strong></p>
+        <p>D)&lt;TAB&gt;</p>
+        <p><strong>24.Html<span style="font-family:宋体">标记中，用什么方法可以将整个表格在页面中居中？</span></strong></p>
+        <p>A)place=middle</p>
+        <p>B)type=middle</p>
+        <p><strong><span style="color:rgb(255,0,0)">C)align=center</span></strong></p>
+        <p>D)type=center</p>
+        <p><strong>25.<span style="font-family:宋体">我们想要让当前页面的背景色为蓝色，应该使用哪一句代码来描述此种设置？</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A)bgcolor="blue"</span></strong></p>
+        <p>B)bgground="blue"</p>
+        <p>C)backcolor="blue"</p>
+        <p>D)background="blue"</p>
+        <p><strong>26.<span style="font-family:宋体">我们想要让当前整个表格的背景色为蓝色，应该使用哪一句代码来描述此种设置？</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A)bgcolor="blue"</span></strong></p>
+        <p>B)bgground="blue"</p>
+        <p>C)backcolor="blue"</p>
+        <p>D)background="blue"</p>
+        <p><strong>27.<span style="font-family:宋体">我们想要让表格的边框在页面中一定不显示出来，用什么方法可以做到呢？</span></strong></p>
+        <p>A)bgcolor="white"</p>
+        <p>B)bgcolor="null"</p>
+        <p><strong><span style="color:rgb(255,0,0)">C)border="0"</span></strong></p>
+        <p>D)bordercolor="white"</p>
+        <p><strong>28.<span style="font-family:宋体">我们想要将表格的宽度设置为</span><span style="font-family:Arial">100</span><span style="font-family:宋体">个像素，应该怎么办？</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A)width="100"</span></strong></p>
+        <p>B)border="100"</p>
+        <p>C)length="100"</p>
+        <p>D)maxlength="100"</p>
+        <p><strong>29.<span style="font-family:宋体">我们想要将表格中的文字放在靠上居中的位置，应该怎么办？</span></strong></p>
+        <p>A)align="middle"align="top"</p>
+        <p>B)align="center"align="top"</p>
+        <p>C)valign="middle"align="top"</p>
+        <p><strong><span style="color:rgb(255,0,0)">D)valign="top" align="center"</span></strong></p>
+        <p><strong>30.<span style="font-family:宋体">我们想要为网页中的文字加上超链接，可以采用哪个标记达到要求？</span></strong></p>
+        <p>A)&lt;LINK&gt;</p>
+        <p>B)&lt;HREF&gt;</p>
+        <p><strong><span style="color:rgb(255,0,0)">C)&lt;A&gt;</span></strong></p>
+        <p>D)&lt;B&gt;</p>
+        <p><strong>31.A<span style="font-family:宋体">文件夹与</span><span style="font-family:Arial">B</span><span style="font-family:宋体">文件夹是同级文件夹，其中</span><span style="font-family:Arial">A</span><span style="font-family:宋体">下有</span><span style="font-family:Arial">a.htm</span><span style="font-family:宋体">，</span><span style="font-family:Arial">B</span><span style="font-family:宋体">下有</span><span style="font-family:Arial">b.htm</span><span style="font-family:宋体">文件，现在我们希望在</span><span style="font-family:Arial">a.htm</span><span style="font-family:宋体">文件中创建超链接，链接到</span><span style="font-family:Arial">b.htm</span><span style="font-family:宋体">，应该在</span><span style="font-family:Arial">a.htm</span><span style="font-family:宋体">页面代码中如何描述链接内容？</span></strong></p>
+        <p>A)b.htm</p>
+        <p>B)././././B/b.htm</p>
+        <p><strong><span style="color:rgb(255,0,0)">C)../B/b.htm</span></strong></p>
+        <p>D)../../b.htm</p>
+        <p><strong>32.<span style="font-family:宋体">我们想要在</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">文档中加入图像，可以使用哪个标记来达到要求呢？</span></strong></p>
+        <p>A)&lt;PIC&gt;</p>
+        <p>B)&lt;PICTURE&gt;</p>
+        <p><strong><span style="color:rgb(255,0,0)">C)&lt;IMG&gt;</span></strong></p>
+        <p>D)&lt;IMAGE&gt;</p>
+        <p><strong>33.<span style="font-family:宋体">我们发现为页面中的图像加入超链接后，默认情况下都带有一道黑框，有什么方法可以去掉它呢？</span></strong></p>
+        <p>A)bordercolor="white"</p>
+        <p><strong><span style="color:rgb(255,0,0)">B)border="0"</span></strong></p>
+        <p>C)style="no border"</p>
+        <p>D)style="0"</p>
+        <p><strong>34.<span style="font-family:宋体">我们想要将表格中加入的图像充满整个单元格，使用哪种方式可以做到？</span></strong></p>
+        <p>A)size="100"</p>
+        <p>B)size="100%"</p>
+        <p>C)width="100"</p>
+        <p><strong><span style="color:rgb(255,0,0)">D)width="100%"</span></strong></p>
+        <p><strong>35.<span style="font-family:宋体">我们希望制作一个表示左</span><span style="font-family:Arial">-</span><span style="font-family:宋体">上</span><span style="font-family:Arial">-</span><span style="font-family:宋体">下格式的框架页面</span></strong></p>
+        <p><strong>如图</strong></p>
+        <table>
+            <tbody>
+                <tr>
+                    <td valign="top" rowspan="2">
+                        <p><strong>&nbsp;</strong></p>
+                    </td>
+                    <td valign="top">
+                        <p><strong>&nbsp;</strong></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <p><strong>&nbsp;</strong></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p><strong>我们需要独立制作几个文件？</strong></p>
+        <p>A)1</p>
+        <p>B)2</p>
+        <p>C)3</p>
+        <p><strong><span style="color:rgb(255,0,0)">D)4</span></strong></p>
+        <p><strong>36.<span style="font-family:宋体">我们想要在框架中加入一个叫做</span><span style="font-family:Arial">list.htm</span><span style="font-family:宋体">的文件，应该在</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">中如何描述它？</span></strong></p>
+        <p>A)framepage="list.htm"</p>
+        <p>B)frametarget="list.htm"</p>
+        <p><strong><span style="color:rgb(255,0,0)">C)framesrc="list.htm"</span></strong></p>
+        <p>D)frameframepage="list.htm"</p>
+        <p><strong>37.<span style="font-family:宋体">我们想要在页面中加入一个层，可以使用哪些</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">标记来描述它？</span><span style="font-family:Arial">(</span><span style="font-family:宋体">选择</span><span style="font-family:Arial">2</span><span style="font-family:宋体">项</span><span style="font-family:Arial">)</span></strong></p>
+        <p>A)&lt;floor&gt;</p>
+        <p><strong><span style="color:rgb(255,0,0)">B)&lt;div&gt;</span></strong></p>
+        <p>C)&lt;span&gt;</p>
+        <p>D)&lt;level&gt;</p>
+        <p><strong>38. <span style="font-family:宋体">下面语句表述正确的是</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A) marginwidth=5<span style="font-family:宋体">表示框架宽度部分边缘所保留的空间。</span></span></strong></p>
+        <p>B)marginwidth=5<span style="font-family:宋体">表示框架宽度空间</span></p>
+        <p>C)noresize<span style="font-family:宋体">是设定不用使用框框的大小</span></p>
+        <p>D)noresize<span style="font-family:宋体">是使用者设定此参数后，可随意地拉动框架改变其大小。</span></p>
+        <p><strong>39. <span style="font-family:宋体">不是表单提供给用户的输入形式是</span></strong></p>
+        <p>A)Text</p>
+        <p>B)Radio</p>
+        <p><strong><span style="color:rgb(255,0,0)">C)Type</span></strong></p>
+        <p>D)file</p>
+        <p><strong>40 . <span style="font-family:宋体">下列哪种</span><span style="font-family:Arial">CSS</span><span style="font-family:宋体">样式定义的方式拥有最高的优先级？</span></strong></p>
+        <p>A)&nbsp; <span style="font-family:宋体">嵌入</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">B)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong><span style="color:rgb(255,0,0)">行内</span></strong></p>
+        <p>C)&nbsp; <span style="font-family:宋体">链接</span></p>
+        <p>D)&nbsp;&nbsp; <span style="font-family:宋体">导入</span></p>
+        <p><strong>41 .web<span style="font-family:宋体">标准的制定者是？</span></strong></p>
+        <p>A)&nbsp; <span style="font-family:宋体">微软</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">B)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong><span style="color:rgb(255,0,0)">万维网联盟（<span style="font-family:Arial">W3C</span></span>）</strong></p>
+        <p>C)&nbsp; <span style="font-family:宋体">网景公司（</span><span style="font-family:Arial">Netscape</span><span style="font-family:宋体">）</span></p>
+        <p>D)&nbsp;&nbsp; SUN<span style="font-family:宋体">公司</span></p>
+        <p><strong>42 . <span style="font-family:宋体">下列的</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">中哪个是最大的标题？</span></strong></p>
+        <p>A)&nbsp; &lt;h6&gt;</p>
+        <p>B)&nbsp; &lt;head&gt;</p>
+        <p>C)&nbsp;&nbsp; &lt;heading&gt;</p>
+        <p><strong><span style="color:rgb(255,0,0)">D)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>&lt;h1&gt;</strong></p>
+        <p><strong>43 . <span style="font-family:宋体">下列的</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">中哪个可以插入一条水平线？</span></strong></p>
+        <p>A)&nbsp; &lt;br&gt;</p>
+        <p><strong><span style="color:rgb(255,0,0)">B)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>&lt;hr&gt;</strong></p>
+        <p>C)&nbsp; &lt;break&gt;</p>
+        <p>D)&nbsp;&nbsp; &lt;P&gt;</p>
+        <p><strong>&nbsp;44 . <span style="font-family:宋体">下列的</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">中哪个可以添加背景颜色？</span></strong></p>
+        <p>A)&nbsp; &lt;body color="yellow"&gt;</p>
+        <p>B)&nbsp; &lt;background&gt;yellow&lt;/background&gt;</p>
+        <p><strong><span style="color:rgb(255,0,0)">C)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>&lt;body bgcolor="yellow"&gt;</strong></p>
+        <p>D)&nbsp;&nbsp; &lt;body backcolor="yellow"&gt;</p>
+        <p><strong>&nbsp;45 . <span style="font-family:宋体">请选择产生粗体字的</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">标签：</span></strong></p>
+        <p>A)&nbsp; &lt;bold&gt;</p>
+        <p>B)&nbsp; &lt;bb&gt;</p>
+        <p><strong><span style="color:rgb(255,0,0)">C)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>&lt;b&gt;</strong></p>
+        <p>D)&nbsp; &lt;bld&gt;</p>
+        <p><strong>&nbsp;46 . <span style="font-family:宋体">请选择产生斜体字的</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">标签：</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>&lt;i&gt;</strong></p>
+        <p>B)&nbsp; &lt;italics&gt;</p>
+        <p>C)&nbsp; &lt;ii&gt;</p>
+        <p>D)&nbsp; &nbsp;&lt;it&gt;</p>
+        <p><strong>&nbsp;47 . <span style="font-family:宋体">下列的</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">中哪个可以产生超链接？</span></strong></p>
+        <p>A)&nbsp; &lt;aurl="http://www.w3schools.com"&gt;W3Schools.com&lt;/a&gt;</p>
+        <p>B)&nbsp; &lt;a&gt;http://www.w3schools.com&lt;/a&gt;</p>
+        <p><strong><span style="color:rgb(255,0,0)">C)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>&lt;a href="http://www.w3schools.com"&gt;W3Schools&lt;/a&gt;</strong></p>
+        <p>D)&nbsp; &lt;a&gt;http://www.w3schools.com&lt;/a&gt;</p>
+        <p><strong>48 . <span style="font-family:宋体">如何制作电子邮件链接？</span></strong></p>
+        <p>A)&nbsp; &lt;a href="xxx@yyy"&gt;</p>
+        <p>B)&nbsp; &lt;mail href="xxx@yyy"&gt;</p>
+        <p><strong><span style="color:rgb(255,0,0)">C)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>&lt;a href="mailto:xxx@yyy"&gt;</strong></p>
+        <p>D)&nbsp; &lt;mail&gt;xxx@yyy&lt;/mail&gt;</p>
+        <p><strong>&nbsp;49 . <span style="font-family:宋体">如何在新窗口打开链接？</span></strong></p>
+        <p>A)&nbsp; &lt;a href="url" new&gt;</p>
+        <p><strong><span style="color:rgb(255,0,0)">B)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>&lt;a href="url" target="_blank"&gt;</strong></p>
+        <p>C)&nbsp; &lt;a href="url"target="new"&gt;</p>
+        <p>D)&nbsp;&nbsp; &lt;a href="url" target="_parent"&gt;</p>
+        <p><strong>&nbsp;50 . <span style="font-family:宋体">以下选项中，哪个全部都是表格标签？</span></strong></p>
+        <p>A)&nbsp; &lt;table&gt;&lt;head&gt;&lt;tfoot&gt;</p>
+        <p><strong><span style="color:rgb(255,0,0)">B)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>&lt;table&gt;&lt;tr&gt;&lt;td&gt;</strong></p>
+        <p>C)&nbsp; &lt;table&gt;&lt;tr&gt;&lt;tt&gt;</p>
+        <p>D)&nbsp; &lt;thead&gt;&lt;body&gt;&lt;tr&gt;</p>
+        <p><strong>&nbsp;51 . <span style="font-family:宋体">请选择可以使单元格中的内容进行左排列的正确</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">标签：</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>&lt;td align="left"&gt;</strong></p>
+        <p>B)&nbsp; &lt;td valign="left"&gt;</p>
+        <p>C)&nbsp; &lt;td leftalign&gt;</p>
+        <p>D)&nbsp; &lt;tdleft&gt;</p>
+        <p><strong>&nbsp;52 . <span style="font-family:宋体">如何产生带有数字列表符号的列表？</span></strong></p>
+        <p>A)&nbsp; &lt;ul&gt;</p>
+        <p>B)&nbsp; &lt;dl&gt;</p>
+        <p><strong><span style="color:rgb(255,0,0)">C)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>&lt;ol&gt;</strong></p>
+        <p>D)&nbsp; &lt;list&gt;</p>
+        <p><strong>&nbsp;53 . <span style="font-family:宋体">如何产生带有圆点列表符号的列表？</span></strong></p>
+        <p>A)&nbsp; &lt;dl&gt;</p>
+        <p>B)&nbsp; &lt;list&gt;</p>
+        <p>C)&nbsp; &lt;ol&gt;</p>
+        <p><strong><span style="color:rgb(255,0,0)">D)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>&lt;ul&gt;</strong></p>
+        <p><strong>&nbsp;54 . <span style="font-family:宋体">下列的</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">中哪个可以产生复选框？</span></strong></p>
+        <p>A)&nbsp; &lt;input type="check"&gt;</p>
+        <p>B)&nbsp; &lt;checkbox&gt;</p>
+        <p><strong><span style="color:rgb(255,0,0)">C)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>&lt;input type="checkbox"&gt;</strong></p>
+        <p>D)&nbsp; &lt;check&gt;</p>
+        <p><strong>&nbsp;</strong></p>
+        <p><strong>&nbsp;55 . <span style="font-family:宋体">下列的</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">中哪个可以产生文本框？</span></strong></p>
+        <p>A)&nbsp; &lt;input type="textfield"&gt;</p>
+        <p>B)&nbsp; &lt;textinput type="text"&gt;</p>
+        <p><strong><span style="color:rgb(255,0,0)">C)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>&lt;input type="text"&gt;</strong></p>
+        <p>D)&nbsp; &lt;textfield&gt;</p>
+        <p><strong>&nbsp;56 . <span style="font-family:宋体">下列的</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">中哪个可以产生下拉列表？</span></strong></p>
+        <p>A)&nbsp; &lt;list&gt;</p>
+        <p>B)&nbsp; &lt;input type="list"&gt;</p>
+        <p>C)&nbsp; &lt;input type="dropdown"&gt;</p>
+        <p><strong><span style="color:rgb(255,0,0)">D)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>&lt;select&gt;</strong></p>
+        <p><strong>&nbsp;57 . <span style="font-family:宋体">下列的</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">中哪个可以产生文本区？</span></strong></p>
+        <p>A)&nbsp; &lt;textarea&gt;</p>
+        <p>B)&nbsp; &lt;input type="textarea"&gt;</p>
+        <p>C)&nbsp; &lt;input type="textbox"&gt;</p>
+        <p><strong><span style="color:rgb(255,0,0)">D)&nbsp;&nbsp;</span>&lt;textarea&gt;&lt;/textarea&gt;</strong></p>
+        <p><strong>&nbsp;58 . <span style="font-family:宋体">下列的</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">中哪个可以插入图像？</span></strong></p>
+        <p>A)&nbsp; &lt;img href="image.gif&gt;</p>
+        <p>B)&nbsp; &lt;image src="image.gif"&gt;</p>
+        <p><strong><span style="color:rgb(255,0,0)">C)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>&lt;img src="image.gif"&gt;</strong></p>
+        <p>D)&nbsp; &lt;img&gt;image.gif&lt;/img&gt;</p>
+        <p><strong>&nbsp;59 . <span style="font-family:宋体">下列的</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">中哪个可以插入背景图像？</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>&lt;body background="background.gif"&gt;</strong></p>
+        <p>B)&nbsp; &lt;backgroundimg="background.gif"&gt;</p>
+        <p>C)&nbsp; &lt;img src="background.gif"background&gt;</p>
+        <p><strong>&nbsp;60 . <span style="font-family:宋体">以下的</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">中，哪个是正确引用外部样式表的方法？</span></strong></p>
+        <p>A)&nbsp; &lt;style src="mystyle.css"&gt;</p>
+        <p><strong><span style="color:rgb(255,0,0)">B)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>&lt;link rel="stylesheet" type="text/css"href="mystyle.css"&gt;</strong></p>
+        <p>C)&nbsp; &lt;stylesheet&gt;mystyle.css&lt;/stylesheet&gt;</p>
+        <p><strong>&nbsp;61. <span style="font-family:宋体">在</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">文档中，引用外部样式表的正确位置是？</span></strong></p>
+        <p>A)&nbsp; <span style="font-family:宋体">文档的末尾</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">B)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>&lt;head&gt;<span style="color:rgb(255,0,0)">部分</span></strong></p>
+        <p>C)&nbsp; <span style="font-family:宋体">文档的顶部</span></p>
+        <p>D)&nbsp; &lt;body&gt;<span style="font-family:宋体">部分</span></p>
+        <p><strong>&nbsp;62. <span style="font-family:宋体">哪个</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">标签可用来定义内部样式表？</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>&lt;style&gt;</strong></p>
+        <p>B)&nbsp; &lt;script&gt;</p>
+        <p>C)&nbsp; &lt;css&gt;</p>
+        <p><strong>&nbsp;63. <span style="font-family:宋体">哪个</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">属性可用来定义内联样式？</span></strong></p>
+        <p>A)&nbsp; font</p>
+        <p>B)&nbsp; class</p>
+        <p>C)&nbsp; styles</p>
+        <p><strong>D)&nbsp;&nbsp;<span style="color:rgb(255,0,0)">style</span></strong></p>
+        <p><strong>&nbsp;64 . <span style="font-family:宋体">下列哪个选项的</span><span style="font-family:Arial">CSS</span><span style="font-family:宋体">语法是正确的？</span></strong></p>
+        <p>A)&nbsp; body:color=black</p>
+        <p>B)&nbsp; {body:color=black(body}</p>
+        <p><strong><span style="color:rgb(255,0,0)">C)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>body{color: black}</strong></p>
+        <p>D)&nbsp; {body;color:black}</p>
+        <p><strong>&nbsp;65 . <span style="font-family:宋体">如何在</span><span style="font-family:Arial">CSS</span><span style="font-family:宋体">文件中插入注释？</span></strong></p>
+        <p>A)&nbsp; // this is a comment</p>
+        <p>B)&nbsp; // this is a comment</p>
+        <p><strong><span style="color:rgb(255,0,0)">C)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>/*this is a comment */</strong></p>
+        <p>D)&nbsp; ' this is a comment</p>
+        <p><strong>&nbsp;66 . CSS<span style="font-family:宋体">哪个属性可用来改变背景颜色？</span></strong></p>
+        <p>A)&nbsp; bgcolor:</p>
+        <p>B)&nbsp; color:</p>
+        <p><strong><span style="color:rgb(255,0,0)">C)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>background-color:</strong></p>
+        <p><strong>&nbsp;67. <span style="font-family:宋体">如何为所有的</span><span style="font-family:Arial">&lt;h1&gt;</span><span style="font-family:宋体">元素添加背景颜色？</span></strong></p>
+        <p>A)&nbsp; h1.all {background-color:#FFFFFF}</p>
+        <p><strong><span style="color:rgb(255,0,0)">B)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>h1{background-color:#FFFFFF}</strong></p>
+        <p>C)&nbsp; all.h1 {background-color:#FFFFFF}</p>
+        <p><strong>&nbsp;68 . CSS<span style="font-family:宋体">如何改变某个元素的文本颜色？</span></strong></p>
+        <p>A)&nbsp; text-color:</p>
+        <p><strong><span style="color:rgb(255,0,0)">B)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>color:</strong></p>
+        <p>C)&nbsp; fgcolor:</p>
+        <p>D)&nbsp; text-color=</p>
+        <p><strong>&nbsp;69 . <span style="font-family:宋体">哪个</span><span style="font-family:Arial">CSS</span><span style="font-family:宋体">属性可控制文本的尺寸？</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>font-size</strong></p>
+        <p>B)&nbsp; text-style</p>
+        <p>C)&nbsp; font-style</p>
+        <p>D)&nbsp; text-size</p>
+        <p><strong>70 . <span style="font-family:宋体">以下的</span><span style="font-family:Arial">CSS</span><span style="font-family:宋体">中，可使所有</span><span style="font-family:Arial">&lt;p&gt;</span><span style="font-family:宋体">元素变为粗体的正确语法是</span><span style="font-family:Arial">?</span></strong></p>
+        <p>A)&nbsp; &lt;p style="font-size:bold"&gt;</p>
+        <p>B)&nbsp; &lt;p style="text-size:bold"&gt;</p>
+        <p><strong><span style="color:rgb(255,0,0)">C)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>p{font-weight:bold}</strong></p>
+        <p>D)&nbsp; p {text-size:bold}</p>
+        <p><strong>&nbsp;71 . <span style="font-family:宋体">如何显示没有下划线的超链接？</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>a{text-decoration:none}</strong></p>
+        <p>B)&nbsp; a {text-decoration:no underline}</p>
+        <p>C)&nbsp; a {underline:none}</p>
+        <p>D)&nbsp; a {decoration:no underline}</p>
+        <p><strong>&nbsp;72 . <span style="font-family:宋体">如何使文本以大写字母开头？</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>text-transform:capitalize</strong></p>
+        <p>B)&nbsp; <span style="font-family:宋体">无法通过</span><span style="font-family:Arial">CSS</span><span style="font-family:宋体">来完成</span></p>
+        <p>C)&nbsp; text-transform:uppercase</p>
+        <p><strong>&nbsp;73 . css<span style="font-family:宋体">如何改变元素的字体？</span></strong></p>
+        <p>A)&nbsp; font=</p>
+        <p>B)&nbsp; f:</p>
+        <p><strong><span style="color:rgb(255,0,0)">C)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>font-family:</strong></p>
+        <p><strong>&nbsp;74 . <span style="font-family:宋体">如何改变元素的左边距？</span></strong></p>
+        <p>A)&nbsp; text-indent:</p>
+        <p><strong><span style="color:rgb(255,0,0)">B)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>margin-left:</strong></p>
+        <p>C)&nbsp; margin:</p>
+        <p>D)&nbsp; indent:</p>
+        <p><strong>&nbsp;75. <span style="font-family:宋体">如何产生带有正方形的项目的列表？</span></strong></p>
+        <p>A)&nbsp; list-type: square</p>
+        <p><strong><span style="color:rgb(255,0,0)">B)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>list-style-type: square</strong></p>
+        <p>C)&nbsp; type: square</p>
+        <p>D)&nbsp; type: 2</p>
+        <p><strong>&nbsp;76 . <span style="font-family:宋体">我们可以在下列哪个</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">元素中放置</span><span style="font-family:Arial"><a href="http://lib.csdn.net/base/18" class="replace_word" title="JavaScript知识库" target="_blank" style="color:#df3434; font-weight:bold;">JavaScript</a></span><span style="font-family:宋体">代码？</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>&lt;script&gt;</strong></p>
+        <p>B)&nbsp; &lt;javascript&gt;</p>
+        <p>C)&nbsp; &lt;js&gt;</p>
+        <p>D)&nbsp; &lt;scripting&gt;</p>
+        <p><strong>&nbsp;77 . <span style="font-family:宋体">写</span><span style="font-family:Arial">“Hello World”</span><span style="font-family:宋体">的正确</span><span style="font-family:Arial">JavaScript</span><span style="font-family:宋体">语法是？</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>document.write("Hello World")</strong></p>
+        <p>B)&nbsp; "Hello World"</p>
+        <p>C)&nbsp; response.write("Hello World")</p>
+        <p>D)&nbsp; ("Hello World")</p>
+        <p><strong>&nbsp;78 . <span style="font-family:宋体">插入</span><span style="font-family:Arial">JavaScript</span><span style="font-family:宋体">的正确位置是？</span></strong></p>
+        <p>A)&nbsp; &lt;body&gt;<span style="font-family:宋体">部分</span></p>
+        <p>B)&nbsp; &lt;head&gt;<span style="font-family:宋体">部分</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">C)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>&lt;body&gt;<span style="color:rgb(255,0,0)">部分和<span style="font-family:Arial">&lt;head&gt;</span></span>部分均可</strong></p>
+        <p><strong>&nbsp;79 . <span style="font-family:宋体">引用名为</span><span style="font-family:Arial">“xxx.js”</span><span style="font-family:宋体">的外部脚本的正确语法是？</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>&lt;script src="xxx.js"&gt;</strong></p>
+        <p>B)&nbsp; &lt;script href="xxx.js"&gt;</p>
+        <p>C)&nbsp; &lt;script name="xxx.js"&gt;</p>
+        <p><strong>&nbsp;80 . <span style="font-family:宋体">如何在警告框中写入</span><span style="font-family:Arial">“Hello World”</span><span style="font-family:宋体">？</span></strong></p>
+        <p>A)&nbsp; alertBox="Hello World"</p>
+        <p>B)&nbsp; msgBox("Hello World")</p>
+        <p><strong><span style="color:rgb(255,0,0)">C)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>alert("Hello World")</strong></p>
+        <p>D)&nbsp; alertBox("Hello World")</p>
+        <p><strong>&nbsp;81 . <span style="font-family:宋体">如何创建函数？</span></strong></p>
+        <p>A)&nbsp; function:myFunction()</p>
+        <p><span style="color:rgb(255,0,0)">B)&nbsp;&nbsp;</span>function myFunction()</p>
+        <p>C)&nbsp; function=myFunction()</p>
+        <p><strong>&nbsp;82 . <span style="font-family:宋体">如何编写当</span><span style="font-family:Arial">i</span><span style="font-family:宋体">等于</span><span style="font-family:Arial">5</span><span style="font-family:宋体">时执行某些语句的条件语句？</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>if(i==5)</strong></p>
+        <p>B)&nbsp; if i=5 then</p>
+        <p>C)&nbsp; if i=5</p>
+        <p>D)&nbsp; if i==5 then</p>
+        <p><strong>&nbsp;83 . <span style="font-family:宋体">如何编写当</span><span style="font-family:Arial">i</span><span style="font-family:宋体">不等于</span><span style="font-family:Arial">5</span><span style="font-family:宋体">时执行某些语句的条件语句？</span></strong></p>
+        <p>A)&nbsp; if =! 5 then</p>
+        <p>B)&nbsp; if &lt;&gt;5</p>
+        <p>C)&nbsp; if (i &lt;&gt; 5)</p>
+        <p><strong><span style="color:rgb(255,0,0)">D)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>if(i != 5)</strong></p>
+        <p><strong>&nbsp;84. for<span style="font-family:宋体">循环如何开始？</span></strong></p>
+        <p>A)&nbsp; for (i &lt;= 5; i++)</p>
+        <p><strong><span style="color:rgb(255,0,0)">B)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>for(i = 0; i &lt;= 5; i++)</strong></p>
+        <p>C)&nbsp; for (i = 0; i &lt;= 5)</p>
+        <p>D)&nbsp; for i = 1 to 5</p>
+        <p><strong>&nbsp;85. <span style="font-family:宋体">如何在</span><span style="font-family:Arial">JavaScript</span><span style="font-family:宋体">中添加注释？</span></strong></p>
+        <p>A)&nbsp; ' This is a comment</p>
+        <p>B)&nbsp; &lt;!--This is a comment--&gt;</p>
+        <p><strong><span style="color:rgb(255,0,0)">C)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>//This is a comment</strong></p>
+        <p><strong>&nbsp;86. <span style="font-family:宋体">定义</span><span style="font-family:Arial">JavaScript</span><span style="font-family:宋体">数组的正确方法是？</span></strong></p>
+        <p>A)&nbsp; var txt = new Array="tim","kim","jim"</p>
+        <p>B)&nbsp; var txt = newArray(1:"tim",2:"kim",3:"jim")</p>
+        <p><strong><span style="color:rgb(255,0,0)">C)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>vartxt = new Array("tim","kim","jim")</strong></p>
+        <p>D)&nbsp; var txt = newArray:1=("tim")2=("kim")3=("jim")</p>
+        <p><strong>&nbsp;87 . <span style="font-family:宋体">如何求得</span><span style="font-family:Arial">2</span><span style="font-family:宋体">和</span><span style="font-family:Arial">4</span><span style="font-family:宋体">中最大的数？</span></strong></p>
+        <p>A)&nbsp; Math.ceil(2,4)</p>
+        <p><strong><span style="color:rgb(255,0,0)">B)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>Math.max(2,4)</strong></p>
+        <p>C)&nbsp; ceil(2,4)</p>
+        <p>D)&nbsp; top(2,4)</p>
+        <p><strong>&nbsp;88 . <span style="font-family:宋体">打开名为</span><span style="font-family:Arial">“window2”</span><span style="font-family:宋体">的新窗口的</span><span style="font-family:Arial">JavaScript</span><span style="font-family:宋体">语法是？</span></strong></p>
+        <p>A)&nbsp; open.new("http://www.w3schools.com","window2")</p>
+        <p><strong><span style="color:rgb(255,0,0)">B)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>window.open("http://www.w3schools.com","window2")</strong></p>
+        <p>C)&nbsp; new("http://www.w3schools.com","window2")</p>
+        <p>D)&nbsp; new.window("http://www.w3schools.com","window2")</p>
+        <p><strong>&nbsp;89 . <span style="font-family:宋体">如何在浏览器的状态栏放入一条消息？</span></strong></p>
+        <p>A)&nbsp; statusbar = "put your message here"</p>
+        <p><strong><span style="color:rgb(255,0,0)">B)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>window.status = "put your message here"</strong></p>
+        <p>C)&nbsp; window.status("put your messagehere")</p>
+        <p>D)&nbsp; status("put your message here")</p>
+        <p><strong>90.<span style="font-family:宋体">下列不属于文档对象的方法的是（）</span></strong></p>
+        <p>A<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp; createElement</span></p>
+        <p>B<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;&nbsp;getElementById</span></p>
+        <p><strong>C<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;</span>&nbsp;<span style="color:rgb(255,0,0)">getElementByName</span></strong></p>
+        <p>D<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp; forms.length</span></p>
+        <p><strong>91.<span style="font-family:宋体">下面这段代码运行的结果（）</span></strong></p>
+        <p><strong>&lt;body&gt;</strong></p>
+        <p><strong>&lt;scriptlanguage=”JavaScript”&gt;</strong></p>
+        <p><strong>document.writeln(“<span style="font-family:宋体">文档最后修改于</span><span style="font-family:Arial">”+document.lastModified);</span></strong></p>
+        <p><strong>var lastModObj=new Date(document.lastModified);</strong></p>
+        <p><strong>alert(lastModObj.getMinutes());</strong></p>
+        <p><strong>&lt;/script&gt;</strong></p>
+        <p><strong>&lt;/body&gt;</strong></p>
+        <p>A<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp; </span>
+            <span style="font-family:宋体">弹出一个对象框</span></p>
+        <p>B<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;&nbsp;</span><span style="font-family:宋体">没有任何输出</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">C<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;</span></span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong><span style="color:rgb(255,0,0)">在文档中显示文档最后修改的时间</span></strong></p>
+        <p>D<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp; </span>
+            <span style="font-family:宋体">在对话框中显示文档最后修改的时间</span></p>
+        <p><strong>92.<span style="font-family:宋体">下列属性中表示文档中的未访问过的超链接的颜色是哪个（）</span></strong></p>
+        <p><strong>A<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;</span>&nbsp;<span style="color:rgb(255,0,0)">linkColor</span>属性</strong></p>
+        <p>B<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;&nbsp;vlinkColor</span><span style="font-family:宋体">属性</span></p>
+        <p>C<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;&nbsp;alinkColor</span><span style="font-family:宋体">属性</span></p>
+        <p>D<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp; </span>
+            <span style="font-family:宋体">以上都不是</span></p>
+        <p><strong>93.<span style="font-family:宋体">分析下面这段代码运行的结果（）</span></strong></p>
+        <p><strong>&lt;scriptlanguage=”JavaScript”&gt;</strong></p>
+        <p><strong>with(document)</strong></p>
+        <p><strong>{</strong></p>
+        <p><strong>writeln(“<span style="font-family:宋体">最后一次修改时间：</span><span style="font-family:Arial">” +document.lastModified+”&lt;br&gt;”);</span></strong></p>
+        <p><strong>writeln(“<span style="font-family:宋体">标题：</span><span style="font-family:Arial">” +document.title+”&lt;br&gt;”);</span></strong></p>
+        <p><strong>writeln(“URL<span style="font-family:宋体">：</span><span style="font-family:Arial">” +document.URL+”&lt;br&gt;”);</span></strong></p>
+        <p><strong>}</strong></p>
+        <p><strong>&lt;/script&gt;</strong></p>
+        <p>A<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp; </span>
+            <span style="font-family:宋体">只输出最后一次修改的时间</span></p>
+        <p>B<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;&nbsp;</span><span style="font-family:宋体">只输出文档的标题</span></p>
+        <p><strong>C<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;</span>&nbsp;<span style="color:rgb(255,0,0)">输出文档的标题、最后一次修改时间和当前的<span style="font-family:Arial">URL</span></span></strong></p>
+        <p>D<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp; </span>
+            <span style="font-family:宋体">什么也不输出</span></p>
+        <p><strong>94.<span style="font-family:宋体">分析下面这个程序运行的结果（）</span></strong></p>
+        <p><strong>&lt;script language=”JavaScript”&gt;</strong></p>
+        <p><strong>var str=”<span style="font-family:宋体">字符串</span><span style="font-family:Arial">”</span></strong></p>
+        <p><strong>with(document)</strong></p>
+        <p><strong>{</strong></p>
+        <p><strong>writeln(“&lt;b&gt;<span style="font-family:宋体">您好，</span><span style="font-family:Arial">&lt;/b&gt;”);</span></strong></p>
+        <p><strong>write(“<span style="font-family:宋体">欢迎光临本网页！</span><span style="font-family:Arial">” +”&lt;br&gt;”);</span></strong></p>
+        <p><strong>writeln(“&lt;p&gt;&lt;b&gt;<span style="font-family:宋体">在</span><span style="font-family:Arial">js</span><span style="font-family:宋体">标签之间，</span><span style="font-family:Arial">”);</span></strong></p>
+        <p><strong>writeln(str+”<span style="font-family:宋体">可以写在这里</span><span style="font-family:Arial">&lt;/b&gt;&lt;/p&gt;”);</span></strong></p>
+        <p><strong>}</strong></p>
+        <p><strong>&lt;/script&gt;</strong></p>
+        <p>A<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp; </span>
+            <span style="font-family:宋体">会有</span><span style="font-family:Arial">”&lt;br&gt;”</span><span style="font-family:宋体">这样的字符输出</span></p>
+        <p><strong>B<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;</span>&nbsp;<span style="color:rgb(255,0,0)">第<span style="font-family:Arial">6</span></span>行输出字符后会换行</strong></p>
+        <p>C<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;&nbsp;</span><span style="font-family:宋体">最后页面会出错</span></p>
+        <p>D<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp; </span>
+            <span style="font-family:宋体">会有乱码出现</span></p>
+        <p><strong>95.<span style="font-family:宋体">以下是历史对象的属性的是（）</span></strong></p>
+        <p>A.&nbsp;&nbsp;Current</p>
+        <p><strong><span style="color:rgb(255,0,0)">B.&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong><span style="color:rgb(255,0,0)">Length</span></strong></p>
+        <p>C.&nbsp;&nbsp;href</p>
+        <p>D.&nbsp;&nbsp;Next</p>
+        <p><strong>96.<span style="font-family:宋体">分析下面这两行代码的作用（）</span></strong></p>
+        <p><strong>01 &lt;A href=”javascript:history.back()”&gt;&lt;/A&gt;</strong></p>
+        <p><strong>02 &lt;A href=”javascript:history.forward()”&gt;&lt;/A&gt;</strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A<span style="font-family:宋体">）代码第</span><span style="font-family:Arial">1</span></span>行的作用相当于后退按钮</strong></p>
+        <p>B<span style="font-family:宋体">）代码第</span><span style="font-family:Arial">2</span><span style="font-family:宋体">行的作用相当于后退按钮</span></p>
+        <p>C<span style="font-family:宋体">）代码第</span><span style="font-family:Arial">1</span><span style="font-family:宋体">行的作用相当于前进按钮</span></p>
+        <p>D<span style="font-family:宋体">）以上表述不都不正确</span></p>
+        <p><strong>97<span style="font-family:宋体">．通常情况下，一个</span><span style="font-family:Arial">URL</span><span style="font-family:宋体">的格式是（）</span></strong></p>
+        <p>A<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp; </span>
+            <span style="font-family:宋体">协议</span><span style="font-family:Arial">//</span><span style="font-family:宋体">路径名称主机：端口</span><span style="font-family:Arial">/#</span><span style="font-family:宋体">哈希标识？搜索条件</span></p>
+        <p>B<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;&nbsp;</span><span style="font-family:宋体">协议</span><span style="font-family:Arial">//</span><span style="font-family:宋体">主机：端口</span><span style="font-family:Arial">/#</span><span style="font-family:宋体">哈希标识</span><span style="font-family:Arial">/</span><span style="font-family:宋体">路径名称？搜索条件</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">C<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;</span></span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong><span style="color:rgb(255,0,0)">协议<span style="font-family:Arial">//</span></span>主机：端口<span style="font-family:Arial">/</span><span style="font-family:宋体">路径名称？搜索条件</span></strong></p>
+        <p>D<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp; </span>
+            <span style="font-family:宋体">协议</span><span style="font-family:Arial">//</span><span style="font-family:宋体">主机：端口？搜索条件</span><span style="font-family:Arial">/</span><span style="font-family:宋体">路径名称</span><span style="font-family:Arial">#</span><span style="font-family:宋体">哈希标识</span></p>
+        <p><strong>98. <span style="font-family:宋体">对</span><span style="font-family:Arial">location</span><span style="font-family:宋体">对象的</span><span style="font-family:Arial">href</span><span style="font-family:宋体">属性的叙述错误的是（）</span></strong></p>
+        <p>A) <span style="font-family:宋体">可以获取当前路径</span></p>
+        <p>B) <span style="font-family:宋体">可以改变当前路径</span></p>
+        <p>C) <span style="font-family:宋体">可以用来刷新页面</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">D)</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong><span style="color:rgb(255,0,0)">是只读属性</span></strong></p>
+        <p><strong>99. <span style="font-family:宋体">可以使用下列哪种方法来用一个</span><span style="font-family:Arial">URL</span><span style="font-family:宋体">取代当前窗口的</span><span style="font-family:Arial">URL</span><span style="font-family:宋体">（）</span></strong></p>
+        <p>A<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp; load</span></p>
+        <p>B<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;&nbsp;onload</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">C<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;</span></span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong><span style="color:rgb(255,0,0)">replace</span></strong></p>
+        <p>D<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp; open</span></p>
+        <p><strong>100.<span style="font-family:宋体">下列对表单对象的属性表述不正确的是（）</span></strong></p>
+        <p>A<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp; name</span><span style="font-family:宋体">：返回表单的名称</span></p>
+        <p>B<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;&nbsp;action</span><span style="font-family:宋体">：返回</span><span style="font-family:Arial">/</span><span style="font-family:宋体">设定表单的提交地址</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">C<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;</span></span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong><span style="color:rgb(255,0,0)">target<span style="font-family:宋体">：返回</span><span style="font-family:Arial">/</span></span>设定表单提交内容的编码方式</strong></p>
+        <p>D<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp; length</span><span style="font-family:宋体">：返回该表单所含元素的数目</span></p>
+        <p><strong>101.<span style="font-family:宋体">对下面这段代码分析不正确的是（）</span></strong></p>
+        <p><strong>funtcion&nbsp; Submit()</strong></p>
+        <p><strong>{</strong></p>
+        <p><strong>form1.submit();</strong></p>
+        <p><strong>alert(“<span style="font-family:宋体">提交成功</span><span style="font-family:Arial">”)</span></strong></p>
+        <p><strong>}</strong></p>
+        <p><strong>functionReset()</strong></p>
+        <p><strong>{</strong></p>
+        <p><strong>form1.reset();</strong></p>
+        <p><strong>}</strong></p>
+        <p>A<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp; </span>
+            <span style="font-family:宋体">调用</span><span style="font-family:Arial">Submit()</span><span style="font-family:宋体">可以提交表单</span></p>
+        <p>B<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;&nbsp;</span><span style="font-family:宋体">调用</span><span style="font-family:Arial">Reset()</span><span style="font-family:宋体">重置表单</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">C<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;</span></span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong><span style="color:rgb(255,0,0)">调用<span style="font-family:Arial">Reset()</span></span>相当于提交按钮</strong></p>
+        <p>D<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp; </span>
+            <span style="font-family:宋体">调用</span><span style="font-family:Arial">Submit()</span><span style="font-family:宋体">相当于提交按钮</span></p>
+        <p><strong>102<span style="font-family:宋体">．对下面这段代码分析不正确的是（）</span></strong></p>
+        <p><strong>var len=form1.elements.length;</strong></p>
+        <p><strong>for(var i=0 ;i&lt;Len; i++)</strong></p>
+        <p><strong>{</strong></p>
+        <p><strong>if(form1.elements[i].value.length==0)</strong></p>
+        <p><strong>{</strong></p>
+        <p><strong>alert(“<span style="font-family:宋体">你的资料没有填写完善</span><span style="font-family:Arial">”);</span></strong></p>
+        <p><strong>return&nbsp; flase;</strong></p>
+        <p><strong>}</strong></p>
+        <p><strong>}</strong></p>
+        <p>A<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp; </span>
+            <span style="font-family:宋体">代码第</span><span style="font-family:Arial">1</span><span style="font-family:宋体">行是取得当前表单元素的个数</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">B<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;</span></span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong><span style="color:rgb(255,0,0)">代码第<span style="font-family:Arial">1</span></span>行是取得当前文本表单的个数</strong></p>
+        <p>C<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;&nbsp;</span><span style="font-family:宋体">这是循环验证表单</span></p>
+        <p>D<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp; </span>
+            <span style="font-family:宋体">这段代码可以验证表单中文本框中的值是否为空</span></p>
+        <p><strong>103.<span style="font-family:宋体">对下面这段代码分析您输入的字符数为正确的是（）</span></strong></p>
+        <p><strong>function count()</strong></p>
+        <p><strong>{</strong></p>
+        <p><strong>var len=form1.text.value.length;</strong></p>
+        <p><strong>alert(“”+len+”<span style="font-family:宋体">个</span><span style="font-family:Arial">”)</span></strong></p>
+        <p><strong>}</strong></p>
+        <p>A<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp; </span>
+            <span style="font-family:宋体">代码第</span><span style="font-family:Arial">3</span><span style="font-family:宋体">行是取得当前文档中文本框的个数</span></p>
+        <p>B<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;&nbsp;</span><span style="font-family:宋体">代码第</span><span style="font-family:Arial">3</span><span style="font-family:宋体">行是取得当前文档中表单的个数</span></p>
+        <p>C<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;&nbsp;</span><span style="font-family:宋体">这段代码有错误</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">D<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;</span></span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong><span style="color:rgb(255,0,0)">这段代码是统计用户输入文本框中字符个数</span></strong></p>
+        <p><strong>104.<span style="font-family:宋体">下列叙述不正确的是（）</span></strong></p>
+        <p>A<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp; document</span><span style="font-family:宋体">：最顶层的节点，所有的其他节点都是附属于它的</span></p>
+        <p>B<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;&nbsp;documentTypeDTD</span><span style="font-family:宋体">：引用（使用</span><span style="font-family:Arial">&lt;!DOCTYPE&gt;</span><span style="font-family:宋体">语法）的对象表现形式</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">C<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;</span></span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong><span style="color:rgb(255,0,0)">Attr<span style="font-family:宋体">：代表一对特性名和特性值。这个节点类型能包含子节点</span></span></strong></p>
+        <p>D<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp; documentFragment</span><span style="font-family:宋体">：可以像</span><span style="font-family:Arial">document</span><span style="font-family:宋体">一样来保存其他节点</span></p>
+        <p><strong>105.<span style="font-family:宋体">下列不属于访问指定节点的方法的是（）</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;</span></span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong><span style="color:rgb(255,0,0)">obj.value</span></strong></p>
+        <p>B<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;&nbsp;getElementByTagName</span></p>
+        <p>C<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;&nbsp;getElementsByName</span></p>
+        <p>D<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp; getElementById</span></p>
+        <p><strong>106.<span style="font-family:宋体">对下列代码分析正确的是（）</span></strong></p>
+        <p><strong>function msg<span style="font-family:宋体">（）</span></strong></p>
+        <p><strong>{</strong></p>
+        <p><strong>var p=document.createElement(“p”);</strong></p>
+        <p><strong>varText=document.createTextNode(“Hello!”);</strong></p>
+        <p><strong>p.appendChild(“Text”);</strong></p>
+        <p><strong>document.body.appendChild(p);</strong></p>
+        <p><strong>}</strong></p>
+        <p>A<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp; </span>
+            <span style="font-family:宋体">代码第</span><span style="font-family:Arial">2</span><span style="font-family:宋体">行是创建一个</span><span style="font-family:Arial">&lt;P&gt;</span><span style="font-family:宋体">元素标签</span></p>
+        <p>B<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;&nbsp;</span><span style="font-family:宋体">代码第</span><span style="font-family:Arial">3</span><span style="font-family:宋体">行是创建一个文本节点</span></p>
+        <p>C<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;&nbsp;&lt;P&gt;</span><span style="font-family:宋体">是文本节点的子节点</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">D<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;</span></span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong><span style="color:rgb(255,0,0)">这代码的作用是创建新的节点</span></strong></p>
+        <p><strong>107.<span style="font-family:宋体">下列对符号所表示的意义解释错误的是（）</span></strong></p>
+        <p>A<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp; ˆ(</span><span style="font-family:宋体">尖号</span><span style="font-family:Arial">)</span><span style="font-family:宋体">：匹配字符串的开头</span></p>
+        <p>B<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;&nbsp;$</span><span style="font-family:宋体">（美元符号）：匹配字符串的结尾</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">C<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;</span></span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong><span style="color:rgb(255,0,0)">？（问号）：匹配前面的子表达式一次或多次</span></strong></p>
+        <p>D<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp; \</span><span style="font-family:宋体">（反斜杠）：对特殊字符的特殊元字符含义进行转义</span></p>
+        <p><strong>108. <span style="font-family:宋体">对下面这段代码分析不正确的是（）</span></strong></p>
+        <p><strong>var reg=/ .o./ g;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //<span style="font-family:宋体">寻找字符</span><span style="font-family:Arial">o</span><span style="font-family:宋体">前后接任意字符组成的有三个字符的字符串</span></strong></p>
+        <p><strong>var str= “How are you?”&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //<span style="font-family:宋体">源串</span></strong></p>
+        <p><strong>var result=new Array();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //<span style="font-family:宋体">用于接收结果</span></strong></p>
+        <p><strong>while(reg.exec(str)!=null)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //<span style="font-family:宋体">执行匹配操作，如果找到匹配则继续找下一项</span></strong></p>
+        <p><strong>{</strong></p>
+        <p><strong>result.push(RegExp.lastMatch);&nbsp;&nbsp; //<span style="font-family:宋体">添加结果</span></strong></p>
+        <p><strong>}</strong></p>
+        <p><strong>alert(result);</strong></p>
+        <p>A<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp; </span>
+            <span style="font-family:宋体">代码第</span><span style="font-family:Arial">1</span><span style="font-family:宋体">行是寻找字符</span><span style="font-family:Arial">o</span><span style="font-family:宋体">前后接任意字符组成的有三个字符的字符串</span></p>
+        <p>B<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;&nbsp;</span><span style="font-family:宋体">代码第</span><span style="font-family:Arial">4</span><span style="font-family:宋体">行是执行匹配操作，如果找到匹配则继续找下一项</span></p>
+        <p>C<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;&nbsp;</span><span style="font-family:宋体">代码第</span><span style="font-family:Arial">6</span><span style="font-family:宋体">行是将所得到的结果添加到数组中</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">D<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;</span></span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong><span style="color:rgb(255,0,0)">最后输出的是<span style="font-family:Arial">“How
+ are you?”</span></span></strong></p>
+        <p><strong>109.<span style="font-family:宋体">以下不是</span><span style="font-family:Arial">RegExp</span><span style="font-family:宋体">对象的实例属性的是（）</span></strong></p>
+        <p>A<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp; global</span><span style="font-family:宋体">属性</span></p>
+        <p>B<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;&nbsp;lastIndex</span><span style="font-family:宋体">属性</span></p>
+        <p>C<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;&nbsp;ignoreCase</span><span style="font-family:宋体">属性</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">D<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;</span></span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong><span style="color:rgb(255,0,0)">multiLine<span style="font-family:宋体">属性</span></span></strong></p>
+        <p><strong>110.<span style="font-family:宋体">下面与</span><span style="font-family:Arial">IE</span><span style="font-family:宋体">结合对</span><span style="font-family:Arial">JavaScript</span><span style="font-family:宋体">调试支持比较好的工具是（）</span></strong></p>
+        <p>A<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp; </span>
+            <span style="font-family:宋体">记事本</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">B<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;</span></span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong><span style="color:rgb(255,0,0)">Microsoft Visual Studio 2005</span></strong></p>
+        <p>C<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;&nbsp;JSEclipse</span></p>
+        <p>D<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp; VC++</span></p>
+        <p><strong>111. <span style="font-family:宋体">在调试前的准备工作下列叙述不对的是（）</span></strong></p>
+        <p>A<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp; </span>
+            <span style="font-family:宋体">在</span><span style="font-family:Arial">“</span><span style="font-family:宋体">设置</span><span style="font-family:Arial">”</span><span style="font-family:宋体">列表框中找到两个</span><span style="font-family:Arial">“</span><span style="font-family:宋体">禁用脚本调试</span><span style="font-family:Arial">”</span><span style="font-family:宋体">复选框，将它们前面的钩去掉</span></p>
+        <p>B<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;&nbsp;</span><span style="font-family:宋体">如果</span><span style="font-family:Arial">“</span><span style="font-family:宋体">禁用脚本调试</span><span style="font-family:Arial">”</span><span style="font-family:宋体">复选框，前面的钩不去掉，则不会弹出调试信息</span></p>
+        <p>C<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;&nbsp;“</span><span style="font-family:宋体">禁用脚本调试</span><span style="font-family:Arial">”</span><span style="font-family:宋体">复选框，前面的钩去掉后，当程序出错时会弹出调试信息</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">D<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;</span></span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong><span style="color:rgb(255,0,0)">“<span style="font-family:宋体">禁用脚本调试</span><span style="font-family:Arial">”</span><span style="font-family:宋体">复选框，前面的钩去不去与调试无关</span></span></strong></p>
+        <p><strong>112.<span style="font-family:宋体">关于代码优化下列表述不对的是（）</span></strong></p>
+        <p>A<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp; JavaScript</span><span style="font-family:宋体">程序代码编写出来后，主要是交给浏览器去运行</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">B<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;</span></span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong><span style="color:rgb(255,0,0)">尽可能使用全局变量，可以使代码简单</span></strong></p>
+        <p>C<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp;&nbsp;</span><span style="font-family:宋体">书写风格应遵循</span><span style="font-family:Arial">“</span><span style="font-family:宋体">标识符短而含义清晰</span><span style="font-family:Arial">”</span><span style="font-family:宋体">、</span><span style="font-family:Arial">“</span><span style="font-family:宋体">代码缩进对齐</span><span style="font-family:Arial">”</span><span style="font-family:宋体">、</span><span style="font-family:Arial">“</span><span style="font-family:宋体">尽可能注释</span><span style="font-family:Arial">”</span><span style="font-family:宋体">等原则</span></p>
+        <p>D<span style="font-family:宋体">）</span><span style="font-family:Arial">&nbsp; </span>
+            <span style="font-family:宋体">在机器上运行的代码总是希望其速度越快越好，阅读维护时其可读性可理解性最好</span></p>
+        <p><strong>113<span style="font-family:宋体">．弹出输入框，默认内容是</span><span style="font-family:Arial">“Hello World”</span><span style="font-family:宋体">的正确</span><span style="font-family:Arial">javascript</span><span style="font-family:宋体">语法是？</span></strong></p>
+        <p>A<span style="font-family:宋体">） </span><span style="font-family:Arial">document.write("HelloWorld")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B</span><span style="font-family:宋体">）
+</span><span style="font-family:Arial">"Hello World"&nbsp;&nbsp;</span></p>
+        <p>C<span style="font-family:宋体">） </span><span style="font-family:Arial">response.write("HelloWorld")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><strong><span style="color:rgb(255,0,0)">D<span style="font-family:宋体">）
+</span><span style="font-family:Arial">prompt(“</span></span>输入<span style="font-family:Arial">”,"Hello World")</span></strong></p>
+        <p><strong>114<span style="font-family:宋体">．</span><span style="font-family:Arial">JS</span><span style="font-family:宋体">特性不包括</span><span style="font-family:Arial">( )</span></strong></p>
+        <p>A<span style="font-family:宋体">）解释性</span><span style="font-family:Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B</span><span style="font-family:宋体">）用于客户端</span><span style="font-family:Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C</span><span style="font-family:宋体">）基于对象</span><span style="font-family:Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><strong><span style="color:rgb(255,0,0)">D<span style="font-family:宋体">）面向对象</span></span></strong></p>
+        <p><strong>115<span style="font-family:宋体">．下列</span><span style="font-family:Arial">JS</span><span style="font-family:宋体">的判断语句中</span><span style="font-family:Arial">( )</span><span style="font-family:宋体">是正确的</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A<span style="font-family:宋体">）</span><span style="font-family:Arial">if(i==0)</span></span></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B<span style="font-family:宋体">）</span><span style="font-family:Arial">if(i=0)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C</span><span style="font-family:宋体">）</span><span style="font-family:Arial">if
+ i==0 then&nbsp;&nbsp;&nbsp;&nbsp; D</span><span style="font-family:宋体">）</span><span style="font-family:Arial">if i=0 then</span></p>
+        <p><strong>116<span style="font-family:宋体">、下列</span><span style="font-family:Arial">JavaScript</span><span style="font-family:宋体">的循环语句中</span><span style="font-family:Arial">( )</span><span style="font-family:宋体">是正确的</span></strong></p>
+        <p>A.if(i&lt;10;i++)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B.for(i=0;i&lt;10)</p>
+        <p>C.for i=1 to 10 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<strong><span style="color:rgb(255,0,0)">D.for(i=0;i&lt;=10;i++)</span></strong></p>
+        <p><strong>117<span style="font-family:宋体">、下列的哪一个表达式将返回假</span></strong></p>
+        <p>A.!(3&lt;=1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><span style="color:rgb(255,0,0)">B.(4&gt;=4)&amp;&amp;(5&lt;=2)</span></strong>&nbsp;</p>
+        <p>C.(“a”==”a”)&amp;&amp;(“c”!=”d”)&nbsp; D.(2&lt;3)||(3&lt;2)</p>
+        <p><strong>118<span style="font-family:宋体">、下列选项中</span><span style="font-family:Arial">,( )</span><span style="font-family:宋体">不是网页中的事件</span></strong></p>
+        <p>A.onclick&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B.onmouseover&nbsp;&nbsp; C.onsubmit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><span style="color:rgb(255,0,0)">D.onpressbutton</span></strong></p>
+        <p><strong>119<span style="font-family:宋体">、有语句</span><span style="font-family:Arial">“var x=0;while(____) x+=2;”</span><span style="font-family:宋体">，要使</span><span style="font-family:Arial">while</span><span style="font-family:宋体">循环体执行</span><span style="font-family:Arial">10</span><span style="font-family:宋体">次，空白处的循环判定式应写为：</span></strong></p>
+        <p>A<span style="font-family:宋体">．</span><span style="font-family:Arial">x&lt;10&nbsp;&nbsp;&nbsp;&nbsp; B. x&lt;=10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><strong><span style="color:rgb(255,0,0)">C.x&lt;20</span></strong>&nbsp;&nbsp;&nbsp;&nbsp; D.x&lt;=20</p>
+        <p><strong>120<span style="font-family:宋体">、</span><span style="font-family:Arial">JS</span><span style="font-family:宋体">语句</span></strong></p>
+        <p><strong>var a1=10;</strong></p>
+        <p><strong>var a2=20;</strong></p>
+        <p><strong>alert(“a1+a2=”+a1+a2)</strong></p>
+        <p><strong>将显示<span style="font-family:Arial">( )</span><span style="font-family:宋体">结果</span></strong></p>
+        <p>A.a1+a2=30&nbsp;&nbsp;<strong><span style="color:rgb(255,0,0)">B.a1+a2=1020</span></strong>&nbsp;C.a1+a2=a1+a2&nbsp; D.<span style="font-family:宋体">显示错误</span></p>
+        <p><strong>121<span style="font-family:宋体">、将字串</span><span style="font-family:Arial">s</span><span style="font-family:宋体">中的所有字母变为小写字母的方法是</span><span style="font-family:Arial">( )</span></strong></p>
+        <p>A.s.toSmallCase()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><span style="color:rgb(255,0,0)">B.s.toLowerCase()</span></strong>&nbsp;&nbsp;&nbsp;</p>
+        <p>C.s.toUpperCase()&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; D.s.toUpperChars()</p>
+        <p><strong>122<span style="font-family:宋体">、以下</span><span style="font-family:Arial">( )</span><span style="font-family:宋体">表达式产生一个</span><span style="font-family:Arial">0~7</span><span style="font-family:宋体">之间</span><span style="font-family:Arial">(</span><span style="font-family:宋体">含</span><span style="font-family:Arial">0,7)</span><span style="font-family:宋体">的随机整数</span><span style="font-family:Arial">.</span></strong></p>
+        <p>A.Math.floor(Math.random()*6)&nbsp;&nbsp;</p>
+        <p>B.Math.floor(Math.random()*7)&nbsp;&nbsp;</p>
+        <p><strong><span style="color:rgb(255,0,0)">C.Math. floor(Math.random()*8)&nbsp;</span></strong></p>
+        <p>D.Math.ceil(Math.random()*8)&nbsp;&nbsp;<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></p>
+        <p><strong>123<span style="font-family:宋体">、产生当前日期的方法是</span><span style="font-family:Arial">( )</span></strong></p>
+        <p>A.Now();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B.Date()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><span style="color:rgb(255,0,0)">C.new Date()</span></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; D.newNow()&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        <p><strong>124<span style="font-family:宋体">、如果想在网页显示后</span><span style="font-family:Arial">,</span><span style="font-family:宋体">动态地改变网页的标题</span><span style="font-family:Arial">( )</span></strong></p>
+        <p>A.<span style="font-family:宋体">是不可能的</span><span style="font-family:Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B.</span><span style="font-family:宋体">通过</span><span style="font-family:Arial">document.write(“</span><span style="font-family:宋体">新的标题内容</span><span style="font-family:Arial">”)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">C.</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong><span style="color:rgb(255,0,0)">通过<span style="font-family:Arial">document.title=(“</span></span>新的标题内容<span style="font-family:Arial">”)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></strong></p>
+        <p>D. <span style="font-family:宋体">通过</span><span style="font-family:Arial">document.changeTitle(“</span><span style="font-family:宋体">新的标题内容</span><span style="font-family:Arial">”)</span></p>
+        <p><strong>125<span style="font-family:宋体">、某网页中有一个窗体对象</span><span style="font-family:Arial">,</span><span style="font-family:宋体">其名称是</span><span style="font-family:Arial">mainForm,</span><span style="font-family:宋体">该窗体对象的第一个元素是按钮</span><span style="font-family:Arial">,</span><span style="font-family:宋体">其名称是</span><span style="font-family:Arial">myButton,</span><span style="font-family:宋体">表述该按钮对象的方法是</span><span style="font-family:Arial">()</span></strong></p>
+        <p>A.document.forms.myButton&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><span style="color:rgb(255,0,0)">B.document.mainForm.myButton</span></strong>&nbsp;&nbsp;&nbsp;</p>
+        <p>C.document.forms[0].element[0]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; D.<span style="font-family:宋体">以上都可以</span></p>
+        <p><strong>126<span style="font-family:宋体">、</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">文档的树状结构中，（）标签为文档的根节点，位于结构中的最顶层。</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A.&lt;HTML&gt;</span></strong>&nbsp; B.&lt;HEAD&gt;&nbsp;&nbsp; C.&lt;BODY&gt;&nbsp;&nbsp; D.&lt;TITLE&gt;</p>
+        <p><strong>127<span style="font-family:宋体">、在</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">页面中，</span><span style="font-family:Arial">CSS</span><span style="font-family:宋体">样式的属性名为</span><span style="font-family:Arial">background-image</span><span style="font-family:宋体">对应的</span><span style="font-family:Arial">style</span><span style="font-family:宋体">对象的属性名是（）。</span></strong></p>
+        <p>A.background&nbsp;&nbsp;<strong><span style="color:rgb(255,0,0)">B.backgroungImage</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span>&nbsp;&nbsp;C.image &nbsp;&nbsp;&nbsp;D.background</p>
+        <p><strong>128<span style="font-family:宋体">、在使用</span><span style="font-family:Arial">Javascript</span><span style="font-family:宋体">实现省市级联菜单功能时，在添加城市列表前清空原来的下拉选项的代码是（）</span></strong></p>
+        <p>A. document.myform.selCity.options.clear()</p>
+        <p>B.document.myform.selCity.options.deleteAll()</p>
+        <p><strong><span style="color:rgb(255,0,0)">C. document.myform.selCity.options.length=0</span></strong></p>
+        <p>D.document.myform.selCity.options.size=0</p>
+        <p><strong>129<span style="font-family:宋体">、</span><span style="font-family:Arial">HMTL</span><span style="font-family:宋体">表单的首要标记是</span><span style="font-family:Arial">&lt;form&gt;,&lt;form&gt;</span><span style="font-family:宋体">标记的参数</span><span style="font-family:Arial">method</span><span style="font-family:宋体">表示表单发送的方法，可能为</span><span style="font-family:Arial">get</span><span style="font-family:宋体">或</span><span style="font-family:Arial">post</span><span style="font-family:宋体">，下列关于</span><span style="font-family:Arial">get</span><span style="font-family:宋体">和</span><span style="font-family:Arial">post</span><span style="font-family:宋体">的描述正确的是（）</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A.post<span style="font-family:宋体">方法传递的数据对客户端是不可见的</span></span></strong></p>
+        <p>B.get<span style="font-family:宋体">请求信息以查询字符串的形式发送，查询字符串长度没有大小限制</span></p>
+        <p>C.post<span style="font-family:宋体">方法对发送数据的数量限制在</span><span style="font-family:Arial">255</span><span style="font-family:宋体">个字符之内</span></p>
+        <p>D.get<span style="font-family:宋体">方法传递的数据对客户端是不可见的</span></p>
+        <p><strong>130<span style="font-family:宋体">、在</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">文档对象模型中，</span><span style="font-family:Arial">history</span><span style="font-family:宋体">对象的（）用于加载历史列表中的下一个</span><span style="font-family:Arial">URL</span><span style="font-family:宋体">页面。</span></strong></p>
+        <p>A<span style="font-family:宋体">．</span><span style="font-family:Arial">next()&nbsp; B.back()&nbsp;</span><strong>&nbsp;<span style="color:rgb(255,0,0)">C.forward()</span></strong>&nbsp; D.go(-1)</p>
+        <p><strong>131<span style="font-family:宋体">、在</span><span style="font-family:Arial">Javascript</span><span style="font-family:宋体">中要改变页面文档的背景色，需要修改</span><span style="font-family:Arial">document</span><span style="font-family:宋体">对象的（）属性。</span></strong></p>
+        <p><strong>A<span style="font-family:宋体">．</span><span style="font-family:Arial">BackColor&nbsp; B.</span><span style="color:rgb(255,0,0)">BackgroundColor</span>&nbsp; C.BgColor&nbsp;D.Background</strong></p>
+        <p><strong>132<span style="font-family:宋体">、在</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">页面中，不能与</span><span style="font-family:Arial">onChange</span><span style="font-family:宋体">事件处理程序相关联的表单元素有（）。</span></strong></p>
+        <p>A<span style="font-family:宋体">．文本框</span><span style="font-family:Arial">&nbsp; B.</span><span style="font-family:宋体">复选框</span><span style="font-family:Arial">&nbsp; C.</span><span style="font-family:宋体">列表框</span><span style="font-family:Arial">&nbsp;&nbsp;</span><strong><span style="color:rgb(255,0,0)">D.<span style="font-family:宋体">按钮</span></span></strong></p>
+        <p><strong>133<span style="font-family:宋体">、在</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">页面上编写</span><span style="font-family:Arial">JavaScript</span><span style="font-family:宋体">代码时，应编写在（）标签中间。</span></strong></p>
+        <p>A.&lt;javascript&gt;<span style="font-family:宋体">和</span><span style="font-family:Arial">&lt;/javascript&gt; &nbsp;</span><strong><span style="color:rgb(255,0,0)">B.&lt;script&gt;<span style="font-family:宋体">和</span><span style="font-family:Arial">&lt;/script&gt;</span></span></strong></p>
+        <p>C. &lt;head&gt;<span style="font-family:宋体">和</span><span style="font-family:Arial">&lt;/head&gt; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D.&lt;body&gt;</span><span style="font-family:宋体">和</span><span style="font-family:Arial">&lt;/body&gt;</span></p>
+        <p><strong>134<span style="font-family:宋体">、编写</span><span style="font-family:Arial">JavaScript</span><span style="font-family:宋体">函数实现网页背景色选择器，下列选项中正确的是（）</span></strong></p>
+        <p>A.functionchange(color){</p>
+        <p>&nbsp;&nbsp;&nbsp; window.bgColor=color;</p>
+        <p>}</p>
+        <p><strong><span style="color:rgb(255,0,0)">B. function change(color){</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">&nbsp;&nbsp;&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>document.bgColor=color;</strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">}</span></strong></p>
+        <p>C. functionchange(color){</p>
+        <p>&nbsp;&nbsp;&nbsp; body.bgColor=color;</p>
+        <p>}</p>
+        <p>D. functionchange(color){</p>
+        <p>&nbsp;&nbsp;&nbsp; form.bgColor=color;</p>
+        <p>}</p>
+        <p><strong>135<span style="font-family:宋体">、在</span><span style="font-family:Arial">Javascript</span><span style="font-family:宋体">中，可以使用</span><span style="font-family:Arial">Date</span><span style="font-family:宋体">对象的</span><span style="font-family:Arial">()</span><span style="font-family:宋体">方法返回一个月中的每一天。</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A<span style="font-family:宋体">．</span><span style="font-family:Arial">getDate</span></span></strong>&nbsp;B.getYear&nbsp; C.getMonth&nbsp;D.getTime</p>
+        <p><strong>136<span style="font-family:宋体">、下列选项中关于浏览器对象的说法错误的是（）</span></strong></p>
+        <p>A.history<span style="font-family:宋体">对象记录了用户在一个浏览器中已经访问过的</span><span style="font-family:Arial">URLs</span></p>
+        <p>B.location<span style="font-family:宋体">对象相当于</span><span style="font-family:Arial">IE</span><span style="font-family:宋体">浏览器中的地址栏，包含关于当前</span><span style="font-family:Arial">URL</span><span style="font-family:宋体">地址的信息</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">C.location<span style="font-family:宋体">对象是</span><span style="font-family:Arial">history</span></span>对象的父对象</strong></p>
+        <p>D.location<span style="font-family:宋体">对象是</span><span style="font-family:Arial">window</span><span style="font-family:宋体">对象的子对象</span></p>
+        <p><strong>137<span style="font-family:宋体">、在</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">页面中包含一个按钮控件</span><span style="font-family:Arial">mybutton</span><span style="font-family:宋体">，如果要实现点击该按钮时调用已定义的</span><span style="font-family:Arial">JavaScript</span><span style="font-family:宋体">函数</span><span style="font-family:Arial">compute</span><span style="font-family:宋体">，要编写的</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">代码是（）</span></strong></p>
+        <p>A.&lt;inputname=”mybutton” type=”button” onBlur=”compute()”value=”<span style="font-family:宋体">计算</span><span style="font-family:Arial">”&gt;</span></p>
+        <p>B.&lt;inputname=”mybutton” type=”button” onFocus=”compute()”value=”<span style="font-family:宋体">计算</span><span style="font-family:Arial">”&gt;</span></p>
+        <p>C.&lt;inputname=”mybutton” type=”button” onClick=”function compute()”value=”<span style="font-family:宋体">计算</span><span style="font-family:Arial">”&gt;</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">D.&lt;input name=”mybutton” type=”button”onClick=”compute()”value=”<span style="font-family:宋体">计算</span><span style="font-family:Arial">”&gt;</span></span></strong></p>
+        <p><strong>138<span style="font-family:宋体">、分析下面的</span><span style="font-family:Arial">Javascript</span><span style="font-family:宋体">代码段，输出结果是（）</span></strong></p>
+        <p><strong>var mystring=”I am a student”;</strong></p>
+        <p><strong>var a=mystring.substring(9,13);</strong></p>
+        <p><strong>document.write(a);</strong></p>
+        <p>A<span style="font-family:宋体">．</span><span style="font-family:Arial">stud&nbsp; B.tuden</span><span style="color:rgb(255,0,0)">&nbsp;&nbsp;</span><strong>C.uden</strong>&nbsp; D.udent</p>
+        <p><strong>139<span style="font-family:宋体">、</span><span style="font-family:Arial">Javascript</span><span style="font-family:宋体">中制作图片代替按钮的提交效果需要手动提交方法</span><span style="font-family:Arial">submit()</span><span style="font-family:宋体">，以下调用正确的是（）</span></strong></p>
+        <p>A.submit();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B.myform.submit()</p>
+        <p><strong><span style="color:rgb(255,0,0)">C.document.myform.submit()</span></strong>&nbsp;D.window.myform.submit();</p>
+        <p><strong>140<span style="font-family:宋体">、在</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">页面中包含如下所示代码，则编写</span><span style="font-family:Arial">Javascript</span><span style="font-family:宋体">函数判断是否按下键盘上的回车键正确的编码是（）</span></strong></p>
+        <p><strong>&lt;input name=”password”type=”text” onkeydown=”myKeyDown()”&gt;</strong></p>
+        <p>A.&nbsp;function myKeyDown(){</p>
+        <p>if (window.keyCode==13)</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp; alert(“<span style="font-family:宋体">你按下了回车键</span><span style="font-family:Arial">”);</span></p>
+        <p>B.&nbsp;function myKeyDown(){</p>
+        <p>if (document.keyCode==13)</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp; alert(“<span style="font-family:宋体">你按下了回车键</span><span style="font-family:Arial">”);</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">C.&nbsp;function myKeyDown(){</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">if(event.keyCode==13)</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">&nbsp;&nbsp;&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>alert(“<span style="color:rgb(255,0,0)">你按下了回车键<span style="font-family:Arial">”);</span></span></strong></p>
+        <p>D.&nbsp;function myKeyDown(){</p>
+        <p>if (keyCode==13)</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp; alert(“<span style="font-family:宋体">你按下了回车键</span><span style="font-family:Arial">”);</span></p>
+        <p><strong>141<span style="font-family:宋体">、如果在</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">页面中包含如下图片标签，则选项中的（）语句能够实现隐藏该图片的功能。</span></strong></p>
+        <p><strong>&nbsp;&nbsp;&nbsp; &lt;img id=”pic” src=”Sunset.jpg” width=”400”height=”300”&gt;</strong></p>
+        <p>A.document.getElementById(“pic”).style.display=”visible”;</p>
+        <p>B.document.getElementById(“pic”).style.display=”disvisible”;</p>
+        <p>C.document.getElementById(“pic”).style.display=”block”;</p>
+        <p><strong><span style="color:rgb(255,0,0)">D.document.getElementById(“pic”).style.display=”none”;</span></strong></p>
+        <p><strong>142<span style="font-family:宋体">、如果在</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">页面中包含如下图片标签，则在下划线处添加（）代码能够实现隐藏该图片的功能。</span></strong></p>
+        <p><strong>&nbsp;&nbsp;&nbsp; &lt;img id=”pic” src=”Sunset.jpg” width=”400”height=”300”&nbsp; _____ &gt;</strong></p>
+        <p>A.style=”display:visible”;</p>
+        <p>B. style=”display:disvisible”;</p>
+        <p>C.style=”display:block”;</p>
+        <p><strong><span style="color:rgb(255,0,0)">D. style=”display:none”;</span></strong></p>
+        <p><strong>143<span style="font-family:宋体">、在</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">文档中包含如下超链接，要实现当鼠标移入该链接时，超链接文本大小变为</span><span style="font-family:Arial">30px</span><span style="font-family:宋体">，选项中的编码正确的是（）</span></strong></p>
+        <p>A.&lt;a href=”#”onmouseover=”this.style.font-size=30px”&gt;<span style="font-family:宋体">注册</span><span style="font-family:Arial">&lt;/a&gt;</span></p>
+        <p>B.&lt;a href=”#”onmouseout=”this.style.fontsize=30px”&gt;<span style="font-family:宋体">注册</span><span style="font-family:Arial">&lt;/a&gt;</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">C.&lt;a href=”#” onmouseover=”this.style.fontSize=30px”&gt;<span style="font-family:宋体">注册</span><span style="font-family:Arial">&lt;/a&gt;</span></span></strong></p>
+        <p>D.&lt;a href=”#”onmouseout=”this.style.font-size=30px”&gt;<span style="font-family:宋体">注册</span><span style="font-family:Arial">&lt;/a&gt;</span></p>
+        <p><strong>144<span style="font-family:宋体">、在</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">页面上，当按下键盘上的任意一个键时都会触发</span><span style="font-family:Arial">Javascript</span><span style="font-family:宋体">的（）事件。</span></strong></p>
+        <p>A.onFocus &nbsp;&nbsp;&nbsp;B.onBlur &nbsp;&nbsp;&nbsp;C.onSubmit&nbsp;&nbsp;&nbsp;<strong><span style="color:rgb(255,0,0)">D.onKeyDown</span></strong></p>
+        <p><strong>145<span style="font-family:宋体">、在</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">页面上包含如下创建层的语句，那么编写</span><span style="font-family:Arial">Javascript</span><span style="font-family:宋体">语句实现显示该层的语句错误的是（）</span></strong></p>
+        <p><strong>&lt;html&gt;</strong></p>
+        <p><strong>&lt;body&gt;</strong></p>
+        <p><strong>&lt;div id=”imageLayer” style=”display:none;”&gt;</strong></p>
+        <p><strong>&lt;img src=”images/Sunset.jpg” width=”200” height=”100”&gt;&lt;/div&gt;</strong></p>
+        <p><strong>&lt;/body&gt;</strong></p>
+        <p><strong>&lt;html&gt;</strong></p>
+        <p>A.document.getElementByTagName(“div”)[0].style.display=”block”</p>
+        <p>B.document.getElementById(“imageLayer”).style.display=”block”;</p>
+        <p>C.document.getElementByName(“imageLayer”)[0].style.display=”block”;</p>
+        <p><strong><span style="color:rgb(255,0,0)">D.document.getElementByName(“imageLayer”).get(0).style.display=”block”;</span></strong></p>
+        <p><strong>146<span style="font-family:宋体">、分析下面的</span><span style="font-family:Arial">Javascript</span><span style="font-family:宋体">代码段，输出结果是（）</span></strong></p>
+        <p><strong>var s1=parseInt(“101<span style="font-family:宋体">中学</span><span style="font-family:Arial">”);</span></strong></p>
+        <p><strong>document.write(s1);</strong></p>
+        <p>A. NaN&nbsp;&nbsp; B.101<span style="font-family:宋体">中学</span><span style="font-family:Arial">&nbsp;</span><strong><span style="color:rgb(255,0,0)">&nbsp;</span>C.101</strong>&nbsp;&nbsp;&nbsp;D.<span style="font-family:宋体">出现脚本错误</span></p>
+        <p><strong>147<span style="font-family:宋体">、在</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">中，点击图片</span><span style="font-family:Arial">”previous.gif”</span><span style="font-family:宋体">上的超级链接后页面将加载历史列表中的上一个</span><span style="font-family:Arial">URL</span><span style="font-family:宋体">页面。代码如下所示，应在下划线处填入（）</span></strong></p>
+        <p><strong>&lt;a href=_______&gt;&lt;imgsrc=”previous.gif” width=”67” height=”21”&gt;&lt;/a&gt;</strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A.”javascript:history.go(-1)”;</span></strong>&nbsp;B. “history.go(1)”</p>
+        <p>C. “history.go(-1)”&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;D. “javascript:history.go(1)”</p>
+        <p><strong>148<span style="font-family:宋体">、在</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">页面上包含如下所示的层对象，则</span><span style="font-family:Arial">javascript</span><span style="font-family:宋体">语句</span><span style="font-family:Arial">document.getElementById(“info”).innerHTML</span><span style="font-family:宋体">的值是（）</span></strong></p>
+        <p><strong>&lt;div id=”info”style=”display:block”&gt;&lt;p&gt;<span style="font-family:宋体">请填写</span><span style="font-family:Arial">&lt;/p&gt;&lt;/div&gt;</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A.<span style="font-family:宋体">请填写</span></span></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B.&lt;p&gt;<span style="font-family:宋体">请填写</span><span style="font-family:Arial">&lt;/p&gt;&nbsp;</span></p>
+        <p>C.id=”info”style=”display:block”</p>
+        <p>D.&lt;divid=”info” style=”display:block”&gt;&lt;p&gt;<span style="font-family:宋体">请填写</span><span style="font-family:Arial">&lt;/p&gt;</span></p>
+        <p><strong>149<span style="font-family:宋体">、</span><span style="font-family:Arial">JavaScript</span><span style="font-family:宋体">是一种（</span><span style="font-family:Arial">C</span><span style="font-family:宋体">）语言</span></strong></p>
+        <p>A<span style="font-family:宋体">．汇编语言 </span><span style="font-family:Arial">B</span><span style="font-family:宋体">．高级语言</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">C<span style="font-family:宋体">．脚本语言</span></span></strong>&nbsp;D<span style="font-family:宋体">．近似语言</span></p>
+        <p><strong>150<span style="font-family:宋体">、下列</span><span style="font-family:Arial">JavaScript</span><span style="font-family:宋体">表达式当中，错误的是（）</span></strong></p>
+        <p>A<span style="font-family:宋体">．</span><span style="font-family:Arial">var tempA, tempB, tempC</span></p>
+        <p>B<span style="font-family:宋体">．</span><span style="font-family:Arial">tempA *= 3</span></p>
+        <p>C<span style="font-family:宋体">．</span><span style="font-family:Arial">tempA &gt;= tempB || tempA &lt;= tempC</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">D<span style="font-family:宋体">．</span><span style="font-family:Arial">tempA &gt;= tempB &gt;tempC</span></span></strong></p>
+        <p><strong>151<span style="font-family:宋体">、表达式</span><span style="font-family:Arial">”This is my”+”book”</span><span style="font-family:宋体">的结果是（）（注：其中，字符</span><span style="font-family:Arial">T</span><span style="font-family:宋体">的</span><span style="font-family:Arial">ASCII</span><span style="font-family:宋体">码为</span><span style="font-family:Arial">84</span><span style="font-family:宋体">，字符</span><span style="font-family:Arial">b</span><span style="font-family:宋体">的</span><span style="font-family:Arial">ASCII</span><span style="font-family:宋体">码为</span><span style="font-family:Arial">98</span><span style="font-family:宋体">）</span></strong></p>
+        <p>A<span style="font-family:宋体">．</span><span style="font-family:Arial">100 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B</span><span style="font-family:宋体">．</span><span style="font-family:Arial">84his is my 98ook</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">C<span style="font-family:宋体">．</span><span style="font-family:Arial">This is my book</span></span></strong><span style="color:rgb(255,0,0)">&nbsp;&nbsp;&nbsp;</span>D<span style="font-family:宋体">．不能计算，要报错</span></p>
+        <p><strong>152<span style="font-family:宋体">、下列名称中，能作为变量名的是（）</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A<span style="font-family:宋体">．</span><span style="font-family:Arial">pArray</span></span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><span style="color:rgb(255,0,0)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;B<span style="font-family:宋体">．</span><span style="font-family:Arial">this</span></p>
+        <p>C<span style="font-family:宋体">．</span><span style="font-family:Arial">function &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D</span><span style="font-family:宋体">．</span><span style="font-family:Arial">*pNumber</span></p>
+        <p><strong>153<span style="font-family:宋体">、在</span><span style="font-family:Arial">JavaScript</span><span style="font-family:宋体">中，以下代码能并闭一个窗口的是</span></strong></p>
+        <p>A<span style="font-family:宋体">．</span><span style="font-family:Arial">window.exit() B</span><span style="font-family:宋体">．</span><span style="font-family:Arial">window.shutdown()</span></p>
+        <p>C<span style="font-family:宋体">．</span><span style="font-family:Arial">window.end() &nbsp;</span><strong><span style="color:rgb(255,0,0)">D<span style="font-family:宋体">．</span><span style="font-family:Arial">window.close()</span></span></strong></p>
+        <p><strong>154<span style="font-family:宋体">、在</span><span style="font-family:Arial">JavaScript</span><span style="font-family:宋体">中，以下代码能产生输出的是</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A<span style="font-family:宋体">．</span><span style="font-family:Arial">document.write()&nbsp;</span></span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><span style="color:rgb(255,0,0)">&nbsp;</span>B<span style="font-family:宋体">．</span><span style="font-family:Arial">window.write()</span></p>
+        <p>C<span style="font-family:宋体">．</span><span style="font-family:Arial">document.confirm() D</span><span style="font-family:宋体">．</span><span style="font-family:Arial">write “The UndefinedFunction”</span></p>
+        <p><strong>156<span style="font-family:宋体">、要获取一个</span><span style="font-family:Arial">ID</span><span style="font-family:宋体">为</span><span style="font-family:Arial">username</span><span style="font-family:宋体">的表单元素的值，不正确的代码是（）</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A<span style="font-family:宋体">．</span><span style="font-family:Arial">document.username.value</span></span></strong></p>
+        <p>B<span style="font-family:宋体">．</span><span style="font-family:Arial">document.all.username.value</span></p>
+        <p>C<span style="font-family:宋体">．</span><span style="font-family:Arial">document.getElementById(“username”).value</span></p>
+        <p>D<span style="font-family:宋体">．如果表单元素外层无表单，则可以直接使用</span><span style="font-family:Arial">username.value</span></p>
+        <p><strong>157<span style="font-family:宋体">、如果想控制一个名为</span><span style="font-family:Arial">menuBar</span><span style="font-family:宋体">的层右移</span><span style="font-family:Arial">20</span><span style="font-family:宋体">个像素显示，下列能实现的是（）</span></strong></p>
+        <p>A<span style="font-family:Arial">document.menuBar.display += 20</span></p>
+        <p>B<span style="font-family:Arial">document.all.menuBar.pixelLeft += 20</span></p>
+        <p>C<span style="font-family:Arial">document.all.menuBar.left += 20</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">D<span style="font-family:Arial">document.all.menuBar.style.pixelLeft+= 20</span></span></strong></p>
+        <p><strong>158<span style="font-family:宋体">、下列代码能产生（）个输出</span></strong></p>
+        <p><strong>1 var i = 1;</strong></p>
+        <p><strong>2 for(;;i++)</strong></p>
+        <p><strong>3 if(i)</strong></p>
+        <p><strong>4 alert(i);</strong></p>
+        <p><strong>5 else</strong></p>
+        <p><strong>6 break;</strong></p>
+        <p>A<span style="font-family:宋体">．</span><span style="font-family:Arial">0</span><span style="font-family:宋体">个</span>&nbsp;<strong><span style="color:rgb(255,0,0)">B<span style="font-family:宋体">．无限多个</span></span></strong>&nbsp;C<span style="font-family:宋体">．</span><span style="font-family:Arial">19</span><span style="font-family:宋体">个
+</span><span style="font-family:Arial">D</span><span style="font-family:宋体">．</span><span style="font-family:Arial">20</span><span style="font-family:宋体">个</span></p>
+        <p><strong>159<span style="font-family:宋体">、下列可以控制某个元素</span><span style="font-family:Arial">a</span><span style="font-family:宋体">的文本颜色的是</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A<span style="font-family:宋体">．</span><span style="font-family:Arial">document.all.a.style.color</span></span></strong></p>
+        <p>B<span style="font-family:宋体">．</span><span style="font-family:Arial">document.all.a.style.backgroundColor</span></p>
+        <p>C<span style="font-family:宋体">．</span><span style="font-family:Arial">document.a.color</span></p>
+        <p>D<span style="font-family:宋体">．</span><span style="font-family:Arial">document.a.gackgroundColor</span></p>
+        <p><strong>160<span style="font-family:宋体">、下列关于网页元素</span><span style="font-family:Arial">overflow</span><span style="font-family:宋体">的说法，正确的是</span></strong></p>
+        <p>A<span style="font-family:宋体">．指网页元素的位置，距离左边框和上边框的距离</span></p>
+        <p>B<span style="font-family:宋体">．指网页元素的位置，距离右边框和下边框的距离</span></p>
+        <p>C<span style="font-family:宋体">．指网页元素的定位方式，可以取值中包括</span><span style="font-family:Arial">absolute</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">D<span style="font-family:宋体">．指网页元素的内容溢出时，是否显示多余的内容</span></span></strong></p>
+        <p><strong>161<span style="font-family:宋体">、如果将想将两个层排列在同一行中，下列描述不能实现的是（）</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A<span style="font-family:宋体">．直接插入两个</span><span style="font-family:Arial">DIV</span></span>标记，会自动排在同一行</strong></p>
+        <p>B<span style="font-family:宋体">．指定</span><span style="font-family:Arial">DIV</span><span style="font-family:宋体">的</span><span style="font-family:Arial">position</span><span style="font-family:宋体">属性为</span><span style="font-family:Arial">absolute</span><span style="font-family:宋体">，然后将层位置拖放到同一行中</span></p>
+        <p>C<span style="font-family:宋体">．指定</span><span style="font-family:Arial">DIV</span><span style="font-family:宋体">标记的宽，并且指定其浮动方式，当层宽度之和小于外层元素</span></p>
+        <p>宽度时，会排在同一行</p>
+        <p>D<span style="font-family:宋体">．使用一个表格，将两个层分别放入一行中的两个单元格内</span></p>
+        <p><strong>162<span style="font-family:宋体">、下列关于元素在网页中的叠放顺序描述，不正确的是（）</span></strong></p>
+        <p>A<span style="font-family:宋体">．使用</span><span style="font-family:Arial">CSS</span><span style="font-family:宋体">属性</span><span style="font-family:Arial">z-index</span><span style="font-family:宋体">来实现叠放顺序</span></p>
+        <p>B<span style="font-family:宋体">．属性的取值越大，表示放置的层次越高</span></p>
+        <p>C<span style="font-family:宋体">．属性取值可以为负整数</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">D<span style="font-family:宋体">．可以叠放，但叠放顺序不能指定，将由计算机随机产生</span></span></strong></p>
+        <p><strong>163<span style="font-family:宋体">、下列哪个是获得某时间对象的月份方法</span><span style="font-family:Arial">getMonth()</span><span style="font-family:宋体">的特点（）</span></strong></p>
+        <p>A<span style="font-family:宋体">．获取的月份是从</span><span style="font-family:Arial">1</span><span style="font-family:宋体">开始计数的</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">B<span style="font-family:宋体">．获取的月份是从</span><span style="font-family:Arial">0</span></span>开始计数的</strong></p>
+        <p>C<span style="font-family:宋体">．获取的月份是英文单词的缩写，如六月份为</span><span style="font-family:Arial">Jun</span></p>
+        <p>D<span style="font-family:宋体">．无法获取月份</span></p>
+        <p><strong>164<span style="font-family:宋体">、求一个表达式的值，可以使用的函数有 。</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A<span style="font-family:宋体">．</span><span style="font-family:Arial">eval()</span></span></strong></p>
+        <p>B<span style="font-family:宋体">．</span><span style="font-family:Arial">isNaN()</span></p>
+        <p>C<span style="font-family:宋体">．</span><span style="font-family:Arial">parseInt()</span></p>
+        <p>D<span style="font-family:宋体">．</span><span style="font-family:Arial">parseFloat()</span></p>
+        <p>E<span style="font-family:宋体">．</span><span style="font-family:Arial">return()</span></p>
+        <p><strong>165<span style="font-family:宋体">、</span><span style="font-family:Arial">JAVASCRIPT</span><span style="font-family:宋体">的</span><span style="font-family:Arial">onSubmit</span><span style="font-family:宋体">事件的作用是 。</span></strong></p>
+        <p>A<span style="font-family:宋体">）当一个表单中的对象被点击时，执行的</span><span style="font-family:Arial">JavaScript</span><span style="font-family:宋体">事件</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">B<span style="font-family:宋体">）当用户提交一个表单时，需要执行的</span><span style="font-family:Arial">JAVASCRIPT</span><span style="font-family:宋体">事件</span></span></strong></p>
+        <p>C<span style="font-family:宋体">）当鼠标移出对象时发生的事件</span></p>
+        <p>D<span style="font-family:宋体">）对象发生改变时调用的事件</span></p>
+        <p>E<span style="font-family:宋体">）当一个鼠标指针从对象或区域之个移到对象或区域上时，调用的事件</span><strong><br>
+二、不定项选择题<span style="font-family:Arial">(35</span><span style="font-family:宋体">题</span><span style="font-family:Arial">)</span></strong></p>
+        <p><strong>1.</strong></p>
+        <p><strong>&lt;HTML&gt;</strong></p>
+        <p><strong>&lt;HEAD&gt;</strong></p>
+        <p><strong>&lt;TITLE&gt;<span style="font-family:宋体">欢迎进入 </span><span style="font-family:Arial">HTML
+</span><span style="font-family:宋体">世界</span><span style="font-family:Arial">&lt;/TITLE&gt;</span></strong></p>
+        <p><strong>&lt;/HEAD&gt;</strong></p>
+        <p><strong>&lt;BODY bgcolor=#000000&gt;</strong></p>
+        <p><strong>&lt;P&gt;<span style="font-family:宋体">这会是一种很有趣的体验</span><span style="font-family:Arial">&lt;/P&gt;</span></strong></p>
+        <p><strong>&lt;/BODY&gt;</strong></p>
+        <p><strong>&lt;/HTML&gt;</strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A)&lt;HTML&gt;&lt;/HTML&gt;<span style="font-family:宋体">用于标记
+</span><span style="font-family:Arial">HTML</span></span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>文档的开始和结束</strong></p>
+        <p>B)bgcolor<span style="font-family:宋体">是</span><span style="font-family:Arial">&lt;HTML&gt;</span><span style="font-family:宋体">的属性</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">C)&lt;P&gt;<span style="font-family:宋体">和</span><span style="font-family:Arial">&lt;BODY&gt;</span></span>都是<span style="font-family:Arial">HTML</span><span style="font-family:宋体">元素，</span><span style="font-family:Arial">&lt;BODY&gt;</span><span style="font-family:宋体">是</span><span style="font-family:Arial">&lt;P&gt;</span><span style="font-family:宋体">的上一级元素</span></strong></p>
+        <p>D)&lt;/P&gt;<span style="font-family:宋体">标记不能省略</span></p>
+        <p><strong>2.<span style="font-family:宋体">我们想要将页面中的文本采用项目符号的形式予以显示，采用哪些标记组合可以达到我们的要求？</span></strong></p>
+        <p>A)&lt;P&gt;</p>
+        <p><strong><span style="color:rgb(255,0,0)">B)&lt;UL&gt;</span></strong></p>
+        <p>C)&lt;BR&gt;</p>
+        <p><strong><span style="color:rgb(255,0,0)">D)&lt;LI&gt;</span></strong></p>
+        <p><strong>3.RGB<span style="font-family:宋体">三原色的组成是哪三种颜色？</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A)<span style="font-family:宋体">红</span></span></strong></p>
+        <p>B)<span style="font-family:宋体">黄</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">C)<span style="font-family:宋体">蓝</span></span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">D)<span style="font-family:宋体">绿</span></span></strong></p>
+        <p><strong>4.</strong></p>
+        <p><strong>&lt;HTML&gt;</strong></p>
+        <p><strong>&lt;HEAD&gt;</strong></p>
+        <p><strong>&nbsp;&nbsp;&nbsp; &lt;TITLE&gt;<span style="font-family:宋体">欢迎学习 </span><span style="font-family:Arial">HTML&lt;/TITLE&gt;</span></strong></p>
+        <p><strong>&lt;/HEAD&gt;</strong></p>
+        <p><strong>&lt;BODY&gt;</strong></p>
+        <p><strong>&nbsp;&nbsp; &nbsp;&lt;H3&gt;<span style="font-family:宋体">我的第一个 </span><span style="font-family:Arial">HTML
+</span><span style="font-family:宋体">文档</span><span style="font-family:Arial">&lt;/H3&gt;</span></strong></p>
+        <p><strong>&lt;/BODY&gt;</strong></p>
+        <p><strong>&lt;/HTML&gt;</strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A)<span style="font-family:宋体">使用浏览器打开上述网页，网页的标题是</span><span style="font-family:Arial">”</span></span>欢迎学习
+<span style="font-family:Arial">HTML”</span></strong></p>
+        <p>B)<span style="font-family:宋体">使用浏览器打开上述网页，网页的标题是</span><span style="font-family:Arial">”</span><span style="font-family:宋体">我的第一个</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">文档</span><span style="font-family:Arial">”</span></p>
+        <p>C)<span style="font-family:宋体">使用浏览器打开上述网页，网页的内容是</span><span style="font-family:Arial">”</span><span style="font-family:宋体">欢迎学习
+</span><span style="font-family:Arial">HTML”</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">D)<span style="font-family:宋体">使用浏览器打开上述网页，网页的内容是</span><span style="font-family:Arial">”</span></span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>我的第一个<span style="font-family:Arial">HTML</span><span style="font-family:宋体">文档</span><span style="font-family:Arial">”</span></strong></p>
+        <p><strong>5.<span style="font-family:宋体">以下说法正确的是</span><span style="font-family:Arial">:</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A)Microsoft<span style="font-family:宋体">公司的</span><span style="font-family:Arial">InternetExplorer</span></span>是<span style="font-family:Arial">HTML</span><span style="font-family:宋体">文件浏览工具</span></strong></p>
+        <p>B)Netscape<span style="font-family:宋体">公司的 </span><span style="font-family:Arial">Navigator</span><span style="font-family:宋体">即可以编辑又可以浏览</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">文件</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">C)Macromedia<span style="font-family:宋体">公司的</span><span style="font-family:Arial">Dreamweaver</span><span style="font-family:宋体">与</span><span style="font-family:Arial">Microsoft</span><span style="font-family:宋体">公司的</span><span style="font-family:Arial">FrontPage</span></span>有类似的功能</strong></p>
+        <p>D)<span style="font-family:宋体">记事本不能用于编辑</span><span style="font-family:Arial">Internet</span><span style="font-family:宋体">网页</span></p>
+        <p><strong>6. <span style="font-family:宋体">下面关于</span><span style="font-family:Arial">CSS</span><span style="font-family:宋体">表述正确的是</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>CSS<span style="color:rgb(255,0,0)">是一种制作网页的新技术，现在已经为大多数的浏览器所支持，成为网页设计必不可少的工具之一。<a target="_blank" name="_Toc101953106"></a></span></strong></p>
+        <p>B)&nbsp; <span style="font-family:宋体">层叠样式表是</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">的辅助工具，缺点是设计者设计的网页缺少动感，网页内容的排版布局上也有很多困难</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">C)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong><span style="color:rgb(255,0,0)">使用<span style="font-family:Arial">CSS</span></span>能够简化网页的格式代码，加快下载显示的速度，也减少了需要上传的代码数量，大大减少了重复劳动的工作量。</strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">D)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>CSS<span style="color:rgb(255,0,0)">是<span style="font-family:Arial">Cascading Stylesheets</span></span>的缩写，中文意思是层叠样式表</strong></p>
+        <p><strong>7. <span style="font-family:宋体">样式表的声明分为</span></strong></p>
+        <p>A) <span style="font-family:宋体">选择符（</span><span style="font-family:Arial">selector</span><span style="font-family:宋体">）、块</span><span style="font-family:Arial">{}</span><span style="font-family:宋体">（</span><span style="font-family:Arial">block</span><span style="font-family:宋体">）、属性（</span><span style="font-family:Arial">properties</span><span style="font-family:宋体">）</span></p>
+        <p>B) <span style="font-family:宋体">块里包含属性的取值（</span><span style="font-family:Arial">value</span><span style="font-family:宋体">）</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">C)</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong><span style="color:rgb(255,0,0)">选择符（<span style="font-family:Arial">selector</span></span>）和块<span style="font-family:Arial">{}</span><span style="font-family:宋体">（</span><span style="font-family:Arial">block</span><span style="font-family:宋体">）</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">D)</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong><span style="color:rgb(255,0,0)">块里包含属性（<span style="font-family:Arial">properties</span></span>）和属性的取值（<span style="font-family:Arial">value</span><span style="font-family:宋体">）</span></strong></p>
+        <p><strong>8. <span style="font-family:宋体">下面说法不正确的是</span></strong></p>
+        <p>A) &lt;table&gt;&lt;tr&gt;&lt;td&gt;<span style="font-family:宋体">这三个标记是最重要的表格标记</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">B) &lt;table&gt;&lt;tr&gt;&lt;td&gt;<span style="font-family:宋体">这三个标记是最重要的框架标记</span></span></strong></p>
+        <p>C) &lt;FRAMESET&gt; &lt;FRAME&gt;<span style="font-family:宋体">这两个标记是最重要的框架标记</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">D) &lt;FRAMESET&gt; &lt;FRAME&gt;<span style="font-family:宋体">这两个标记是最重要的表格标记</span></span></strong></p>
+        <p><strong>9. <span style="font-family:宋体">看下述文件</span></strong></p>
+        <p><strong>&lt;html&gt;</strong></p>
+        <p><strong>&lt;head&gt;</strong></p>
+        <p><strong>&lt;/head&gt;</strong></p>
+        <p><strong>&lt;framesetcols="50%,*"&gt;</strong></p>
+        <p><strong>&lt;framename="hello" src="b.htm"&gt;</strong></p>
+        <p><strong>&lt;framename="hi" src="c.htm"&gt;</strong></p>
+        <p><strong>&lt;/frameset&gt;</strong></p>
+        <p><strong>&lt;/html&gt;</strong></p>
+        <p><strong>下面说明正确的是</strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A) src="c.htm"<span style="font-family:宋体">是设定此框窗中要显示的网页档案，每个框窗一定要对应一个网页档案。</span></span></strong></p>
+        <p>B) src="c.htm"<span style="font-family:宋体">是设定此框窗中要显示的网页档案属性</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">C) &lt;frameset&gt;<span style="font-family:宋体">标记宣告</span><span style="font-family:Arial">HTML</span></span>文件为框架模式，并设定视窗如何分割</strong></p>
+        <p>D) &lt;frameset&gt;<span style="font-family:宋体">标记宣告</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">文件为表格模式，并设定视窗如何分割</span></p>
+        <p><strong>10. <span style="font-family:宋体">下面是</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">表格标记的是</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A) &nbsp;</span>&lt;table&gt;</strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">B)&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>&lt;tr&gt;</strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">C) &nbsp;</span>&lt;td&gt;</strong></p>
+        <p>D)&nbsp; &lt;from&gt;</p>
+        <p><strong>11. JavaScript<span style="font-family:宋体">的数据类型主要有 。</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A<span style="font-family:宋体">）字符串值</span><span style="font-family:Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>&nbsp;<span style="color:rgb(255,0,0)">B<span style="font-family:宋体">）数字</span></span></strong></p>
+        <p>C<span style="font-family:宋体">）日期型</span><span style="color:rgb(255,0,0)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><strong><span style="color:rgb(255,0,0)">D<span style="font-family:宋体">）逻辑值</span></span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">E<span style="font-family:宋体">）布尔值</span></span></strong></p>
+        <p><strong>12. <span style="font-family:宋体">关于变量的命名规则，下列说法正确的是 。</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A<span style="font-family:宋体">）首字符必须是大写，小写的字母，下划线（</span><span style="font-family:Arial">_</span><span style="font-family:宋体">）或美元符（</span><span style="font-family:Arial">$</span><span style="font-family:宋体">）。</span></span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">B<span style="font-family:宋体">）后续的字符可以是字母，数字，下划线或美元符。</span></span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">C<span style="font-family:宋体">）变量名称不能是保留字。</span></span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">D<span style="font-family:宋体">）长度是任意。</span></span></strong></p>
+        <p>E<span style="font-family:宋体">）不区分大小写。</span></p>
+        <p><strong>13. <span style="font-family:宋体">有关</span><span style="font-family:Arial">JavaScript</span><span style="font-family:宋体">语句，下列说法正确的是 。</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A<span style="font-family:宋体">）单行注释语句是在需要注释的行前面用</span><span style="font-family:Arial">//</span></span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">B<span style="font-family:宋体">）多行注释语句是在需要注释的文字两端加</span><span style="font-family:Arial">/*</span></span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong><span style="color:rgb(255,0,0)">注释文字<span style="font-family:Arial">*/</span></span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">C<span style="font-family:宋体">）</span><span style="font-family:Arial">with</span><span style="font-family:宋体">语句的功能是为一段程序建立默认对象</span></span></strong></p>
+        <p>D<span style="font-family:宋体">）</span><span style="font-family:Arial">JavaScript</span><span style="font-family:宋体">中没有</span><span style="font-family:Arial">if...else</span><span style="font-family:宋体">语句</span></p>
+        <p>E<span style="font-family:宋体">）</span><span style="font-family:Arial">JavaScript</span><span style="font-family:宋体">中只有</span><span style="font-family:Arial">while</span><span style="font-family:宋体">语句，而没有</span><span style="font-family:Arial">do...while</span><span style="font-family:宋体">语句</span></p>
+        <p><strong>14. <span style="font-family:宋体">以下生成对象的方法中，正确的是 。</span></strong></p>
+        <p>A<span style="font-family:宋体">）</span><span style="font-family:Arial">varz = new Boolean(a);</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">B<span style="font-family:宋体">）</span><span style="font-family:Arial">varstr = "JavaScript";</span></span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">C<span style="font-family:宋体">）</span><span style="font-family:Arial">fruit=newArray(3);</span></span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">D<span style="font-family:宋体">）</span><span style="font-family:Arial">today1=newDate(2008,10,1);</span></span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">E<span style="font-family:宋体">）</span><span style="font-family:Arial">today=newDate("October 1,2008");</span></span></strong></p>
+        <p><strong>15. JavaScript<span style="font-family:宋体">运算符包括 。</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A<span style="font-family:宋体">）</span><span style="font-family:Arial">== &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span>B<span style="color:rgb(255,0,0)">）<span style="font-family:Arial">+=</span></span></strong></p>
+        <p>C<span style="font-family:宋体">）</span><span style="font-family:Arial">.&nbsp;</span><span style="color:rgb(255,0,0)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><strong>&nbsp;D<span style="color:rgb(255,0,0)">）<span style="font-family:Arial">++</span></span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">E<span style="font-family:宋体">）</span><span style="font-family:Arial">||</span></span></strong></p>
+        <p><strong>16. <span style="font-family:宋体">关于</span><span style="font-family:Arial">JAVASCRIPT</span><span style="font-family:宋体">函数，下列说法正确的是 。</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A<span style="font-family:宋体">）函数是独立于主程序的，具有特定功能的一段程序代码块</span></span></strong></p>
+        <p>B<span style="font-family:宋体">）函数可以不用</span><span style="font-family:Arial">function</span><span style="font-family:宋体">关键字</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">C<span style="font-family:宋体">）函数的命名规则同变量命名规则是一样的</span></span></strong></p>
+        <p>D<span style="font-family:宋体">）函数必须使用</span><span style="font-family:Arial">return</span><span style="font-family:宋体">语句</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">E<span style="font-family:宋体">）函数的调用时直接用函数名，并给形式参数赋值</span></span></strong></p>
+        <p><strong>17. <span style="font-family:宋体">在</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">页面中，定义了如下的</span><span style="font-family:Arial">JavaScript</span><span style="font-family:宋体">函数，则正确调用该函数的</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">代码是（）</span></strong></p>
+        <p><strong>function compute(op){</strong></p>
+        <p><strong>alert(op);</strong></p>
+        <p><strong>}</strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A)&lt;input name=”a” type=”button”onclick=”compute(this.value)”value=”+”&gt;</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">B)&lt;input name=”b” type=”button”onclick=”compute(‘-‘)” value=”-”&gt;</span></strong></p>
+        <p>C)&lt;inputname=”c” type=”button” onclick=”compute(“*”)” value=”*”&gt;</p>
+        <p>D)&lt;inputname=”d” type=”button” onclick=”compute(/ )” value=”/”&gt;</p>
+        <p><strong>18. <span style="font-family:宋体">关于</span><span style="font-family:Arial">JAVASCRIPT</span><span style="font-family:宋体">事件，下列说法正确的是 。</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A<span style="font-family:宋体">）事件是用户对浏览器所做的特定的动作（操作），是实现交互操作的一种机制</span></span></strong></p>
+        <p>B<span style="font-family:宋体">）对象发生改变时调用的事件是</span><span style="font-family:Arial">onBlur</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">C<span style="font-family:宋体">）当一个表单中的对象被点击时，执行的</span><span style="font-family:Arial">JavaScript</span><span style="font-family:宋体">事件是</span><span style="font-family:Arial">onClick</span></span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">D<span style="font-family:宋体">）当浏览器完成加载一个窗口或者加载完成框架集合中的所有框时，执行的</span><span style="font-family:Arial">JavaScript</span><span style="font-family:宋体">事件是</span><span style="font-family:Arial">onLoad</span></span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">E<span style="font-family:宋体">）当</span></span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong><span style="color:rgb(255,0,0)">select<span style="font-family:宋体">事件发生时执行的</span><span style="font-family:Arial">JavaScript</span></span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong><span style="color:rgb(255,0,0)">事件是<span style="font-family:Arial">onSelect</span></span></strong></p>
+        <p><strong>19. <span style="font-family:宋体">有关</span><span style="font-family:Arial">JAVASCRIPT</span><span style="font-family:宋体">的定时器，下列说法正确的是 。</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A<span style="font-family:宋体">）用于指定在一段特定的时间后执行某段程序</span></span></strong></p>
+        <p>B<span style="font-family:宋体">）</span><span style="font-family:Arial">setTimeout(“&lt;</span><span style="font-family:宋体">表达式</span><span style="font-family:Arial">&gt;”</span><span style="font-family:宋体">，毫秒数</span><span style="font-family:Arial">)</span><span style="font-family:宋体">其功能是在经过毫秒数后重复执行</span><span style="font-family:Arial">&lt;</span><span style="font-family:宋体">表达式</span><span style="font-family:Arial">&gt;</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">C<span style="font-family:宋体">）</span><span style="font-family:Arial">clearTimeout(id)</span><span style="font-family:宋体">是用于终止一个定时器</span></span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">D<span style="font-family:宋体">）</span><span style="font-family:Arial">setInterval(“&lt;</span><span style="font-family:宋体">表达式</span><span style="font-family:Arial">&gt;”</span><span style="font-family:宋体">，毫秒</span><span style="font-family:Arial">)</span><span style="font-family:宋体">的功能是每隔毫秒数重复执行</span><span style="font-family:Arial">&lt;</span><span style="font-family:宋体">表达式</span><span style="font-family:Arial">&gt;</span><span style="font-family:宋体">，直至窗口）框架被关闭或执行</span><span style="font-family:Arial">clearInterval</span><span style="font-family:宋体">。</span></span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">E<span style="font-family:宋体">）</span><span style="font-family:Arial">clearInterval(id)</span></span>的功能是终止定时器</strong></p>
+        <p><strong>20. <span style="font-family:宋体">有关</span><span style="font-family:Arial">Window</span><span style="font-family:宋体">对象，下列说法正确的是 。</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A<span style="font-family:宋体">）代表一个浏览器的窗口或者框架</span></span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">B<span style="font-family:宋体">）是一个文档，链接或历史对象组的顶层对象</span></span></strong></p>
+        <p>C<span style="font-family:宋体">）窗口对象不能设置状态栏默认信息</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">D<span style="font-family:宋体">）判断窗口是否关闭，可以使用窗口对象的</span><span style="font-family:Arial">closed</span><span style="font-family:宋体">属性</span></span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">E<span style="font-family:宋体">）设置窗口左边界的</span><span style="font-family:Arial">X</span><span style="font-family:宋体">坐标，可以使用窗口对象的</span><span style="font-family:Arial">screenX</span><span style="font-family:宋体">属性</span></span></strong></p>
+        <p><strong>21. <span style="font-family:宋体">有关窗口对象的属性，下列说法正确的是 。</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A<span style="font-family:宋体">）设置状态栏的临时信息是用</span><span style="font-family:Arial">status</span><span style="font-family:宋体">属性</span></span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">B<span style="font-family:宋体">）该窗口最近查阅过的网页用</span><span style="font-family:Arial">history</span><span style="font-family:宋体">属性</span></span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">C<span style="font-family:宋体">）对当前窗口进行操作是用</span><span style="font-family:Arial">self</span><span style="font-family:宋体">属性</span></span></strong></p>
+        <p>D<span style="font-family:宋体">）对最上方的窗口进行操作，是用</span><span style="font-family:Arial">parent</span><span style="font-family:宋体">属性</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">E<span style="font-family:宋体">）设置浏览器滚动条，可以使用窗口对象的</span><span style="font-family:Arial">scrollbars</span><span style="font-family:宋体">属性</span></span></strong></p>
+        <p><strong>22. <span style="font-family:宋体">有关窗口对象的方法，下列说法正确的是 。</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A<span style="font-family:宋体">）弹出警告信息用</span><span style="font-family:Arial">alert(</span><span style="font-family:宋体">信息字串</span><span style="font-family:Arial">)</span></span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">B<span style="font-family:宋体">）显示确认信息对话框用</span><span style="font-family:Arial">confirm(</span><span style="font-family:宋体">信息字串</span><span style="font-family:Arial">)</span></span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">C<span style="font-family:宋体">）显示提示信息，并提供可输入的字段用</span><span style="font-family:Arial">prompt(</span><span style="font-family:宋体">提示字串</span><span style="font-family:Arial">[</span><span style="font-family:宋体">，默认值</span><span style="font-family:Arial">])</span></span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">D<span style="font-family:宋体">）将焦点移到该窗口，是用</span><span style="font-family:Arial">focus()</span></span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">E<span style="font-family:宋体">）进入浏览器设置的主页，可以使用</span><span style="font-family:Arial">home()</span></span></strong></p>
+        <p><strong>23. <span style="font-family:宋体">窗口对象的事件处理程序有 。</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A<span style="font-family:宋体">）</span><span style="font-family:Arial">onErrorB</span><span style="font-family:宋体">）</span><span style="font-family:Arial">onLoad</span></span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">C<span style="font-family:宋体">）</span><span style="font-family:Arial">onFocusD</span><span style="font-family:宋体">）</span></span>offMove</strong></p>
+        <p>E<span style="font-family:宋体">）</span><span style="font-family:Arial">offFocus</span></p>
+        <p><strong>24. open<span style="font-family:宋体">方法的窗口规格参数，下列说法正确的是 。</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A<span style="font-family:宋体">）是否显示网址工具栏，用</span><span style="font-family:Arial">location</span></span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">B<span style="font-family:宋体">）是否显示菜单工具栏，用</span><span style="font-family:Arial">menubar</span></span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">C<span style="font-family:宋体">）是否显示滚动条，用</span><span style="font-family:Arial">scrollbars</span></span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">D<span style="font-family:宋体">）是否显示状态栏，用</span><span style="font-family:Arial">status</span></span></strong></p>
+        <p>E<span style="font-family:宋体">）是否可以改变窗口的大小，用</span><span style="font-family:Arial">resize</span></p>
+        <p><strong>25. <span style="font-family:宋体">在</span><span style="font-family:Arial">Javascript</span><span style="font-family:宋体">中，对于浏览器对象的层次关系理解正确的是（）</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A.window<span style="font-family:宋体">对象是所有页面内容的根对象</span></span></strong></p>
+        <p>B.document<span style="font-family:宋体">对象包含</span><span style="font-family:Arial">location</span><span style="font-family:宋体">对象和</span><span style="font-family:Arial">history</span><span style="font-family:宋体">对象</span></p>
+        <p>C.location<span style="font-family:宋体">对象包含</span><span style="font-family:Arial">history</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">D.document<span style="font-family:宋体">对象包含</span><span style="font-family:Arial">form</span></span>对象</strong></p>
+        <p><strong>26. <span style="font-family:宋体">在</span><span style="font-family:Arial">DOM</span><span style="font-family:宋体">对象模型中，下列选项中的（）对象位于</span><span style="font-family:Arial">DOM</span><span style="font-family:宋体">对象模型的第二层。</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A<span style="font-family:宋体">．</span><span style="font-family:Arial">history &nbsp;&nbsp;&nbsp;&nbsp;</span></span>B.document</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C.button &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D.text</p>
+        <p><strong>27. <span style="font-family:宋体">以下代码能获得文档中的第一个</span><span style="font-family:Arial">form</span><span style="font-family:宋体">对象的是（）</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A) document.forms[0];</span></strong></p>
+        <p>B) document.forms(0);</p>
+        <p>C) document.forms.0;</p>
+        <p><strong><span style="color:rgb(255,0,0)">D) document.forms.item(0)</span></strong></p>
+        <p><strong>28. <span style="font-family:宋体">表单对象的属性主要有 。</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A<span style="font-family:宋体">）</span><span style="font-family:Arial">action</span><span style="font-family:宋体">是表单动作</span></span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">B<span style="font-family:宋体">）</span><span style="font-family:Arial">elements</span><span style="font-family:宋体">是以索引表示的所有表单元素</span></span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">C<span style="font-family:宋体">）</span><span style="font-family:Arial">encoding</span><span style="font-family:宋体">是编码的类型</span></span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">D<span style="font-family:宋体">）</span><span style="font-family:Arial">length</span><span style="font-family:宋体">是表单元素的个数</span></span></strong></p>
+        <p>E<span style="font-family:宋体">）</span><span style="font-family:Arial">method</span><span style="font-family:宋体">是目标</span></p>
+        <p><strong>29. <span style="font-family:宋体">表单对象的方法，下列说法正确的是 。</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A<span style="font-family:宋体">）</span><span style="font-family:Arial">handleEvent(</span><span style="font-family:宋体">事件</span><span style="font-family:Arial">)</span><span style="font-family:宋体">是使事件处理程序生效</span></span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">B<span style="font-family:宋体">）</span><span style="font-family:Arial">reset()</span><span style="font-family:宋体">是重置表单元素</span></span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">C<span style="font-family:宋体">）</span><span style="font-family:Arial">submit()</span><span style="font-family:宋体">是表单提交</span></span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">D<span style="font-family:宋体">）表单对象的方法是表单对象为完成需求而调用的方法</span></span></strong></p>
+        <p>E<span style="font-family:宋体">）表单对象的方法是表单对象通过事件而调用的方法</span></p>
+        <p><strong>30. <span style="font-family:宋体">密码对象的事件处理程序，可以是 。</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A<span style="font-family:宋体">）</span><span style="font-family:Arial">onBlur&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></strong><span style="color:rgb(255,0,0)">&nbsp;</span><strong>&nbsp;B<span style="color:rgb(255,0,0)">）<span style="font-family:Arial">onChange</span></span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">C<span style="font-family:宋体">）</span><span style="font-family:Arial">onClick&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span>D<span style="color:rgb(255,0,0)">）<span style="font-family:Arial">onSelect</span></span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">E<span style="font-family:宋体">）</span><span style="font-family:Arial">onMouseMove</span></span></strong></p>
+        <p><strong>31. <span style="font-family:宋体">按钮对象的属性主要有 。</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A<span style="font-family:宋体">）</span><span style="font-family:Arial">form</span><span style="font-family:宋体">表示该对象所在的表单</span></span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">B<span style="font-family:宋体">）</span><span style="font-family:Arial">name</span><span style="font-family:宋体">表示该对象的</span><span style="font-family:Arial">name</span><span style="font-family:宋体">属性</span></span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">C<span style="font-family:宋体">）</span><span style="font-family:Arial">type</span><span style="font-family:宋体">表示该对象的</span><span style="font-family:Arial">type</span><span style="font-family:宋体">属性</span></span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">D<span style="font-family:宋体">）</span><span style="font-family:Arial">value</span><span style="font-family:宋体">表示该对象的</span><span style="font-family:Arial">value</span><span style="font-family:宋体">属性</span></span></strong></p>
+        <p>E<span style="font-family:宋体">）</span><span style="font-family:Arial">status</span><span style="font-family:宋体">表示该对象的</span><span style="font-family:Arial">status</span><span style="font-family:宋体">属性</span></p>
+        <p><strong>32. <span style="font-family:宋体">选择对象的属性主要有 。</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A<span style="font-family:宋体">）</span><span style="font-family:Arial">form</span><span style="font-family:宋体">表示该对象所在的表单</span></span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">B<span style="font-family:宋体">）</span><span style="font-family:Arial">name</span><span style="font-family:宋体">表示该对象的</span><span style="font-family:Arial">name</span><span style="font-family:宋体">属性</span></span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">C<span style="font-family:宋体">）</span><span style="font-family:Arial">length</span><span style="font-family:宋体">表示该对象的选项的数目</span></span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">D<span style="font-family:宋体">）</span><span style="font-family:Arial">options</span><span style="font-family:宋体">表示该对象的</span><span style="font-family:Arial">&lt;option&gt;</span><span style="font-family:宋体">标记</span></span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">E<span style="font-family:宋体">）</span><span style="font-family:Arial">selectedIndex</span></span>表示该对象的所选项目的索引值</strong></p>
+        <p><strong>33.<span style="font-family:宋体">下列选项中，（）段</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">代码所表示的</span><span style="font-family:Arial">“</span><span style="font-family:宋体">返回</span><span style="font-family:Arial">”</span><span style="font-family:宋体">链接能够正确实现</span><span style="font-family:Arial">IE</span><span style="font-family:宋体">工具栏中</span><span style="font-family:Arial">“</span><span style="font-family:宋体">后退</span><span style="font-family:Arial">”</span><span style="font-family:宋体">按钮的功能。</span></strong></p>
+        <p><strong><span style="color:rgb(255,0,0)">A) &lt;a href=”javascript:history.go(-1)”&gt;<span style="font-family:宋体">返回</span><span style="font-family:Arial">&lt;/a&gt;</span></span></strong></p>
+        <p>B) &lt;ahref=”javascript:location.back()”&gt;<span style="font-family:宋体">返回</span><span style="font-family:Arial">&lt;/a&gt;</span></p>
+        <p>C) &lt;ahref=”javascript: location go(-1)”&gt;<span style="font-family:宋体">返回</span><span style="font-family:Arial">&lt;/a&gt;</span></p>
+        <p><strong><span style="color:rgb(255,0,0)">D) &lt;a href=”javascript:history.back()”&gt;<span style="font-family:宋体">返回</span><span style="font-family:Arial">&lt;/a&gt;</span></span></strong></p>
+        <p><span style="color:rgb(153,51,102)">&nbsp;</span><strong>34. <span style="font-family:宋体">
+在不指定特殊属性的情况下，哪几种</span><span style="font-family:Arial">HTML</span><span style="font-family:宋体">标签可以手动输入文本：</span><span style="font-family:Arial">&nbsp;&nbsp;</span><br>
+&nbsp;&nbsp;&nbsp;<span style="color:rgb(255,0,0)">A)&lt;TEXTAREA&gt;&lt;/TEXTAREA&gt;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;<br>
+<span style="color:rgb(255,0,0)">&nbsp;&nbsp; B) &lt;INPUT&nbsp;&nbsp;&nbsp;type=”text”/&gt;&nbsp;&nbsp;</span></strong>&nbsp;
+            <br> &nbsp;&nbsp; C) &lt;INPUT&nbsp;&nbsp;&nbsp;type=”hidden”/&gt;&nbsp;&nbsp;&nbsp;
+            <br> &nbsp;&nbsp; D) &lt;DIV&gt;&lt;/DIV&gt;&nbsp;&nbsp;&nbsp;<strong><br>
+35. <span style="font-family:宋体">以下哪些是</span><span style="font-family:Arial">javascript</span><span style="font-family:宋体">的全局函数：</span><span style="font-family:Arial">&nbsp;&nbsp;</span><br>
+</strong><span style="color:rgb(255,0,0)">&nbsp;&nbsp;</span><span style="color:rgb(255,0,0)">&nbsp;</span><strong><span style="color:rgb(255,0,0)">A) escape&nbsp;&nbsp;&nbsp;</span><span style="color:rgb(255,0,0)"><br>
+</span><span style="color:rgb(255,0,0)">&nbsp;&nbsp; B) parseFloat&nbsp;&nbsp;&nbsp;</span><span style="color:rgb(255,0,0)"><br>
+</span><span style="color:rgb(255,0,0)">&nbsp;&nbsp; C) eval&nbsp;</span></strong><span style="color:rgb(255,0,0)">&nbsp;&nbsp;</span>
+            <br> &nbsp;&nbsp; D) setTimeout&nbsp;&nbsp;&nbsp;
+            <br> &nbsp;&nbsp; E) alert&nbsp;&nbsp;&nbsp;</p>
+        <p align="center">&nbsp;</p>
+        <p>&nbsp;</p>
+    </div>
+          </div>
+          <nav>
+            <ul class="pager">
+              <li><a href="#">Previous</a></li>
+              <li><a href="#">Next</a></li>
+            </ul>
+          </nav>
+
+        </div><!-- /.blog-main -->
+
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          <div class="sidebar-module sidebar-module-inset">
+            <h4>About</h4>
+            <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+          </div>
+          <div class="sidebar-module">
+            <h4>Archives</h4>
+            <ol class="list-unstyled">
+              <li><a href="#">March 2014</a></li>
+              <li><a href="#">February 2014</a></li>
+              <li><a href="#">January 2014</a></li>
+              <li><a href="#">December 2013</a></li>
+              <li><a href="#">November 2013</a></li>
+              <li><a href="#">October 2013</a></li>
+              <li><a href="#">September 2013</a></li>
+              <li><a href="#">August 2013</a></li>
+              <li><a href="#">July 2013</a></li>
+              <li><a href="#">June 2013</a></li>
+              <li><a href="#">May 2013</a></li>
+              <li><a href="#">April 2013</a></li>
+            </ol>
+          </div>
+          <div class="sidebar-module">
+            <h4>Elsewhere</h4>
+            <ol class="list-unstyled">
+              <li><a href="#">GitHub</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Facebook</a></li>
+            </ol>
+          </div>
+        </div><!-- /.blog-sidebar -->
+
+      </div><!-- /.row -->
+
+    </div><!-- /.container -->
+
+    <footer class="blog-footer">
+      <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+      <p>
+        <a href="#">Back to top</a>
+      </p>
+    </footer>
+  
+  </body>
+</html>

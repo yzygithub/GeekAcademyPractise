@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="interview">
+	<meta name="author" content="yzy">
+	<title>iterview</title>
+	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/blog.css" rel="stylesheet">
+</head>
+
+<body>
+	<div class="blog-masthead">
+		<div class="container">
+			<nav class="blog-nav">
+				<a class="blog-nav-item active" href="#">Home</a>
+				<a class="blog-nav-item" href="#">New features</a>
+				<a class="blog-nav-item" href="#">Press</a>
+				<a class="blog-nav-item" href="#">New hires</a>
+				<a class="blog-nav-item" href="#">About</a>
+			</nav>
+		</div>
+	</div>
+	<div class="container">
+		<div class="blog-header">
+			<h1 class="blog-title">高级前端面试题</h1>
+		</div>
+		<div class="row">
+			<div class="col-sm-8 blog-main">
+				<div class="blog-post">
+					
+					<div class="mcCon">
+						<div class="fr" style=" margin:0 0 10px 10px">
+						</div>
+						
+						<div class="post-body" itemprop="articleBody">
+      <pre>
+        <code>对当前的Web世界而言，JavaScript是一门你必须精通的语言。</code>
+      </pre>
+      <a id="more"></a>
+      <h2 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h2>
+      <h3 id="1-变量范围"><a href="#1-变量范围" class="headerlink" title="1. 变量范围"></a>1. 变量范围</h3>
+      <p>以下代码的输出结果为：</p>
+      <pre>
+        <code>
+  (function() {
+     var a = b = 5;
+  })();
+  
+  console.log(b); //5
+  console.log(a); //Error, a is not defined</code>
+      </pre>
+      <p>解答：</p>
+      <p>在这个立即执行函数表达式（IIFE）中包括两个赋值操作，其中<code>a</code>使用<code>var</code>关键字进行声明，因此其属于函数内部的局部变量（仅存在于函数中），相反，<code>b</code>被分配到全局命名空间。
+      </p>
+      <p>另一个需要注意的是，这里没有在函数内部使用<a href="http://cjihrig.com/blog/javascripts-strict-mode-and-why-you-should-use-it/"
+                                 target="_blank" rel="external">严格模式</a>(<code>use
+        strict</code>;)。如果启用了严格模式，代码会在输出b时报错<code>Uncaught ReferenceError: b is not defined</code>,需要记住的是，严格模式要求你显式的引用全局作用域。因此，你需要写成：
+      </p>
+      <pre>
+        <code>
+  (function() {
+     'use strict';
+     var a = window.b = 5;
+  })();
+  
+  console.log(b);
+        </code>
+      </pre>
+      <h3 id="2-创建“native”方法"><a href="#2-创建“native”方法" class="headerlink" title="2. 创建“native”方法"></a>2. 创建“native”方法
+      </h3>
+      <p>在<code>String</code>对象上定义一个<code>repeatify</code>方法。该方法接收一个整数作为参数用于指定字符串的重复次数。例如：</p>
+      <pre><code>console.log('hello'.repeatify(3)); // hellohellohello</code></pre>
+      <p>解答：</p>
+      <pre><code>String.prototype.repeatify = String.prototype.repeatify || function(times) {
+     var str = '';
+  
+     for (var i = 0; i &lt; times; i++) {
+        str += this;
+     }
+  
+     return str;
+  };</code></pre>
+      <p>这个题目主要测试你对JavaScript中的继承和<code>prototype</code>属性的理解。另一个值得关注的点是，在定义该方法前你需要确定该对象中是否已存在你要定义的同名方法。通常，我们使用如下的方式：</p>
+      <pre><code>String.prototype.repeatify = String.prototype.repeatify || function(times) {/* code here */};</code></pre>
+      <h3 id="3-提升-Hoisting"><a href="#3-提升-Hoisting" class="headerlink" title="3. 提升 Hoisting"></a>3. 提升 Hoisting</h3>
+      <p>以下代码的执行结果为：</p>
+      <pre><code>function test() {
+     console.log(a);     // undefined
+     console.log(foo()); // 2
+  
+     var a = 1;
+     function foo() {
+        return 2;
+     }
+  }
+  
+  test();</code></pre>
+      <p>回答：</p>
+      <p>执行结果分别为<code>undefined</code>和<code>2</code>。</p>
+      <p>
+        在JavaScript中，变量和命名函数都会被提升到函数的顶端，但是对变量而言其初始化操作不会被提升。因此，当打印<code>a</code>的值时，它虽然存在于函数<code>test()</code>中，但其值此刻为<code>undefined</code>，即未被初始化。也就是说，上面的代码会被转换成：
+      </p>
+      <pre><code>function test() {
+     var a;
+     function foo() {
+        return 2;
+     }
+  
+     console.log(a);
+     console.log(foo());
+  
+     a = 1;
+  }
+  
+  test();
+  </code></pre>
+      <h3 id="4-this在JavaScript中是如何工作的"><a href="#4-this在JavaScript中是如何工作的" class="headerlink"
+                                           title="4. this在JavaScript中是如何工作的"></a>4. <code>this</code>在JavaScript中是如何工作的
+      </h3>
+      <p>下面代码的执行结果为：</p>
+      <pre><code>var fullname = 'John Doe';
+  var obj = {
+     fullname: 'Colin Ihrig',
+     prop: {
+        fullname: 'Aurelio De Rosa',
+        getFullname: function() {
+           return this.fullname;
+        }
+     }
+  };
+  
+  console.log(obj.prop.getFullname()); // Aurelio De Rosa
+  
+  var test = obj.prop.getFullname;
+  
+  console.log(test());  // John Doe
+  </code></pre>
+      <p>解答：</p>
+      <p>上面的代码打印结果依次为<code>Aurelio De Rosa</code>和<code>John Doe</code>。
+        原因在于<code>this</code>指向的是函数的执行环境，<code>this</code>取决于其被谁调用了，而不是被谁定义了。</p>
+      <p>对第一个<code>console.log()</code>语句而言，<code>getFullName()</code>是作为<code>obj.prop</code>对象的一个方法被调用的，因此此时的执行环境应该是这个对象。另一方面，但<code>getFullName()</code>被分配给<code>test</code>变量时，此时的执行环境变成全局对象（<code>window</code>），原因是<code>test</code>是在全局作用域中定义的。因此，此时的<code>this</code>指向的是全局作用域的<code>fullname</code>变量，即<code>John
+        Doe</code>。</p>
+      <h3 id="5-call-和apply"><a href="#5-call-和apply" class="headerlink" title="5. call()和apply()"></a>5.
+        <code>call()</code>和<code>apply()</code></h3>
+      <p>修正题目4中存在的问题，使得最后一个<code>console.log()</code>打印出<code>Aurelio De Rosa</code>。</p>
+      <p>解答：</p>
+      <p>可以使用<code>call()</code>或者<code>apply()</code>强制切换执行环境，如果你不知道这两者的区别，可以参考<a
+          href="http://www.sitepoint.com/whats-the-difference-between-function-call-and-function-apply/" target="_blank"
+          rel="external">这篇文章</a>。如下：</p>
+      <pre><code>console.log(test.call(obj.prop)); // 这里使用apply()也是一样的
+  </code></pre>
+      <p>下面5个面试题来考察JavaScript中的部分重要概念，主要包括JavaScript中的闭包概念、数据类型、事件循环和一个简单的算法题，希望能够让你注意到JavaScript这门语言与其他语言不同的地方。</p>
+      <h3 id="6-闭包-Closures"><a href="#6-闭包-Closures" class="headerlink" title="6. 闭包 Closures"></a>6. 闭包 Closures</h3>
+      <p>阅读下面的代码：</p>
+      <pre><code>var nodes = document.getElementsByTagName('button');
+  for (var i = 0; i &lt; nodes.length; i++) {
+     nodes[i].addEventListener('click', function() {
+        console.log('You clicked element #' + i);
+     });
+  }
+  </code></pre>
+      <p>当用户点击第一个和第四个按钮的时候控制台分别打印的结果是什么？为什么？</p>
+      <p>解答：</p>
+      <p>上面的代码考察了一个非常重要的概念：闭包。如果你对闭包不是非常了解，可以参考我翻译过的<a href="http://wwsun.me/posts/javascript-closure.html"
+                                                       target="_blank" rel="external">这篇文章</a>，也可以阅读<a
+          href="http://www.sitepoint.com/javascript-closures-demystified/" target="_blank" rel="external">另一篇文章</a>。</p>
+      <p>上面的代码会打印两次<code>You clicked element #NODES_LENGTH</code>, 其中<code>NODES_LENGTH</code>为所获取到的button的个数。</p>
+      <p>该问题的原因在于’addEventListener’是闭包，其中的回调函数是匿名函数，而不是闭包对象。在闭包中一共创建了’NODES_LENGTH’个匿名函数，但是它们都共享同一个环境，<code>i</code>是在闭包中的变量。在<code>addEventListener</code>的回调执行时，循环已经结束，此时的变量<code>i</code>被赋值为<code>NODES_LENGTGH</code>。
+      </p>
+      <h3 id="7-还是闭包"><a href="#7-还是闭包" class="headerlink" title="7. 还是闭包"></a>7. 还是闭包</h3>
+      <p>修复问题1的代码，使其按照我们的设想运行，即第一个按钮打印0，第二个按钮打印1等等。</p>
+      <p>解答：</p>
+      <p>这个问题可以有多种解答方法，下面主要使用两种方法解决这个问题。</p>
+      <p>解法1：使用IIFE再创建一个闭包，这样<code>i</code>的值就不会被影响。如下：</p>
+      <pre><code>var nodes = document.getElementsByTagName('button');
+  for (var i = 0; i &lt; nodes.length; i++) {
+     nodes[i].addEventListener('click', (function(i) {
+        return function() {
+           console.log('You clicked element #' + i);
+        }
+     })(i));
+  }
+  </code></pre>
+      <p>解法2：将函数移动到循环外部即可（这就创建了一个新的闭包对象）</p>
+      <pre><code>function handlerWrapper(i) {
+     return function() {
+        console.log('You clicked element #' + i);
+     }
+  }
+  
+  var nodes = document.getElementsByTagName('button');
+  for (var i = 0; i &lt; nodes.length; i++) {
+     nodes[i].addEventListener('click', handlerWrapper(i));
+  }
+  </code></pre>
+      <h3 id="8-数据类型"><a href="#8-数据类型" class="headerlink" title="8. 数据类型"></a>8. 数据类型</h3>
+      <p>阅读下面的代码，给出输出结果：</p>
+      <pre><code>console.log(typeof null);  // object
+  console.log(typeof {});    // object
+  console.log(typeof []);    // object
+  console.log(typeof undefined);    // undefined
+  </code></pre>
+      <p>解答：</p>
+      <p>这里主要测试的是对<code>typeof</code>操作符的理解。最容易被误解的应该是第三个输出值，可能大部分人的直觉是应该返回<code>Array</code>。假如你想测试一个变量是否包含数组，你可以使用下面的测试代码：
+      </p>
+      <pre><code>var myArray = [];
+  if (myArray instanceof Array) {
+     // do something...
+  }
+  </code></pre>
+      <p><code>typeof</code>测试的是数据类型（基本数据类型 + <code>object</code>）；<code>instanceof</code>测试的是属于哪个对象的实例。</p>
+      <h3 id="9-事件循环-Event-Loop"><a href="#9-事件循环-Event-Loop" class="headerlink" title="9. 事件循环 Event Loop"></a>9. 事件循环
+        Event Loop</h3>
+      <p>下面代码的执行结果为：</p>
+      <pre><code>function printing() {
+     console.log(1);
+     setTimeout(function() { console.log(2); }, 1000);
+     setTimeout(function() { console.log(3); }, 0);
+     console.log(4);
+  }
+  
+  printing();
+  </code></pre>
+      <p>解答：</p>
+      <p>执行结果为：</p>
+      <pre><code>1
+  4
+  3
+  2
+  </code></pre>
+      <p>要想知道为什么输出顺序是这样的，你就得深入的了解<code>setTimeout()</code>做了什么，以及浏览器的<a
+          href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/EventLoop" target="_blank" rel="external">事件循环</a>机制。
+      </p>
+      <p><code>setTimeout()</code>函数属于window对象，用来进行超时调用。它接受两个参数：要执行的代码和以毫秒表示的时间（即在执行代码前需要等待多时毫秒）。JavaScript是一个单线程序的解释器，因此同一时间内只能执行一段代码。为了控制要执行的代码，就有一个JavaScript任务队列。这些任务会按照它们添加到队列的顺序执行。
+      </p>
+      <p><code>setTimeout()</code>在指定时间后将任务插入任务队列。如果队列是空的，那么添加的代码会立即执行；如果队列不是空的，那么就要等前面的代码执行完了以后再执行。所以关于计时器你需要记住的是：</p>
+      <blockquote>
+        <p>指定的时间间隔表示何时将定时器的代码添加到队列，而不是何时实际的执行代码。</p>
+      </blockquote>
+      <p>因此，当调用<code>setTimeout()</code>时，即使延迟被设定为0，其回调也会被插入到队列中。回调处于队列中，直到被JS引擎分配到它，才会被执行。也就是说，即使<code>setTimeout</code>的延迟为0，其回调也会被加入到那些没有延迟的函数队列之后。
+      </p>
+      <h3 id="10-算法"><a href="#10-算法" class="headerlink" title="10. 算法"></a>10. 算法</h3>
+      <p>写一个函数<code>isPrime()</code>判断一个数是否为素数，如果是返回<code>true</code>，如果不是返回<code>false</code>。</p>
+      <p>解答：</p>
+      <p>回答这个题目首先要注意的是，这是在使用JavaScript进行编程，因此你不能信任传入的参数类型。因此，你永远都要检查函数的输入。</p>
+      <p>其次需要注意的是，负数一定不是素数，1和0也不是，因此首先测试这些数字。其次，偶数中只有2是素数，因此，其他的偶数你无需判断。</p>
+      <p>最后一点需要注意的是，通常你只需判断到给定数的根值即可。整理之后，很容易写出下面的程序：</p>
+      <pre><code>function isPrime(number) {
+  
+     // If your browser doesn't support the method Number.isInteger of ECMAScript 6,
+     // you can implement your own pretty easily
+     if (typeof number !== 'number' || !Number.isInteger(number)) {
+        // Alternatively you can throw an error.
+        return false;
+     }
+  
+     if (number &lt; 2) {
+        return false;
+     }
+  
+     if (number === 2) {
+        return true;
+     } else if (number % 2 === 0) {
+        return false;
+     }
+  
+     var squareRoot = Math.sqrt(number);
+     for(var i = 3; i &lt;= squareRoot; i += 2) {
+        if (number % i === 0) {
+           return false;
+        }
+     }
+  
+     return true;
+  }
+  </code></pre>
+  <hr>
+      <div class="entry-content">
+	<ul>
+		<li>1. 常用js类定义的方法有哪些？</li>
+	</ul>
+	<p>参考答案：主要有构造函数原型和对象创建两种方法。原型法是通用老方法，对象创建是ES5推荐使用的方法.目前来看，原型法更普遍.</p>
+	<p>代码演示
+		<br> 1) 构造函数方法定义类</p>
+	<div class="highlight highlight-source-js">
+		<pre>    <span class="pl-k">function</span> <span class="pl-en">Person</span>(){
+		<span class="pl-v">this</span>.<span class="pl-c1">name</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>michaelqin<span class="pl-pds">'</span></span>;
+	}
+	<span class="pl-c1">Person</span>.<span class="pl-c1">prototype</span>.<span class="pl-en">sayName</span> <span class="pl-k">=</span> <span class="pl-k">function</span>(){
+		<span class="pl-c1">alert</span>(<span class="pl-v">this</span>.<span class="pl-c1">name</span>);
+	}
+
+	<span class="pl-k">var</span> person <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Person</span>();
+	person.sayName();</pre>
+	</div>
+	<p>2) 对象创建方法定义类</p>
+	<pre><code>    var Person = {
+		name: 'michaelqin',
+		sayName: function(){ alert(this.name); }
+	};
+
+	var person = Object.create(Person);
+	person.sayName();
+</code></pre>
+	<ul>
+		<li>2. js类继承的方法有哪些</li>
+	</ul>
+	<p>参考答案：原型链法，属性复制法和构造器应用法. 另外，由于每个对象可以是一个类，这些方法也可以用于对象类的继承．</p>
+	<p>代码演示
+		<br> 1) 原型链法</p>
+	<div class="highlight highlight-source-js">
+		<pre>    <span class="pl-k">function</span> <span class="pl-en">Animal</span>() {
+		<span class="pl-v">this</span>.<span class="pl-c1">name</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>animal<span class="pl-pds">'</span></span>;
+	}
+	<span class="pl-c1">Animal</span>.<span class="pl-c1">prototype</span>.<span class="pl-en">sayName</span> <span class="pl-k">=</span> {
+		<span class="pl-c1">alert</span>(<span class="pl-v">this</span>.<span class="pl-c1">name</span>);
+	};
+
+	<span class="pl-k">function</span> <span class="pl-en">Person</span>() {}
+	<span class="pl-c1">Person</span>.<span class="pl-c1">prototype</span> <span class="pl-k">=</span> Animal.<span class="pl-c1">prototype</span>; <span class="pl-c">// 人继承自动物</span>
+	<span class="pl-c1">Person</span>.<span class="pl-c1">prototype</span>.<span class="pl-en">constructor</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>Person<span class="pl-pds">'</span></span>; <span class="pl-c">// 更新构造函数为人</span></pre>
+	</div>
+	<p>2) 属性复制法</p>
+	<div class="highlight highlight-source-js">
+		<pre>    <span class="pl-k">function</span> <span class="pl-en">Animal</span>() {
+		<span class="pl-v">this</span>.<span class="pl-c1">name</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>animal<span class="pl-pds">'</span></span>;
+	}
+	<span class="pl-c1">Animal</span>.<span class="pl-c1">prototype</span>.<span class="pl-en">sayName</span> <span class="pl-k">=</span> {
+		<span class="pl-c1">alert</span>(<span class="pl-v">this</span>.<span class="pl-c1">name</span>);
+	};
+
+	<span class="pl-k">function</span> <span class="pl-en">Person</span>() {}
+
+	<span class="pl-k">for</span>(prop <span class="pl-k">in</span> Animal.<span class="pl-c1">prototype</span>) {
+		Person.<span class="pl-c1">prototype</span>[prop] <span class="pl-k">=</span> Animal.<span class="pl-c1">prototype</span>[prop];
+	} <span class="pl-c">// 复制动物的所有属性到人量边</span>
+	<span class="pl-c1">Person</span>.<span class="pl-c1">prototype</span>.<span class="pl-en">constructor</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>Person<span class="pl-pds">'</span></span>; <span class="pl-c">// 更新构造函数为人</span></pre>
+	</div>
+	<p>3) 构造器应用法</p>
+	<div class="highlight highlight-source-js">
+		<pre>    <span class="pl-k">function</span> <span class="pl-en">Animal</span>() {
+		<span class="pl-v">this</span>.<span class="pl-c1">name</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>animal<span class="pl-pds">'</span></span>;
+	}
+	<span class="pl-c1">Animal</span>.<span class="pl-c1">prototype</span>.<span class="pl-en">sayName</span> <span class="pl-k">=</span> {
+		<span class="pl-c1">alert</span>(<span class="pl-v">this</span>.<span class="pl-c1">name</span>);
+	};
+
+	<span class="pl-k">function</span> <span class="pl-en">Person</span>() {
+		Animal.<span class="pl-c1">call</span>(<span class="pl-v">this</span>); <span class="pl-c">// apply, call, bind方法都可以．细微区别，后面会提到．</span>
+	}</pre>
+	</div>
+	<ul>
+		<li>3. js类多重继承的实现方法是怎么样的?</li>
+	</ul>
+	<p>参考答案：就是类继承里边的属性复制法来实现．因为当所有父类的prototype属性被复制后，子类自然拥有类似行为和属性．</p>
+	<ul>
+		<li>4. js里的作用域是什么样子的？</li>
+	</ul>
+	<p>参考答案：大多数语言里边都是块作作用域，以{}进行限定，js里边不是．js里边叫函数作用域，就是一个变量在全函数里有效．比如有个变量p1在函数最后一行定义，第一行也有效，但是值是undefined.</p>
+	<p>代码演示</p>
+	<div class="highlight highlight-source-js">
+		<pre>    <span class="pl-k">var</span> globalVar <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>global var<span class="pl-pds">'</span></span>;
+
+	<span class="pl-k">function</span> <span class="pl-en">test</span>() {
+		<span class="pl-c1">alert</span>(globalVar); <span class="pl-c">// undefined, 因为globalVar在本函数内被重定义了，导致全局失效，这里使用函数内的变量值，可是此时还没定义</span>
+		<span class="pl-k">var</span> globalVar <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>overrided var<span class="pl-pds">'</span></span>; <span class="pl-c">//　globalVar在本函数内被重定义</span>
+		<span class="pl-c1">alert</span>(globalVar);　<span class="pl-c">// overrided var</span>
+	}
+	<span class="pl-c1">alert</span>(globalVar); <span class="pl-c">// global var，使用全局变量</span></pre>
+	</div>
+	<ul>
+		<li>5. js里边的this指的是什么?</li>
+	</ul>
+	<p>参考答案: this指的是对象本身，而不是构造函数．</p>
+	<p>代码演示</p>
+	<div class="highlight highlight-source-js">
+		<pre>    <span class="pl-k">function</span> <span class="pl-en">Person</span>() {
+	}
+	Person.<span class="pl-c1">prototype</span>.<span class="pl-en">sayName</span>() { <span class="pl-c1">alert</span>(<span class="pl-v">this</span>.<span class="pl-c1">name</span>); }
+
+	<span class="pl-k">var</span> person1 <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Person</span>();
+	person1.<span class="pl-c1">name</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>michaelqin<span class="pl-pds">'</span></span>;
+	person1.sayName(); <span class="pl-c">// michaelqin</span></pre>
+	</div>
+	<ul>
+		<li>6. apply, call和bind有什么区别?</li>
+	</ul>
+	<p>参考答案：三者都可以把一个函数应用到其他对象上，注意不是自身对象．apply,call是直接执行函数调用，bind是绑定，执行需要再次调用．apply和call的区别是apply接受数组作为参数，而call是接受逗号分隔的无限多个参数列表，</p>
+	<p>代码演示</p>
+	<div class="highlight highlight-source-js">
+		<pre>    <span class="pl-k">function</span> <span class="pl-en">Person</span>() {
+	}
+	Person.<span class="pl-c1">prototype</span>.<span class="pl-en">sayName</span>() { <span class="pl-c1">alert</span>(<span class="pl-v">this</span>.<span class="pl-c1">name</span>); }
+
+	<span class="pl-k">var</span> obj <span class="pl-k">=</span> {name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>michaelqin<span class="pl-pds">'</span></span>}; <span class="pl-c">// 注意这是一个普通对象，它不是Person的实例</span>
+	<span class="pl-c1">1</span>) apply
+	Person.<span class="pl-c1">prototype</span>.sayName.<span class="pl-c1">apply</span>(obj, [param1, param2, param3]);
+
+	<span class="pl-c1">2</span>) call
+	Person.<span class="pl-c1">prototype</span>.sayName.<span class="pl-c1">call</span>(obj, param1, param2, param3);
+
+	<span class="pl-c1">3</span>) bind
+	<span class="pl-k">var</span> sn <span class="pl-k">=</span> Person.<span class="pl-c1">prototype</span>.sayName.bind(obj);    
+	sn([param1, param2, param3]); <span class="pl-c">// bind需要先绑定，再执行 </span>
+	sn(param1, param2, param3); <span class="pl-c">// bind需要先绑定，再执行</span></pre>
+	</div>
+	<ul>
+		<li>7. caller, callee和arguments分别是什么?</li>
+	</ul>
+	<p>参考答案: caller,callee之间的关系就像是employer和employee之间的关系，就是调用与被调用的关系，二者返回的都是函数对象引用．arguments是函数的所有参数列表，它是一个类数组的变量．</p>
+	<p>代码演示</p>
+	<div class="highlight highlight-source-js">
+		<pre>    <span class="pl-k">function</span> <span class="pl-en">parent</span>(<span class="pl-smi">param1</span>, <span class="pl-smi">param2</span>, <span class="pl-smi">param3</span>) {
+		child(param1, param2, param3);
+	}
+
+	<span class="pl-k">function</span> <span class="pl-en">child</span>() {
+		<span class="pl-en">console</span>.<span class="pl-c1">log</span>(arguments); <span class="pl-c">// { '0': 'mqin1', '1': 'mqin2', '2': 'mqin3' }</span>
+		<span class="pl-en">console</span>.<span class="pl-c1">log</span>(arguments.<span class="pl-c1">callee</span>); <span class="pl-c">// [Function: child]</span>
+		<span class="pl-en">console</span>.<span class="pl-c1">log</span>(child.<span class="pl-c1">caller</span>); <span class="pl-c">// [Function: parent]</span>
+	}
+
+	parent(<span class="pl-s"><span class="pl-pds">'</span>mqin1<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>mqin2<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>mqin3<span class="pl-pds">'</span></span>);</pre>
+	</div>
+	<ul>
+		<li>8. 什么是闭包，闭包有哪些用处?</li>
+	</ul>
+	<p>参考答案: 闭包这个术语，无论中文翻译还是英文解释都太２Ｂ了，我必须骂人，因为它什么其实都不是．非要讲它是什么的话，两个字函数，更多字嵌套函数的父子自我引用关系．所有函数都是闭包．通俗的说，闭包就是作用域范围，因为js是函数作用域，所以函数就是闭包．全局函数的作用域范围就是全局，所以无须讨论．更多的应用其实是在内嵌函数，这就会涉及到内嵌作用域，或者叫作用域链．说到内嵌，其实就是父子引用关系(父函数包含子函数，子函数因为函数作用域又引用父函数，这它妈不是死结吗？所以叫闭包），这就会带来另外一个问题，什么时候引用结束？如果不结束，就会一直占用内存，引起内存泄漏．好吧，不用的时候就引用设为空，死结就解开了．</p>
+	<ul>
+		<li>9. defineProperty, hasOwnProperty, isEnumerable都是做什么用的？</li>
+	</ul>
+	<p>参考答案：Object.defineProperty(obj, prop, descriptor)用来给对象定义属性,有value,writable,configurable,enumerable,set/get等.hasOwnProerty用于检查某一属性是不是存在于对象本身，继承来的父亲的属性不算．isEnumerable用来检测某一属性是否可遍历，也就是能不能用for..in循环来取到.</p>
+	<ul>
+		<li>10. js常用设计模式的实现思路，单例，工厂，代理，装饰，观察者模式等</li>
+	</ul>
+	<p>参考答案：</p>
+	<div class="highlight highlight-source-js">
+		<pre>    <span class="pl-c1">1</span>) 单例：　任意对象都是单例，无须特别处理
+	<span class="pl-k">var</span> obj <span class="pl-k">=</span> {name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>michaelqin<span class="pl-pds">'</span></span>, age<span class="pl-k">:</span> <span class="pl-c1">30</span>};
+
+	<span class="pl-c1">2</span>) 工厂<span class="pl-k">:</span> 就是同样形式参数返回不同的实例
+	<span class="pl-k">function</span> <span class="pl-en">Person</span>() { <span class="pl-v">this</span>.<span class="pl-c1">name</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>Person1<span class="pl-pds">'</span></span>; }
+	<span class="pl-k">function</span> <span class="pl-en">Animal</span>() { <span class="pl-v">this</span>.<span class="pl-c1">name</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>Animal1<span class="pl-pds">'</span></span>; }
+
+	<span class="pl-k">function</span> <span class="pl-en">Factory</span>() {}
+	<span class="pl-c1">Factory</span>.<span class="pl-c1">prototype</span>.<span class="pl-en">getInstance</span> <span class="pl-k">=</span> <span class="pl-k">function</span>(<span class="pl-smi">className</span>) {
+		<span class="pl-k">return</span> <span class="pl-c1">eval</span>(<span class="pl-s"><span class="pl-pds">'</span>new <span class="pl-pds">'</span></span> <span class="pl-k">+</span> className <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span>()<span class="pl-pds">'</span></span>);
+	}
+
+	<span class="pl-k">var</span> factory <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Factory</span>();
+	<span class="pl-k">var</span> obj1 <span class="pl-k">=</span> factory.getInstance(<span class="pl-s"><span class="pl-pds">'</span>Person<span class="pl-pds">'</span></span>);
+	<span class="pl-k">var</span> obj2 <span class="pl-k">=</span> factory.getInstance(<span class="pl-s"><span class="pl-pds">'</span>Animal<span class="pl-pds">'</span></span>);
+	<span class="pl-en">console</span>.<span class="pl-c1">log</span>(obj1.<span class="pl-c1">name</span>); <span class="pl-c">// Person1</span>
+	<span class="pl-en">console</span>.<span class="pl-c1">log</span>(obj2.<span class="pl-c1">name</span>); <span class="pl-c">// Animal1</span>
+
+	<span class="pl-c1">3</span>) 代理<span class="pl-k">:</span> 就是新建个类调用老类的接口,包一下
+	<span class="pl-k">function</span> <span class="pl-en">Person</span>() { }
+	<span class="pl-c1">Person</span>.<span class="pl-c1">prototype</span>.<span class="pl-en">sayName</span> <span class="pl-k">=</span> <span class="pl-k">function</span>() { <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>michaelqin<span class="pl-pds">'</span></span>); }
+	<span class="pl-c1">Person</span>.<span class="pl-c1">prototype</span>.<span class="pl-en">sayAge</span> <span class="pl-k">=</span> <span class="pl-k">function</span>() { <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-c1">30</span>); }
+
+	<span class="pl-k">function</span> <span class="pl-en">PersonProxy</span>() { 
+		<span class="pl-v">this</span>.person <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Person</span>();
+		<span class="pl-k">var</span> that <span class="pl-k">=</span> <span class="pl-v">this</span>;
+		<span class="pl-c1">this</span>.<span class="pl-en">callMethod</span> <span class="pl-k">=</span> <span class="pl-k">function</span>(<span class="pl-smi">functionName</span>) {
+			<span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>before proxy:<span class="pl-pds">'</span></span>, functionName);
+			that.person[functionName](); <span class="pl-c">// 代理</span>
+			<span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>after proxy:<span class="pl-pds">'</span></span>, functionName);
+		}
+	}
+
+	<span class="pl-k">var</span> pp <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">PersonProxy</span>();
+	pp.callMethod(<span class="pl-s"><span class="pl-pds">'</span>sayName<span class="pl-pds">'</span></span>); <span class="pl-c">// 代理调用Person的方法sayName()</span>
+	pp.callMethod(<span class="pl-s"><span class="pl-pds">'</span>sayAge<span class="pl-pds">'</span></span>); <span class="pl-c">// 代理调用Person的方法sayAge() </span>
+
+	<span class="pl-c1">4</span>) 观察者<span class="pl-k">:</span> 就是事件模式，比如按钮的onclick这样的应用.
+	<span class="pl-k">function</span> <span class="pl-en">Publisher</span>() {
+		<span class="pl-v">this</span>.listeners <span class="pl-k">=</span> [];
+	}
+	<span class="pl-c1">Publisher</span>.<span class="pl-c1">prototype</span> <span class="pl-k">=</span> {
+		<span class="pl-s"><span class="pl-pds">'</span><span class="pl-en">addListener</span><span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-k">function</span>(<span class="pl-smi">listener</span>) {
+			<span class="pl-v">this</span>.listeners.<span class="pl-c1">push</span>(listener);
+		},
+
+		<span class="pl-s"><span class="pl-pds">'</span><span class="pl-en">removeListener</span><span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-k">function</span>(<span class="pl-smi">listener</span>) {
+			<span class="pl-k">delete</span> <span class="pl-v">this</span>.listeners[listener];
+		},
+
+		<span class="pl-s"><span class="pl-pds">'</span><span class="pl-en">notify</span><span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-k">function</span>(<span class="pl-smi">obj</span>) {
+			<span class="pl-k">for</span>(<span class="pl-k">var</span> i <span class="pl-k">=</span> <span class="pl-c1">0</span>; i <span class="pl-k">&lt;</span> <span class="pl-v">this</span>.listeners.<span class="pl-c1">length</span>; i<span class="pl-k">++</span>) {
+				<span class="pl-k">var</span> listener <span class="pl-k">=</span> <span class="pl-v">this</span>.listeners[i];
+				<span class="pl-k">if</span> (<span class="pl-k">typeof</span> listener <span class="pl-k">!==</span> <span class="pl-s"><span class="pl-pds">'</span>undefined<span class="pl-pds">'</span></span>) {
+					listener.process(obj);
+				}
+			}
+		}
+	}; <span class="pl-c">// 发布者</span>
+
+	<span class="pl-k">function</span> <span class="pl-en">Subscriber</span>() {
+
+	}
+	<span class="pl-c1">Subscriber</span>.<span class="pl-c1">prototype</span> <span class="pl-k">=</span> {
+		<span class="pl-s"><span class="pl-pds">'</span><span class="pl-en">process</span><span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-k">function</span>(<span class="pl-smi">obj</span>) {
+			<span class="pl-en">console</span>.<span class="pl-c1">log</span>(obj);
+		}
+	};　<span class="pl-c">// 订阅者</span>
+
+
+	<span class="pl-k">var</span> publisher <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Publisher</span>();
+	publisher.addListener(<span class="pl-k">new</span> <span class="pl-en">Subscriber</span>());
+	publisher.addListener(<span class="pl-k">new</span> <span class="pl-en">Subscriber</span>());
+	publisher.notify({name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>michaelqin<span class="pl-pds">'</span></span>, ageo<span class="pl-k">:</span> <span class="pl-c1">30</span>}); <span class="pl-c">// 发布一个对象到所有订阅者</span>
+	publisher.notify(<span class="pl-s"><span class="pl-pds">'</span>2 subscribers will both perform process<span class="pl-pds">'</span></span>); <span class="pl-c">// 发布一个字符串到所有订阅者</span></pre>
+	</div>
+	<ul>
+		<li>11. 列举数组相关的常用方法</li>
+	</ul>
+	<p>参考答案: push/pop, shift/unshift, split/join, slice/splice/concat, sort/reverse, map/reduce, forEach, filter</p>
+	<ul>
+		<li>12. 列举字符串相关的常用方法</li>
+	</ul>
+	<p>参考答案: indexOf/lastIndexOf/charAt, split/match/test, slice/substring/substr, toLowerCase/toUpperCase</p>
+	<p class="mt20"></p>
+	<p></p>
+</div>
+<hr>
+<div class="entry-content">
+	<h5 style="box-sizing: border-box; margin-top: 1em; margin-bottom: 16px; line-height: 1.4; font-size: 1em; font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">问题一</h5>
+	<blockquote style="box-sizing: border-box; margin: 0px 0px 16px; padding: 0px 15px; color: #777777; border-left-width: 4px; border-left-style: solid; border-left-color: #dddddd; font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; line-height: 25.6000003814697px;">
+		<p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 0px;">使用Promise描述如下过程：绿灯亮3秒，然后红灯亮3秒，然后黄灯再亮3秒。灯亮过程可以用console表示。</p>
+	</blockquote>
+	<div class="highlight highlight-source-js" style="box-sizing: border-box; margin-bottom: 16px; font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; line-height: 25.6000003814697px;">
+		<pre style="box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6000003814697px; margin-top: 0px; margin-bottom: 0px; font-stretch: normal; line-height: 1.45; word-wrap: normal; padding: 16px; overflow: auto; border-radius: 3px; word-break: normal; background-color: #f7f7f7;">    <span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">function</span> <span class="pl-en" style="box-sizing: border-box; color: #795da3;">sleep</span>(<span class="pl-smi" style="box-sizing: border-box;">delay</span>){
+		<span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">var</span> now <span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">=</span> <span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">new</span> <span class="pl-en" style="box-sizing: border-box; color: #795da3;">Date</span>().<span class="pl-c1" style="box-sizing: border-box; color: #0086b3;">getTime</span>();
+		<span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">while</span>(<span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">new</span> <span class="pl-en" style="box-sizing: border-box; color: #795da3;">Date</span>().<span class="pl-c1" style="box-sizing: border-box; color: #0086b3;">getTime</span>() <span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">-</span> now <span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">&lt;</span> delay){
+		}
+	}
+
+	<span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">function</span> <span class="pl-en" style="box-sizing: border-box; color: #795da3;">led</span>(<span class="pl-smi" style="box-sizing: border-box;">color</span>){
+		<span class="pl-en" style="box-sizing: border-box; color: #795da3;">console</span>.<span class="pl-c1" style="box-sizing: border-box; color: #0086b3;">log</span>(color);
+		<span class="pl-en" style="box-sizing: border-box; color: #795da3;">sleep</span>(<span class="pl-c1" style="box-sizing: border-box; color: #0086b3;">3000</span>);
+		<span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">return</span> <span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">new</span> <span class="pl-en" style="box-sizing: border-box; color: #795da3;">Promise</span>(<span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">function</span>(<span class="pl-smi" style="box-sizing: border-box;">resolve</span>,<span class="pl-smi" style="box-sizing: border-box;">reject</span>){
+			<span class="pl-en" style="box-sizing: border-box; color: #795da3;">resolve</span>();
+		});
+	}
+
+	<span class="pl-en" style="box-sizing: border-box; color: #795da3;">led</span>(<span class="pl-s" style="box-sizing: border-box; color: #183691;"><span class="pl-pds" style="box-sizing: border-box;">"</span>green<span class="pl-pds" style="box-sizing: border-box;">"</span></span>).<span class="pl-en" style="box-sizing: border-box; color: #795da3;">then</span>(<span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">function</span>(){
+		<span class="pl-en" style="box-sizing: border-box; color: #795da3;">led</span>(<span class="pl-s" style="box-sizing: border-box; color: #183691;"><span class="pl-pds" style="box-sizing: border-box;">"</span>red<span class="pl-pds" style="box-sizing: border-box;">"</span></span>);
+	}).<span class="pl-en" style="box-sizing: border-box; color: #795da3;">then</span>(<span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">function</span>(){
+		<span class="pl-en" style="box-sizing: border-box; color: #795da3;">led</span>(<span class="pl-s" style="box-sizing: border-box; color: #183691;"><span class="pl-pds" style="box-sizing: border-box;">"</span>yellow<span class="pl-pds" style="box-sizing: border-box;">"</span></span>);
+	});</pre>
+	</div>
+	<h6 style="box-sizing: border-box; margin-top: 1em; margin-bottom: 16px; line-height: 1.4; font-size: 1em; color: #777777; font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"><a id="user-content-问题二" class="anchor" style="box-sizing: border-box; color: #4078c0; text-decoration: none; display: inline-block; padding-right: 2px; margin-left: -18px; line-height: 1.1; background-color: transparent;" href="https://github.com/zhangjh/hello-blog/blob/52c9311f926701dbe9243c253c4f6c089d4352d0/source/_posts/interview-questions.md#问题二"></a>问题二</h6>
+	<blockquote style="box-sizing: border-box; margin: 0px 0px 16px; padding: 0px 15px; color: #777777; border-left-width: 4px; border-left-style: solid; border-left-color: #dddddd; font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; line-height: 25.6000003814697px;">
+		<p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 0px;">自己实现一个sort2，尽可能地模拟js原有的sort函数</p>
+	</blockquote>
+	<div class="highlight highlight-source-js" style="box-sizing: border-box; margin-bottom: 16px; font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; line-height: 25.6000003814697px;">
+		<pre style="box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6000003814697px; margin-top: 0px; margin-bottom: 0px; font-stretch: normal; line-height: 1.45; word-wrap: normal; padding: 16px; overflow: auto; border-radius: 3px; word-break: normal; background-color: #f7f7f7;"><span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">function</span> <span class="pl-en" style="box-sizing: border-box; color: #795da3;">sort2</span>(<span class="pl-smi" style="box-sizing: border-box;">arr</span>,<span class="pl-smi" style="box-sizing: border-box;">option</span>){
+	<span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">for</span>(<span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">var</span> i<span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">=</span><span class="pl-c1" style="box-sizing: border-box; color: #0086b3;">0</span>,len<span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">=</span><span class="pl-smi" style="box-sizing: border-box;">arr</span>.<span class="pl-c1" style="box-sizing: border-box; color: #0086b3;">length</span>;i<span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">&lt;</span>len<span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">-</span><span class="pl-c1" style="box-sizing: border-box; color: #0086b3;">1</span>;i<span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">++</span>){
+		<span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">for</span>(<span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">var</span> j<span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">=</span>i<span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">+</span><span class="pl-c1" style="box-sizing: border-box; color: #0086b3;">1</span>;j<span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">&lt;</span>len;j<span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">++</span>){
+			<span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">if</span>(option <span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">&amp;&amp;</span> option <span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">==</span> <span class="pl-c1" style="box-sizing: border-box; color: #0086b3;">1</span>){
+				<span class="pl-c" style="box-sizing: border-box; color: #969896;">//1为降序，默认或者0为升序</span>
+				<span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">if</span>(arr[j] <span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">&gt;</span> arr[i]){
+					<span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">var</span> tmp <span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">=</span> arr[j];
+					arr[j] <span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">=</span> arr[i];
+					arr[i] <span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">=</span> tmp;
+				}
+			}<span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">else</span> {
+				<span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">if</span>(arr[j] <span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">&lt;</span> arr[i]){
+					<span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">var</span> tmp <span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">=</span> arr[j];
+					arr[j] <span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">=</span> arr[i];
+					arr[i] <span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">=</span> tmp;
+				}
+			}
+		}
+	}
+<span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">return</span> arr;
+}
+
+<span class="pl-c" style="box-sizing: border-box; color: #969896;">//var arr = [9,4,6,2,1,3,5,8,7,0];</span>
+<span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">var</span> arr <span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">=</span> [<span class="pl-s" style="box-sizing: border-box; color: #183691;"><span class="pl-pds" style="box-sizing: border-box;">'</span>c<span class="pl-pds" style="box-sizing: border-box;">'</span></span>,<span class="pl-s" style="box-sizing: border-box; color: #183691;"><span class="pl-pds" style="box-sizing: border-box;">'</span>b<span class="pl-pds" style="box-sizing: border-box;">'</span></span>,<span class="pl-s" style="box-sizing: border-box; color: #183691;"><span class="pl-pds" style="box-sizing: border-box;">'</span>e<span class="pl-pds" style="box-sizing: border-box;">'</span></span>,<span class="pl-s" style="box-sizing: border-box; color: #183691;"><span class="pl-pds" style="box-sizing: border-box;">'</span>a<span class="pl-pds" style="box-sizing: border-box;">'</span></span>];
+
+<span class="pl-en" style="box-sizing: border-box; color: #795da3;">console</span>.<span class="pl-c1" style="box-sizing: border-box; color: #0086b3;">log</span>(<span class="pl-en" style="box-sizing: border-box; color: #795da3;">sort2</span>(arr));
+</pre>
+	</div>
+	<p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 16px; font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; line-height: 25.6000003814697px;">该函数支持正序，逆序，数字，字母排序。</p>
+	<p class="mt20"></p>
+	<p></p>
+</div>
+
+    </div>
+					</div>
+				</div>
+
+				<nav>
+					<ul class="pager">
+						<li><a href="#">Previous</a></li>
+						<li><a href="#">Next</a></li>
+					</ul>
+				</nav>
+			</div>
+			<!-- /.blog-main -->
+			<div class="col-sm-3 col-sm-offset-1 blog-sidebar" style="position: fixed;right: 70px;top: 100px">
+				<div class="sidebar-module sidebar-module-inset">
+					<h4>About</h4>
+					<p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+				</div>
+				<div class="sidebar-module">
+					<h4>Subjects</h4>
+					<ol class="list-unstyled">
+						<li><a href="#1-变量范围">变量范围</a></li>
+						<li><a href="#2-创建“native”方法">创建“native”方法</a></li>
+						<li><a href="#3-提升-Hoisting">提升-Hoisting</a></li>
+						<li><a href="#4-this在JavaScript中是如何工作的">this在JavaScript中是如何工作的</a></li>
+						<li><a href="#5-call-和apply">call-和apply</a></li>
+						<li><a href="#6-闭包-Closures">闭包-Closures</a></li>
+						<li><a href="#7-还是闭包">还是闭包</a></li>
+						<li><a href="#8-数据类型">数据类型</a></li>
+						<li><a href="#9-事件循环-Event-Loop">事件循环-Event-Loop</a></li>
+						<li><a href="#10-算法">算法</a></li>
+					</ol>
+				</div>
+				<div class="sidebar-module">
+					<h4>Elsewhere</h4>
+					<ol class="list-unstyled">
+						<li><a href="#">GitHub</a></li>
+						<li><a href="#">Twitter</a></li>
+						<li><a href="#">Facebook</a></li>
+					</ol>
+				</div>
+			</div>
+			<!-- /.blog-sidebar -->
+		</div>
+		<!-- /.row -->
+	</div>
+	<!-- /.container -->
+	<footer class="blog-footer">
+		<p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+		<p>
+			<a href="#">Back to top</a>
+		</p>
+	</footer>
+</body>
+
+</html>

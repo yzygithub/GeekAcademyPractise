@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<ul class="pages">
+  <li class="pgNext pgEmpty">首页</li>
+  <li class="pgNext pgEmpty">上一页</li>
+  <li class="page-number pgCurrent">1</li>
+  <li class="page-number">2</li>
+  <li class="page-number">3</li>
+  <li class="page-number">4</li>
+  <li class="page-number">5</li>
+  <li class="page-number">6</li>
+  <li class="page-number">7</li>
+  <li class="thpoint">...</li>
+  <li class="pgNext">下一页</li>
+  <li class="pgNext">末页</li>
+  <li class="thpoint pagetotal" style="margin-top:3px;">共 95 页</li>
+  <li class="thpoint pagenow">当前<input type="text" value="1" maxlength="6" id="gotoval"
+                                       style="width:20px; height:16px;margin-top:-3px;padding-top:2px;padding-left:10px;">页
+  </li>
+  <li class="pgNext go">确定</li>
+</ul>
+<li id="3224">
+  <div class="lessonimg-box">
+    <a href="https://www.jikexueyuan.com/course/3224.html" target="_blank">
+      <img src="https://a1.jikexueyuan.com/home/201612/12/1b6a/584e070d8c2cb.jpeg" class="lessonimg" title="腾讯云产品 - 游戏云"
+           alt="腾讯云产品 - 游戏云">
+      <div class="lessonplay" style="opacity: 0;">
+        <i class="playericon"></i>
+      </div>
+    </a>
+  </div>
+  <div class="lesson-infor" style="height: 88px;">
+    <h2 class="lesson-info-h2"><a href="https://www.jikexueyuan.com/course/3224.html" target="_blank">腾讯云产品 - 游戏云</a>
+    </h2>
+    <p style="height: 0; opacity: 0; display: none;">
+      本课程主要介绍腾讯游戏云相关知识
+    </p>
+    <div class="timeandicon">
+      <div class="cf">
+        <dl>
+          <dd class="mar-b8"><i class="time-icon"></i><em>5课时177分钟</em>
+          </dd>
+          <dd class="zhongji">
+            <i class="xinhao-icon2"></i><em>中级</em>
+          </dd>
+        </dl>
+        <em class="learn-number">5831人学习</em>
+      </div>
+      <div class="cf">
+        <div class="lessonicon-box">
+          <a href="https://www.jikexueyuan.com/course/tencent/">
+            <img width="16" src="https://a1.jikexueyuan.com/home/201604/29/930b/572318c5ac303.png" alt="tencent"
+                 title="腾讯云">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</li>
+<script>
+  function lessonHover() {
+    var n = $(this).find(".lessonplay");
+    n.animate({opacity: 1, ease: Quart.easeOut}, 600);
+    var a = $(this).children(".lesson-infor"),
+      s = $(this).find(".learn-number"),
+      r = $(this).find(".zhongji");
+    s.show(), r.show(), a.addClass("lesson-hover"), $(this).find(".lessonicon-box").css("bottom", "-2px"),
+      a.animate({height: 175, ease: Quart.easeOut}, 600);
+    var l = a.find("p");
+    l.animate({display: "block", height: 52, opacity: 1, ease: Linear.easeOut}, 150)
+  }
+  function lessonOut() {
+    var n = $(this).find(".lessonplay");
+    n.animate({opacity: 1, ease: Quart.easeNone}, 600);
+    var a = $(this).children(".lesson-infor"),
+      s = $(this).find(".learn-number"),
+      r = $(this).find(".zhongji");
+    s.hide(), r.hide(), a.removeClass("lesson-hover"), $(this).find(".lessonicon-box").css("bottom", "4px"),
+      a.animate({height: 88, ease: Quart.easeNone}, 600);
+    var l = a.find("p");
+    l.animate({display: "none", height: 0, opacity: 0, ease: Linear.easeNone}, 300)
+  }
+</script>
+</body>
+</html>
