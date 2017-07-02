@@ -1,0 +1,5 @@
+存储型 XSS: </td><img src=0 onerror=alert(0)><td>
+存储型 XSS: </td><script>alert(0)</script><td>
+
+'newstitle'=>htmlspecialchars($row['newsTitle']),
+'newssrc'=>htmlspecialchars($row['newsSrc'])
